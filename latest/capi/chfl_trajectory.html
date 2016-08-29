@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Function manipulating CHFL_TRAJECTORY &mdash; Chemfiles 0.7.0-dev documentation</title>
+    <title>Function manipulating CHFL_TRAJECTORY &#8212; Chemfiles 0.7.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -188,8 +188,8 @@ associated with the file.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv220chfl_trajectory_readP15CHFL_TRAJECTORYP10CHFL_FRAME">
-<span id="chfl_trajectory_read__CHFL_TRAJECTORYP.CHFL_FRAMEP"></span><span class="target" id="chemfileschemfiles_8h_1a74e197d92c457bd92f17ed007195d5a5"></span>int <code class="descclassname"></code><code class="descname">chfl_trajectory_read</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em>file</em>, CHFL_FRAME *<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_trajectory_readP15CHFL_TRAJECTORYP10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220chfl_trajectory_readPC15CHFL_TRAJECTORYPC10CHFL_FRAME">
+<span id="chfl_trajectory_read__CHFL_TRAJECTORYPC.CHFL_FRAMEPC"></span><span class="target" id="chemfileschemfiles_8h_1a5eb90f0fc005bd75c10cea71e75276f2"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_trajectory_read</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em class="property">const</em> <em>file</em>, CHFL_FRAME *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_trajectory_readPC15CHFL_TRAJECTORYPC10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the next step of the trajectory into a frame. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -207,8 +207,8 @@ associated with the file.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv225chfl_trajectory_read_stepP15CHFL_TRAJECTORY6size_tP10CHFL_FRAME">
-<span id="chfl_trajectory_read_step__CHFL_TRAJECTORYP.s.CHFL_FRAMEP"></span><span class="target" id="chemfileschemfiles_8h_1acb723d615826ff49bf6780c8c7b7a2e7"></span>int <code class="descclassname"></code><code class="descname">chfl_trajectory_read_step</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em>file</em>, size_t <em>step</em>, CHFL_FRAME *<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_trajectory_read_stepP15CHFL_TRAJECTORY6size_tP10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv225chfl_trajectory_read_stepPC15CHFL_TRAJECTORY6size_tPC10CHFL_FRAME">
+<span id="chfl_trajectory_read_step__CHFL_TRAJECTORYPC.s.CHFL_FRAMEPC"></span><span class="target" id="chemfileschemfiles_8h_1ac3145745dd8d8e53d2a42b7c8b3ed510"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_trajectory_read_step</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em class="property">const</em> <em>file</em>, size_t <em>step</em>, CHFL_FRAME *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_trajectory_read_stepPC15CHFL_TRAJECTORY6size_tPC10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a specific step of the trajectory in a frame. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -228,8 +228,8 @@ associated with the file.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221chfl_trajectory_writeP15CHFL_TRAJECTORYPK10CHFL_FRAME">
-<span id="chfl_trajectory_write__CHFL_TRAJECTORYP.CHFL_FRAMECP"></span><span class="target" id="chemfileschemfiles_8h_1a246b5e379f0d6631f8382ffcfb2c6ab7"></span>int <code class="descclassname"></code><code class="descname">chfl_trajectory_write</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em>file</em>, <em class="property">const</em> CHFL_FRAME *<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_trajectory_writeP15CHFL_TRAJECTORYPK10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221chfl_trajectory_writePC15CHFL_TRAJECTORYPCK10CHFL_FRAME">
+<span id="chfl_trajectory_write__CHFL_TRAJECTORYPC.CHFL_FRAMECPC"></span><span class="target" id="chemfileschemfiles_8h_1a7347a0bc23ea029f0e9d03724b8dfa55"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_trajectory_write</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em class="property">const</em> <em>file</em>, <em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_trajectory_writePC15CHFL_TRAJECTORYPCK10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a frame to the trajectory. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -247,8 +247,8 @@ associated with the file.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv228chfl_trajectory_set_topologyP15CHFL_TRAJECTORYPK13CHFL_TOPOLOGY">
-<span id="chfl_trajectory_set_topology__CHFL_TRAJECTORYP.CHFL_TOPOLOGYCP"></span><span class="target" id="chemfileschemfiles_8h_1a8dd3602717ab9fbf2ad14d48fcf128da"></span>int <code class="descclassname"></code><code class="descname">chfl_trajectory_set_topology</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em>file</em>, <em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv228chfl_trajectory_set_topologyP15CHFL_TRAJECTORYPK13CHFL_TOPOLOGY" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv228chfl_trajectory_set_topologyPC15CHFL_TRAJECTORYPCK13CHFL_TOPOLOGY">
+<span id="chfl_trajectory_set_topology__CHFL_TRAJECTORYPC.CHFL_TOPOLOGYCPC"></span><span class="target" id="chemfileschemfiles_8h_1a7550ccfea3b3e20d9861e4e244822409"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_trajectory_set_topology</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em class="property">const</em> <em>file</em>, <em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv228chfl_trajectory_set_topologyPC15CHFL_TRAJECTORYPCK13CHFL_TOPOLOGY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the topology associated with a trajectory. This topology will be used when reading and writing the files, replacing any topology in the frames or files. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -266,8 +266,8 @@ associated with the file.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv233chfl_trajectory_set_topology_fileP15CHFL_TRAJECTORYPKc">
-<span id="chfl_trajectory_set_topology_file__CHFL_TRAJECTORYP.cCP"></span><span class="target" id="chemfileschemfiles_8h_1a7847a7967e2c2dabbb52e140f2c9c851"></span>int <code class="descclassname"></code><code class="descname">chfl_trajectory_set_topology_file</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em>file</em>, <em class="property">const</em> char *<em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv233chfl_trajectory_set_topology_fileP15CHFL_TRAJECTORYPKc" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv233chfl_trajectory_set_topology_filePC15CHFL_TRAJECTORYPKc">
+<span id="chfl_trajectory_set_topology_file__CHFL_TRAJECTORYPC.cCP"></span><span class="target" id="chemfileschemfiles_8h_1ab558cccbaf38fa2a6fbe85f997ac9cb5"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_trajectory_set_topology_file</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em class="property">const</em> <em>file</em>, <em class="property">const</em> char *<em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv233chfl_trajectory_set_topology_filePC15CHFL_TRAJECTORYPKc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the topology associated with a trajectory by reading the first frame of `filename`; and extracting the topology of this frame. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -285,8 +285,8 @@ associated with the file.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv240chfl_trajectory_set_topology_with_formatP15CHFL_TRAJECTORYPKcPKc">
-<span id="chfl_trajectory_set_topology_with_format__CHFL_TRAJECTORYP.cCP.cCP"></span><span class="target" id="chemfileschemfiles_8h_1a4c5e8cb03f2b6136d87cdb57604c9a55"></span>int <code class="descclassname"></code><code class="descname">chfl_trajectory_set_topology_with_format</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em>file</em>, <em class="property">const</em> char *<em>filename</em>, <em class="property">const</em> char *<em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv240chfl_trajectory_set_topology_with_formatP15CHFL_TRAJECTORYPKcPKc" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv240chfl_trajectory_set_topology_with_formatPC15CHFL_TRAJECTORYPKcPKc">
+<span id="chfl_trajectory_set_topology_with_format__CHFL_TRAJECTORYPC.cCP.cCP"></span><span class="target" id="chemfileschemfiles_8h_1abee5c02652e2aab58a2085f3c16d3905"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_trajectory_set_topology_with_format</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em class="property">const</em> <em>file</em>, <em class="property">const</em> char *<em>filename</em>, <em class="property">const</em> char *<em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv240chfl_trajectory_set_topology_with_formatPC15CHFL_TRAJECTORYPKcPKc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the topology associated with a trajectory by reading the first frame of `filename` using the file format in `format`; and extracting the topology of this frame. </p>
 <p>This can be needed when the topology file format does not match the extension, or when there is not standard extension for this format.</p>
 <p><dl class="docutils">
@@ -307,8 +307,8 @@ associated with the file.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv222chfl_trajectory_nstepsP15CHFL_TRAJECTORYP6size_t">
-<span id="chfl_trajectory_nsteps__CHFL_TRAJECTORYP.sP"></span><span class="target" id="chemfileschemfiles_8h_1a0d4cd3105f29db75e02ff084229b941f"></span>int <code class="descclassname"></code><code class="descname">chfl_trajectory_nsteps</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em>file</em>, size_t *<em>nsteps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_trajectory_nstepsP15CHFL_TRAJECTORYP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv222chfl_trajectory_nstepsPC15CHFL_TRAJECTORYP6size_t">
+<span id="chfl_trajectory_nsteps__CHFL_TRAJECTORYPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a77af5c0b372a101d99fb1ae6c01045a3"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_trajectory_nsteps</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em class="property">const</em> <em>file</em>, size_t *<em>nsteps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_trajectory_nstepsPC15CHFL_TRAJECTORYP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of steps (the number of frames) in a trajectory. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -327,7 +327,7 @@ associated with the file.</p>
 
 <dl class="function">
 <dt id="_CPPv221chfl_trajectory_closeP15CHFL_TRAJECTORY">
-<span id="chfl_trajectory_close__CHFL_TRAJECTORYP"></span><span class="target" id="chemfileschemfiles_8h_1aee5cfaf110a165f2d5d13a49e92a4171"></span>int <code class="descclassname"></code><code class="descname">chfl_trajectory_close</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_trajectory_closeP15CHFL_TRAJECTORY" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_trajectory_close__CHFL_TRAJECTORYP"></span><span class="target" id="chemfileschemfiles_8h_1ad6a5bf73a8236dd9cd6395597f9e6c29"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_trajectory_close</code><span class="sig-paren">(</span>CHFL_TRAJECTORY *<em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_trajectory_closeP15CHFL_TRAJECTORY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close a trajectory file, and free the associated memory. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>

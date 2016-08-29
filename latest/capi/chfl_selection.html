@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Function manipulating CHFL_SELECTION &mdash; Chemfiles 0.7.0-dev documentation</title>
+    <title>Function manipulating CHFL_SELECTION &#8212; Chemfiles 0.7.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -155,8 +155,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv219chfl_selection_sizePK14CHFL_SELECTIONP6size_t">
-<span id="chfl_selection_size__CHFL_SELECTIONCP.sP"></span><span class="target" id="chemfileschemfiles_8h_1a1b369e5a057c397cacb5413f89010aca"></span>int <code class="descclassname"></code><code class="descname">chfl_selection_size</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_SELECTION *<em>selection</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_selection_sizePK14CHFL_SELECTIONP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219chfl_selection_sizePCK14CHFL_SELECTIONP6size_t">
+<span id="chfl_selection_size__CHFL_SELECTIONCPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a240304f5a485d39fc9b8cdf52f8e5a59"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_selection_size</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_SELECTION *<em class="property">const</em> <em>selection</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_selection_sizePCK14CHFL_SELECTIONP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the size of the selection, i.e. the number of atoms we are selecting together. </p>
 <p>This value is 1 for the &#8216;atom&#8217; context, 2 for the &#8216;pair&#8217; and &#8216;bond&#8217; context, 3 for the &#8216;three&#8217; and &#8216;angles&#8217; contextes and 4 for the &#8216;four&#8217; and &#8216;dihedral&#8217; contextes.</p>
 <p><dl class="docutils">
@@ -175,8 +175,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv224chfl_selection_evalutateP14CHFL_SELECTIONPK10CHFL_FRAMEP6size_t">
-<span id="chfl_selection_evalutate__CHFL_SELECTIONP.CHFL_FRAMECP.sP"></span><span class="target" id="chemfileschemfiles_8h_1a284c46b85260a8316d048436cb1910c4"></span>int <code class="descclassname"></code><code class="descname">chfl_selection_evalutate</code><span class="sig-paren">(</span>CHFL_SELECTION *<em>selection</em>, <em class="property">const</em> CHFL_FRAME *<em>frame</em>, size_t *<em>n_matches</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_selection_evalutateP14CHFL_SELECTIONPK10CHFL_FRAMEP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv224chfl_selection_evalutatePC14CHFL_SELECTIONPCK10CHFL_FRAMEP6size_t">
+<span id="chfl_selection_evalutate__CHFL_SELECTIONPC.CHFL_FRAMECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1ae22c7716a11bd9fd46e0f662fc316f13"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_selection_evalutate</code><span class="sig-paren">(</span>CHFL_SELECTION *<em class="property">const</em> <em>selection</em>, <em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t *<em>n_matches</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_selection_evalutatePC14CHFL_SELECTIONPCK10CHFL_FRAMEP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate a selection for a given frame. </p>
 <p>Use the `chfl_selection_get` function to get the matches for this selection.</p>
 <p><dl class="docutils">
@@ -197,8 +197,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv222chfl_selection_matchesPK14CHFL_SELECTIONA_12chfl_match_t6size_t">
-<span id="chfl_selection_matches__CHFL_SELECTIONCP.chfl_match_tA.s"></span><span class="target" id="chemfileschemfiles_8h_1afb855b3130fb86837b8c97fb6fd95058"></span>int <code class="descclassname"></code><code class="descname">chfl_selection_matches</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_SELECTION *<em>selection</em>, <a class="reference internal" href="#_CPPv212chfl_match_t" title="chfl_match_t">chfl_match_t</a> <em>matches</em>[], size_t <em>n_matches</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_selection_matchesPK14CHFL_SELECTIONA_12chfl_match_t6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv222chfl_selection_matchesPCK14CHFL_SELECTIONA_12chfl_match_t6size_t">
+<span id="chfl_selection_matches__CHFL_SELECTIONCPC.chfl_match_tA.s"></span><span class="target" id="chemfileschemfiles_8h_1af1c1bd9b677eabe3ff94225bba67e98c"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_selection_matches</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_SELECTION *<em class="property">const</em> <em>selection</em>, <a class="reference internal" href="#_CPPv212chfl_match_t" title="chfl_match_t">chfl_match_t</a> <em>matches</em>[], size_t <em>n_matches</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_selection_matchesPCK14CHFL_SELECTIONA_12chfl_match_t6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the matches for a selection after a call to `chfl_selection_evalutate`. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -219,7 +219,7 @@
 
 <dl class="function">
 <dt id="_CPPv219chfl_selection_freeP14CHFL_SELECTION">
-<span id="chfl_selection_free__CHFL_SELECTIONP"></span><span class="target" id="chemfileschemfiles_8h_1aeeaf2ffa61a4ba65bca6edd4c43bc87e"></span>int <code class="descclassname"></code><code class="descname">chfl_selection_free</code><span class="sig-paren">(</span>CHFL_SELECTION *<em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_selection_freeP14CHFL_SELECTION" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_selection_free__CHFL_SELECTIONP"></span><span class="target" id="chemfileschemfiles_8h_1a4cd1a3274e3687031bff76f9b80c6c32"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_selection_free</code><span class="sig-paren">(</span>CHFL_SELECTION *<em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_selection_freeP14CHFL_SELECTION" title="Permalink to this definition">¶</a></dt>
 <dd><p>Destroy a selection, and free the associated memory. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Function manipulating CHFL_TOPOLOGY &mdash; Chemfiles 0.7.0-dev documentation</title>
+    <title>Function manipulating CHFL_TOPOLOGY &#8212; Chemfiles 0.7.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -155,8 +155,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv224chfl_topology_from_framePK10CHFL_FRAME">
-<span id="chfl_topology_from_frame__CHFL_FRAMECP"></span><span class="target" id="chemfileschemfiles_8h_1a18d28825f8ecbb8bbf6ee0318e5fe834"></span>CHFL_TOPOLOGY *<code class="descclassname"></code><code class="descname">chfl_topology_from_frame</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_topology_from_framePK10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv224chfl_topology_from_framePCK10CHFL_FRAME">
+<span id="chfl_topology_from_frame__CHFL_FRAMECPC"></span><span class="target" id="chemfileschemfiles_8h_1ac91a1cc968ac9f7fe03e274537c9ea15"></span>CHFL_TOPOLOGY *<code class="descclassname"></code><code class="descname">chfl_topology_from_frame</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_topology_from_framePCK10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a copy of the topology of a frame. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -172,8 +172,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv225chfl_topology_atoms_countPK13CHFL_TOPOLOGYP6size_t">
-<span id="chfl_topology_atoms_count__CHFL_TOPOLOGYCP.sP"></span><span class="target" id="chemfileschemfiles_8h_1a8ba609cf7bbbac68bf541b3235698380"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t *<em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_topology_atoms_countPK13CHFL_TOPOLOGYP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv225chfl_topology_atoms_countPCK13CHFL_TOPOLOGYP6size_t">
+<span id="chfl_topology_atoms_count__CHFL_TOPOLOGYCPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1aa29de1b691843282a01647a73798528e"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t *<em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_topology_atoms_countPCK13CHFL_TOPOLOGYP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current number of atoms in the topology. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -191,8 +191,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv220chfl_topology_appendP13CHFL_TOPOLOGYPK9CHFL_ATOM">
-<span id="chfl_topology_append__CHFL_TOPOLOGYP.CHFL_ATOMCP"></span><span class="target" id="chemfileschemfiles_8h_1a71f0d81e147599bb286b916bcdec0947"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_append</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em>topology</em>, <em class="property">const</em> CHFL_ATOM *<em>atom</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_appendP13CHFL_TOPOLOGYPK9CHFL_ATOM" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220chfl_topology_appendPC13CHFL_TOPOLOGYPCK9CHFL_ATOM">
+<span id="chfl_topology_append__CHFL_TOPOLOGYPC.CHFL_ATOMCPC"></span><span class="target" id="chemfileschemfiles_8h_1ad8db5a1d66ddad643e3569fd3c7f0d41"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_append</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, <em class="property">const</em> CHFL_ATOM *<em class="property">const</em> <em>atom</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_appendPC13CHFL_TOPOLOGYPCK9CHFL_ATOM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an atom at the end of a topology. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -210,8 +210,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv220chfl_topology_removeP13CHFL_TOPOLOGY6size_t">
-<span id="chfl_topology_remove__CHFL_TOPOLOGYP.s"></span><span class="target" id="chemfileschemfiles_8h_1a90437bf9a9d0025277e3c1ee1a0ab5a9"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_remove</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em>topology</em>, size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_removeP13CHFL_TOPOLOGY6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220chfl_topology_removePC13CHFL_TOPOLOGY6size_t">
+<span id="chfl_topology_remove__CHFL_TOPOLOGYPC.s"></span><span class="target" id="chemfileschemfiles_8h_1af1c1e7abb9d1130fca4db412bb9d7f04"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_remove</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_removePC13CHFL_TOPOLOGY6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove an atom from a topology by index. This modify all the other atoms indexes. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -229,8 +229,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv220chfl_topology_isbondPK13CHFL_TOPOLOGY6size_t6size_tPb">
-<span id="chfl_topology_isbond__CHFL_TOPOLOGYCP.s.s.bP"></span><span class="target" id="chemfileschemfiles_8h_1a5fe6d7b30b4f57d964ccf5bc3119f54a"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_isbond</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t <em>i</em>, size_t <em>j</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_isbondPK13CHFL_TOPOLOGY6size_t6size_tPb" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220chfl_topology_isbondPCK13CHFL_TOPOLOGY6size_t6size_tPb">
+<span id="chfl_topology_isbond__CHFL_TOPOLOGYCPC.s.s.bP"></span><span class="target" id="chemfileschemfiles_8h_1a5c251fd368045f0cc93dfd904dcf6296"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_isbond</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em>, size_t <em>j</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_isbondPCK13CHFL_TOPOLOGY6size_t6size_tPb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tell if the atoms `i` and `j` are bonded together. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -252,8 +252,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221chfl_topology_isanglePK13CHFL_TOPOLOGY6size_t6size_t6size_tPb">
-<span id="chfl_topology_isangle__CHFL_TOPOLOGYCP.s.s.s.bP"></span><span class="target" id="chemfileschemfiles_8h_1a2237d541706377ff55b98c8bc02ed3d1"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_isangle</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t <em>i</em>, size_t <em>j</em>, size_t <em>k</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_topology_isanglePK13CHFL_TOPOLOGY6size_t6size_t6size_tPb" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221chfl_topology_isanglePCK13CHFL_TOPOLOGY6size_t6size_t6size_tPb">
+<span id="chfl_topology_isangle__CHFL_TOPOLOGYCPC.s.s.s.bP"></span><span class="target" id="chemfileschemfiles_8h_1a6474994b7d6f9f523f6b0be192261483"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_isangle</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em>, size_t <em>j</em>, size_t <em>k</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_topology_isanglePCK13CHFL_TOPOLOGY6size_t6size_t6size_tPb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tell if the atoms `i`, `j` and `k` constitues an angle. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -277,8 +277,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv224chfl_topology_isdihedralPK13CHFL_TOPOLOGY6size_t6size_t6size_t6size_tPb">
-<span id="chfl_topology_isdihedral__CHFL_TOPOLOGYCP.s.s.s.s.bP"></span><span class="target" id="chemfileschemfiles_8h_1aa927e796f4e701fb9af3128e4fc481d3"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_isdihedral</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t <em>i</em>, size_t <em>j</em>, size_t <em>k</em>, size_t <em>m</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_topology_isdihedralPK13CHFL_TOPOLOGY6size_t6size_t6size_t6size_tPb" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv224chfl_topology_isdihedralPCK13CHFL_TOPOLOGY6size_t6size_t6size_t6size_tPb">
+<span id="chfl_topology_isdihedral__CHFL_TOPOLOGYCPC.s.s.s.s.bP"></span><span class="target" id="chemfileschemfiles_8h_1ae23b878051a8453f2a36cd41e478e44f"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_isdihedral</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em>, size_t <em>j</em>, size_t <em>k</em>, size_t <em>m</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_topology_isdihedralPCK13CHFL_TOPOLOGY6size_t6size_t6size_t6size_tPb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tell if the atoms `i`, `j`, `k` and `m` constitues a dihedral angle. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -304,8 +304,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv225chfl_topology_bonds_countPK13CHFL_TOPOLOGYP6size_t">
-<span id="chfl_topology_bonds_count__CHFL_TOPOLOGYCP.sP"></span><span class="target" id="chemfileschemfiles_8h_1ab15c4704796a83d2d094f1d74bc5f769"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_bonds_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t *<em>nbonds</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_topology_bonds_countPK13CHFL_TOPOLOGYP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv225chfl_topology_bonds_countPCK13CHFL_TOPOLOGYP6size_t">
+<span id="chfl_topology_bonds_count__CHFL_TOPOLOGYCPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1ab1e637513811044621392b43d3e5eb42"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_bonds_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t *<em>nbonds</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_topology_bonds_countPCK13CHFL_TOPOLOGYP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of bonds in the system. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -323,8 +323,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv226chfl_topology_angles_countPK13CHFL_TOPOLOGYP6size_t">
-<span id="chfl_topology_angles_count__CHFL_TOPOLOGYCP.sP"></span><span class="target" id="chemfileschemfiles_8h_1a2a790ee8c532b3b08c291ff6fe78105c"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_angles_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t *<em>nangles</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv226chfl_topology_angles_countPK13CHFL_TOPOLOGYP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv226chfl_topology_angles_countPCK13CHFL_TOPOLOGYP6size_t">
+<span id="chfl_topology_angles_count__CHFL_TOPOLOGYCPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a012da97b5662587d78bc164227c40bce"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_angles_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t *<em>nangles</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv226chfl_topology_angles_countPCK13CHFL_TOPOLOGYP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of angles in the system. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -342,8 +342,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv229chfl_topology_dihedrals_countPK13CHFL_TOPOLOGYP6size_t">
-<span id="chfl_topology_dihedrals_count__CHFL_TOPOLOGYCP.sP"></span><span class="target" id="chemfileschemfiles_8h_1ad5603d5893dbcf5cf9797b29f3cff37b"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_dihedrals_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t *<em>ndihedrals</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv229chfl_topology_dihedrals_countPK13CHFL_TOPOLOGYP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv229chfl_topology_dihedrals_countPCK13CHFL_TOPOLOGYP6size_t">
+<span id="chfl_topology_dihedrals_count__CHFL_TOPOLOGYCPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1acb6b8ea8799a5595db2d348a696e1029"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_dihedrals_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t *<em>ndihedrals</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv229chfl_topology_dihedrals_countPCK13CHFL_TOPOLOGYP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of dihedral angles in the system. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -361,8 +361,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv219chfl_topology_bondsPK13CHFL_TOPOLOGYPA2_6size_t6size_t">
-<span class="target" id="chemfileschemfiles_8h_1a04f01ce82609708418bfdaaabdabab81"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_bonds</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t (*<em>data</em>)[2], size_t <em>nbonds</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_topology_bondsPK13CHFL_TOPOLOGYPA2_6size_t6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219chfl_topology_bondsPCK13CHFL_TOPOLOGYPA2_6size_t6size_t">
+<span class="target" id="chemfileschemfiles_8h_1a33014cac79c2db390705b09b8776c7fb"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_bonds</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t (*<em>data</em>)[2], size_t <em>nbonds</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_topology_bondsPCK13CHFL_TOPOLOGYPA2_6size_t6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of bonds in the system. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -373,7 +373,7 @@
 </li>
 <li><code class="first docutils literal"><span class="pre">data</span></code> - <p>A nbonds x 2 array to be filled with the bonds in the system </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">nbonds</span></code> - <p>The size of the array. This should equal the value given by the chfl_topology_bonds_count function </p>
+<li><code class="first docutils literal"><span class="pre">nbonds</span></code> - <p>The size of the array. This should equal the value given by the `chfl_topology_bonds_count` function </p>
 </li>
 </ul>
 </dd>
@@ -382,8 +382,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv220chfl_topology_anglesPK13CHFL_TOPOLOGYPA3_6size_t6size_t">
-<span class="target" id="chemfileschemfiles_8h_1ad97afd57a7527f0c995bfa1fb4a23cf1"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_angles</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t (*<em>data</em>)[3], size_t <em>nangles</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_anglesPK13CHFL_TOPOLOGYPA3_6size_t6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220chfl_topology_anglesPCK13CHFL_TOPOLOGYPA3_6size_t6size_t">
+<span class="target" id="chemfileschemfiles_8h_1a44148e58b99afb1fff7a6c08a6f846a8"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_angles</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t (*<em>data</em>)[3], size_t <em>nangles</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_anglesPCK13CHFL_TOPOLOGYPA3_6size_t6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of angles in the system. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -394,7 +394,7 @@
 </li>
 <li><code class="first docutils literal"><span class="pre">data</span></code> - <p>A nangles x 3 array to be filled with the angles in the system </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">nangles</span></code> - <p>The size of the array. This should equal the value given by the chfl_topology_angles_count function </p>
+<li><code class="first docutils literal"><span class="pre">nangles</span></code> - <p>The size of the array. This should equal the value given by the `chfl_topology_angles_count` function </p>
 </li>
 </ul>
 </dd>
@@ -403,8 +403,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv223chfl_topology_dihedralsPK13CHFL_TOPOLOGYPA4_6size_t6size_t">
-<span class="target" id="chemfileschemfiles_8h_1a85e324bd18d9b8cf4eb537a731116192"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_dihedrals</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em>topology</em>, size_t (*<em>data</em>)[4], size_t <em>ndihedrals</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223chfl_topology_dihedralsPK13CHFL_TOPOLOGYPA4_6size_t6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv223chfl_topology_dihedralsPCK13CHFL_TOPOLOGYPA4_6size_t6size_t">
+<span class="target" id="chemfileschemfiles_8h_1af5e81c158c17ef2eaa919e98c145d74e"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_dihedrals</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t (*<em>data</em>)[4], size_t <em>ndihedrals</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223chfl_topology_dihedralsPCK13CHFL_TOPOLOGYPA4_6size_t6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of dihedral angles in the system. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -415,7 +415,7 @@
 </li>
 <li><code class="first docutils literal"><span class="pre">data</span></code> - <p>A ndihedrals x 4 array to be filled with the dihedral angles in the system </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">ndihedrals</span></code> - <p>The size of the array. This should equal the value given by the chfl_topology_dihedrals_count function </p>
+<li><code class="first docutils literal"><span class="pre">ndihedrals</span></code> - <p>The size of the array. This should equal the value given by the `chfl_topology_dihedrals_count` function </p>
 </li>
 </ul>
 </dd>
@@ -424,8 +424,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv222chfl_topology_add_bondP13CHFL_TOPOLOGY6size_t6size_t">
-<span id="chfl_topology_add_bond__CHFL_TOPOLOGYP.s.s"></span><span class="target" id="chemfileschemfiles_8h_1ac043794fffbc88ff3a2125fc260a8e96"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_add_bond</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em>topology</em>, size_t <em>i</em>, size_t <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_topology_add_bondP13CHFL_TOPOLOGY6size_t6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv222chfl_topology_add_bondPC13CHFL_TOPOLOGY6size_t6size_t">
+<span id="chfl_topology_add_bond__CHFL_TOPOLOGYPC.s.s"></span><span class="target" id="chemfileschemfiles_8h_1a6b99f3e9d55a2c9cdd7e28902c37a1ac"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_add_bond</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em>, size_t <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_topology_add_bondPC13CHFL_TOPOLOGY6size_t6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a bond between the atoms `i` and `j` in the system. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -445,8 +445,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv225chfl_topology_remove_bondP13CHFL_TOPOLOGY6size_t6size_t">
-<span id="chfl_topology_remove_bond__CHFL_TOPOLOGYP.s.s"></span><span class="target" id="chemfileschemfiles_8h_1aa14fba3e3ab65ca6c28e6b43f5cba87c"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_remove_bond</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em>topology</em>, size_t <em>i</em>, size_t <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_topology_remove_bondP13CHFL_TOPOLOGY6size_t6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv225chfl_topology_remove_bondPC13CHFL_TOPOLOGY6size_t6size_t">
+<span id="chfl_topology_remove_bond__CHFL_TOPOLOGYPC.s.s"></span><span class="target" id="chemfileschemfiles_8h_1ad1a1fda578fe52c629c1cba28dff2894"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_remove_bond</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em>, size_t <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_topology_remove_bondPC13CHFL_TOPOLOGY6size_t6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove any existing bond between the atoms `i` and `j` in the system. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -467,7 +467,7 @@
 
 <dl class="function">
 <dt id="_CPPv218chfl_topology_freeP13CHFL_TOPOLOGY">
-<span id="chfl_topology_free__CHFL_TOPOLOGYP"></span><span class="target" id="chemfileschemfiles_8h_1ac2f67a9de62096f5d19791bc22626848"></span>int <code class="descclassname"></code><code class="descname">chfl_topology_free</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em>topology</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218chfl_topology_freeP13CHFL_TOPOLOGY" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_topology_free__CHFL_TOPOLOGYP"></span><span class="target" id="chemfileschemfiles_8h_1adcb52f2c526e9e533cccf6e7a107e0ab"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_topology_free</code><span class="sig-paren">(</span>CHFL_TOPOLOGY *<em>topology</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218chfl_topology_freeP13CHFL_TOPOLOGY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Destroy a topology, and free the associated memory. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
