@@ -246,51 +246,6 @@ the doccumentation of CMake.</p>
 <p>The <strong class="command">cmake</strong> step can be further configured by using the curse-based GUI
 (<strong class="command">ccmake .</strong>) or providing some command-line arguments. Here are the
 most important options:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="41%" />
-<col width="24%" />
-<col width="34%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Option</th>
-<th class="head">Default value</th>
-<th class="head">Effect/Informations</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">-DCMAKE_INSTALL_PREFIX=prefix</span></code></td>
-<td><code class="file docutils literal"><span class="pre">/usr/local</span></code></td>
-<td>Set the installation prefix
-to <code class="docutils literal"><span class="pre">prefix</span></code></td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">-DCMAKE_BUILD_TYPE=type</span></code></td>
-<td><code class="docutils literal"><span class="pre">release</span></code></td>
-<td>Set to <code class="docutils literal"><span class="pre">debug</span></code> for debug
-informations</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">-DBUILD_SHARED_LIBS=ON|OFF</span></code></td>
-<td><code class="docutils literal"><span class="pre">OFF</span></code></td>
-<td>Build shared library instead
-of static one.</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">-DBUILD_DOCUMENTATION=ON|OFF</span></code></td>
-<td><code class="docutils literal"><span class="pre">OFF</span></code></td>
-<td>Build the documentation.
-This needs <a class="reference external" href="http://sphinx-doc.org/">sphinx</a> and
-<a class="reference external" href="http://doxygen.org/">doxygen</a> to be installed</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">-DBUILD_TESTS=ON|OFF</span></code></td>
-<td><code class="docutils literal"><span class="pre">OFF</span></code></td>
-<td>Build the test suite.</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">-DENABLE_NETCDF=ON|OFF</span></code></td>
-<td><code class="docutils literal"><span class="pre">OFF</span></code></td>
-<td>Enable the Amber NetCDF
-format</td>
-</tr>
-</tbody>
-</table>
 <p>For instance, to install to <code class="file docutils literal"><span class="pre">$HOME/local</span></code>, use:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$HOME</span>/local ..
 </pre></div>
