@@ -247,6 +247,31 @@
 <dd><p>Remove all bonding information in the topology (bonds, angles and dihedrals) </p>
 </dd></dl>
 
+<dl class="function">
+<dt id="_CPPv2N8Topology11add_residueE7Residue">
+<span id="Topology::add_residue__Residue"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1ae53ca14ed4b8ae4b97181744923f3d19"></span>void <code class="descname">add_residue</code><span class="sig-paren">(</span>Residue <em>residue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8Topology11add_residueE7Residue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a `residue` to this topology.</p>
+<p>This function throws a `chemfiles::Error` if any atom in the `residue` is already in another residue in this topology. In that case, the topology is not modified. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N8Topology10are_linkedERK7ResidueRK7Residue">
+<span id="Topology::are_linked__ResidueCR.ResidueCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1ae338782ed505d598fa9a4a2e61f9bcb4"></span>bool <code class="descname">are_linked</code><span class="sig-paren">(</span><em class="property">const</em> Residue &amp;<em>res_1</em>, <em class="property">const</em> Residue &amp;<em>res_2</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology10are_linkedERK7ResidueRK7Residue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if two residues are linked together, i.e. if there is a bond between one atom in the first residue and one atom in the second one. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N8Topology7residueE6size_t">
+<span id="Topology::residue__s"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1af3ceda4b28fe4f026c8388927820dc14"></span>optional&lt;<em class="property">const</em> Residue&amp;&gt; <code class="descname">residue</code><span class="sig-paren">(</span>size_t <em>atom</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology7residueE6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the residue containing the `atom` at the given index. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9chemfiles8Topology8residuesEv">
+<span id="chemfiles::Topology::residues"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afdea6b211bce5809e34eee3bdeeea2b8"></span><em class="property">const</em> std::vector&lt;Residue&gt; &amp;<code class="descname">residues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles8Topology8residuesEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the residues in the topology. </p>
+</dd></dl>
+
 </div>
 </dd></dl>
 
