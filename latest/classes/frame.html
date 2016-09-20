@@ -247,6 +247,18 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv2N5Frame7reserveE6size_t">
+<span id="Frame::reserve__s"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1a534ae61cdf105fc808788434bd6a825b"></span>void <code class="descname">reserve</code><span class="sig-paren">(</span>size_t <em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5Frame7reserveE6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reserve size in the frame to store data for `natoms` atoms. This function only reserve storage for the the velocities if the data is present. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5Frame8add_atomE4Atom8Vector3D8Vector3D">
+<span id="Frame::add_atom__Atom.Vector3D.Vector3D"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1a0bd4ab2359d27103123161321c06b194"></span>void <code class="descname">add_atom</code><span class="sig-paren">(</span>Atom <em>atom</em>, Vector3D <em>position</em>, Vector3D <em>velocity</em> = Vector3D()<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5Frame8add_atomE4Atom8Vector3D8Vector3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an `atom` at the given `position` and optionally with the given `velocity`. The `velocity` value will only be used if this frame contains velocity data. </p>
+</dd></dl>
+
+<dl class="function">
 <dt id="_CPPv2N9chemfiles5Frame4stepEv">
 <span id="chemfiles::Frame::step"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1a53076d72f2526fbfb572412fdaa72529"></span>size_t <code class="descname">step</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles5Frame4stepEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current simulation step. </p>

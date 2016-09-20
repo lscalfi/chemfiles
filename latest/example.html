@@ -295,7 +295,7 @@ informations to a new trajectory file.</li>
     <span class="k">if</span> <span class="p">(</span><span class="n">chfl_trajectory_read</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span> <span class="o">!=</span> <span class="n">CHFL_SUCCESS</span><span class="p">)</span> <span class="p">{</span><span class="cm">/*Handle error*/</span><span class="p">}</span>
 
     <span class="kt">size_t</span> <span class="n">natoms</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">float</span> <span class="p">(</span><span class="o">*</span><span class="n">positions</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">chfl_vector_t</span><span class="o">*</span> <span class="n">positions</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
     <span class="n">chfl_frame_positions</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">positions</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">natoms</span><span class="p">);</span>
     <span class="n">indexes</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">natoms</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span><span class="p">));</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">indexes</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span><span class="cm">/*Handle error*/</span><span class="p">}</span>
@@ -351,7 +351,7 @@ informations to a new trajectory file.</li>
         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">chfl_trajectory_read</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">frame</span><span class="p">))</span> <span class="p">{</span><span class="cm">/*Handle error*/</span><span class="p">}</span>
 
         <span class="kt">size_t</span> <span class="n">natoms</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="kt">float</span> <span class="p">(</span><span class="o">*</span><span class="n">positions</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">chfl_vector_t</span><span class="o">*</span> <span class="n">positions</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
 
         <span class="c1">// Get a pointer to the positions in `positions`. The array `positions`</span>
         <span class="c1">// contains natoms entries.</span>

@@ -182,7 +182,7 @@
 <dl class="function">
 <dt id="_CPPv217chfl_frame_resizePC10CHFL_FRAME6size_t">
 <span id="chfl_frame_resize__CHFL_FRAMEPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a6301d7966dbc54acaf291d41f3807a9e"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_resize</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t <em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_frame_resizePC10CHFL_FRAME6size_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Resize the positions and the velocities in frame, to make space for N atoms. </p>
+<dd><p>Resize the positions and the velocities in frame, to make space for `natoms` atoms. </p>
 <p>This function may invalidate any pointer to the positions or the velocities if the new size is bigger than the old one. In all the cases, previous data is conserved. This function conserve the presence of absence of velocities.</p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -200,8 +200,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPPA3_fP6size_t">
-<span class="target" id="chemfileschemfiles_8h_1a84f3c11e02ca452fd24ffd1c1a072f14"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_positions</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, float (**<em>data</em>)[3], size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPPA3_fP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPP13chfl_vector_tP6size_t">
+<span id="chfl_frame_positions__CHFL_FRAMEPC.chfl_vector_tPP.sP"></span><span class="target" id="chemfileschemfiles_8h_1a73e55bdb786b553841d3986900985574"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_positions</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPP13chfl_vector_tP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a pointer to the positions array from a frame. </p>
 <p>The positions are stored as a N x 3 array, this function set a pointer to point to the first element of this array, and give the value of N. If the frame is resized (by writing to it, or calling `chfl_frame_resize`), the pointer is invalidated.</p>
 <p><dl class="docutils">
@@ -211,7 +211,7 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">frame</span></code> - <p>The frame </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">data</span></code> - <p>A pointer to a pointer to float[3] array, which will point to the data </p>
+<li><code class="first docutils literal"><span class="pre">data</span></code> - <p>A pointer to a `chfl_vector_t` array, which will be set to point to the positions data. </p>
 </li>
 <li><code class="first docutils literal"><span class="pre">size</span></code> - <p>A pointer to the an integer to be filled with the array size </p>
 </li>
@@ -222,8 +222,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPPA3_fP6size_t">
-<span class="target" id="chemfileschemfiles_8h_1ae2487ac7ce386294c9dfe6cc82313599"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_velocities</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, float (**<em>data</em>)[3], size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPPA3_fP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPP13chfl_vector_tP6size_t">
+<span id="chfl_frame_velocities__CHFL_FRAMEPC.chfl_vector_tPP.sP"></span><span class="target" id="chemfileschemfiles_8h_1ad09985e33f1e3aaf34685dd690849fa0"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_velocities</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPP13chfl_vector_tP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a pointer to the velocities array from a frame. </p>
 <p>The velocities are stored as a `N x 3` array, this function set a pointer to point to the first element of this array, and give the value of N. If the frame is resized (by writing to it, or calling `chfl_frame_resize`), the pointer is invalidated.</p>
 <p>If the frame do not have velocity, this will return an error. Use `chfl_frame_add_velocities` to add velocities to a frame before calling this function.</p>
@@ -234,7 +234,7 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">frame</span></code> - <p>The frame </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">data</span></code> - <p>A pointer to a pointer to float[3] array, which will point to the data </p>
+<li><code class="first docutils literal"><span class="pre">data</span></code> - <p>A pointer to a `chfl_vector_t` array, which will be set to point to the velocity data. </p>
 </li>
 <li><code class="first docutils literal"><span class="pre">size</span></code> - <p>A pointer to the an integer to be filled with the array size </p>
 </li>
