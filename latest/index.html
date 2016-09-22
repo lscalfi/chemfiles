@@ -69,10 +69,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Chemfiles features overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="selections.html">Selection language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Chemfiles classes overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example.html">Usage examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formats.html">Supported formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selections.html">Selection language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="others.html">Other libraries for reading trajectories</a></li>
 </ul>
 <ul>
@@ -142,61 +142,36 @@
       
   <div class="section" id="chemfiles-an-efficient-io-library-for-chemistry-file-formats">
 <h1>Chemfiles, an efficient IO library for chemistry file formats<a class="headerlink" href="#chemfiles-an-efficient-io-library-for-chemistry-file-formats" title="Permalink to this headline">¶</a></h1>
-<p>Chemfiles is a multi-language library written in modern C++ for reading and writing
-from and to molecular trajectory files. These files are created by your favorite
-theoretical chemistry program, and contains informations about atomic or residues
-names and positions. Some format also have additional informations, such as
-velocities, forces, energy, …</p>
-<p>The main targeted audience of chemfiles (<em>libchemfiles</em>) are chemistry researchers
-working on their own code to do some kind of awesome science, without wanting to
-bother about handling all the format that may exist in the world.</p>
+<p>Chemfiles is a multi-language library written in modern C++ for reading and
+writing from and to molecular trajectory files. These files are created by your
+favorite theoretical chemistry program, and contains informations about atomic
+or residues names and positions. Some format also have additional informations,
+such as velocities, forces, energy, …</p>
+<p>The main targeted audience of chemfiles (<em>libchemfiles</em>) are chemistry
+researchers working on their own code to do some kind of awesome science,
+without wanting to bother about handling all the format that may exist in the
+world.</p>
 <p>Running simulation (either Quantum Dynamic, Monte Carlo, Molecular Dynamic, or
 any other method) often produce enormous amounts of data, which had to be
-post-processed in order to extract informations. This post-processing step involve
-reading and parsing the data, and computing physical values with the help of
-statistical thermodynamic. Chemfiles tries to help you on the first point, by providing
-the same interface to all the trajectory formats. If you ever need to change your
-output format, your analysis tools will still work the same way. Chemfiles is
-efficient because it allow you to write and debug your code only once, and then
-to re-use it as needed.</p>
+post-processed in order to extract informations. This post-processing step
+involve reading and parsing the data, and computing physical values with the
+help of statistical thermodynamic. Chemfiles tries to help you on the first
+point, by providing the same interface to all the trajectory formats. If you
+ever need to change your output format, your analysis tools will still work the
+same way. Chemfiles is efficient because it allow you to write and debug your
+code only once, and then to re-use it as needed.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Chemfiles is still is alpha stage, and no backward compatibility is assured.
-I hope I can reach a stable interface pretty soon, once it have been validated on
-various formats.</p>
+I hope I can reach a stable interface pretty soon, once it have been
+validated on various formats.</p>
 </div>
-<p>Even if chemfiles is written in C++, it can be used from the most popular scientific
-programming languages: C, Fortran, Python, … You can just pick up your favorite
-language to use it. This part of the documentation presents the data model used by
-chemfiles to store information about the trajectories, and how to acess that data in
-C and C++.</p>
-<p>Basic usage of chemfiles looks like this in C++:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="cp">#include</span> <span class="cpf">&quot;chemfiles.cpp&quot;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">chemfiles</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Trajectory</span> <span class="n">traj</span><span class="p">(</span><span class="s">&quot;filename.xyz&quot;</span><span class="p">);</span>
-    <span class="n">Frame</span> <span class="n">frame</span><span class="p">;</span>
-
-    <span class="n">traj</span> <span class="o">&gt;&gt;</span> <span class="n">frame</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;There are &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">frame</span><span class="p">.</span><span class="n">natoms</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; atoms in the frame&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">positions</span> <span class="o">=</span> <span class="n">frame</span><span class="p">.</span><span class="n">positions</span><span class="p">();</span>
-
-    <span class="c1">// Do awesome science here with the positions</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">frame</span><span class="p">.</span><span class="n">velocities</span><span class="p">())</span> <span class="p">{</span>
-        <span class="k">auto</span> <span class="n">velocities</span> <span class="o">=</span> <span class="o">*</span><span class="n">frame</span><span class="p">.</span><span class="n">velocities</span><span class="p">();</span>
-
-        <span class="c1">// If the file contains information about the velocities, you will</span>
-        <span class="c1">// find them here.</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The documentation for the other languages interfaces to chemfiles are accessibles at the
-following places:</p>
+<p>Even if chemfiles is written in C++, it can be used from the most popular
+scientific programming languages: C, Fortran, Python, … You can just pick up
+your favorite language to use it. This part of the documentation presents the
+data model used by chemfiles to store information about the trajectories, and
+how to acess that data in C and C++. The documentation for the other languages
+interfaces to chemfiles are accessibles at the following places:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://chemfiles.github.io/chemfiles.py/latest/">Python interface</a>, usable with Python 2 and 3;</li>
 <li><a class="reference external" href="http://chemfiles.github.io/chemfiles.f03/latest/">Fortran interface</a>, for Fortran 2003;</li>
@@ -206,9 +181,9 @@ following places:</p>
 <div class="section" id="user-manual">
 <h2>User manual<a class="headerlink" href="#user-manual" title="Permalink to this headline">¶</a></h2>
 <p>This section of the documentation will cover how to install chemfiles, give an
-high-level overview of the functionalities and the supported formats. In order to use
-chemfiles in your code, you should refer for now to the <a class="reference internal" href="#classes-reference"><span class="std std-ref">Classes and functions reference</span></a>, a
-more comprehensive tutorial is on the way.</p>
+high-level overview of the functionalities and the supported formats. In order
+to use chemfiles in your code, you should refer for now to the
+<a class="reference internal" href="#classes-reference"><span class="std std-ref">Classes and functions reference</span></a>, a more comprehensive tutorial is on the way.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
@@ -216,20 +191,7 @@ more comprehensive tutorial is on the way.</p>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#building-from-sources">Building from sources</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Chemfiles features overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#trajectory-the-main-entry-point">Trajectory: the main entry point</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#frame-data-from-a-simulation-step">Frame: data from a simulation step</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#topology-how-are-the-atoms-organised">Topology: how are the atoms organised</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#atom-building-blocks-for-simulations">Atom: building blocks for simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#unitcell-wrapping-the-atoms-together">UnitCell: wrapping the atoms together</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#selections-selecting-groups-of-atoms">Selections: selecting groups of atoms</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="selections.html">Selection language</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="selections.html#selectors">Selectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="selections.html#elisions">Elisions</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Chemfiles classes overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example.html">Usage examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="example.html#usage-from-c">Usage from C++</a></li>
 <li class="toctree-l2"><a class="reference internal" href="example.html#id1">Usage from C</a></li>
@@ -238,6 +200,11 @@ more comprehensive tutorial is on the way.</p>
 <li class="toctree-l1"><a class="reference internal" href="formats.html">Supported formats</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="formats.html#list-of-supported-formats">List of supported formats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats.html#asking-for-a-new-format">Asking for a new format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="selections.html">Selection language</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selections.html#selectors">Selectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html#elisions">Elisions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="others.html">Other libraries for reading trajectories</a><ul>
@@ -252,30 +219,32 @@ more comprehensive tutorial is on the way.</p>
 </div>
 <div class="section" id="classes-and-functions-reference">
 <span id="classes-reference"></span><h2>Classes and functions reference<a class="headerlink" href="#classes-and-functions-reference" title="Permalink to this headline">¶</a></h2>
-<p>All the public classes (for the C++ interface) and functions (for the C interface)
-are extensively documented here.</p>
+<p>All the public classes (for the C++ interface) and functions (for the C
+interface) are extensively documented here.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="classes/index.html">C++ interface reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="classes/trajectory.html">Trajectory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes/frame.html">Frames</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes/topology.html">Topology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classes/atom.html">Atoms and atomic informations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes/atom.html">Atoms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes/unitcell.html">Unit Cell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes/selection.html">Selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes/residue.html">Residues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes/logger.html">Logging capacities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes/errors.html">Errors and exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes/index.html#exported-macro">Exported macro</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="capi/index.html">C interface reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capi/errors.html">Functions for errors handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="capi/chfl_trajectory.html">Function manipulating <code class="docutils literal"><span class="pre">CHFL_TRAJECTORY</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="capi/chfl_frame.html">Function manipulating <code class="docutils literal"><span class="pre">CHFL_FRAME</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="capi/chfl_atom.html">Function manipulating <code class="docutils literal"><span class="pre">CHFL_ATOM</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="capi/chfl_cell.html">Function manipulating <code class="docutils literal"><span class="pre">CHFL_CELL</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="capi/chfl_topology.html">Function manipulating <code class="docutils literal"><span class="pre">CHFL_TOPOLOGY</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="capi/chfl_residue.html">Function manipulating <code class="docutils literal"><span class="pre">CHFL_RESIDUE</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="capi/chfl_selection.html">Function manipulating <code class="docutils literal"><span class="pre">CHFL_SELECTION</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="capi/errors.html">Functions for errors handling</a></li>
 </ul>
 </li>
 </ul>

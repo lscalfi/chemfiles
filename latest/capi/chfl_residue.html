@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Function manipulating CHFL_RESIDUE &#8212; Chemfiles 0.7.0-dev documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.3.6/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/chemfiles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.7.0-dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Chemfiles 0.7.0-dev documentation" href="../index.html" />
+    <link rel="up" title="C interface reference" href="index.html" />
+    <link rel="next" title="Function manipulating CHFL_SELECTION" href="chfl_selection.html" />
+    <link rel="prev" title="Function manipulating CHFL_TOPOLOGY" href="chfl_topology.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Chemfiles</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.7-dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Navigation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Chemfiles classes overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example.html">Usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formats.html">Supported formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selections.html">Selection language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others.html">Other libraries for reading trajectories</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../classes/index.html">C++ interface reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">C interface reference</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../devdoc/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devdoc/internals.html">Chemfiles internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devdoc/file.html"><code class="docutils literal"><span class="pre">File</span></code> classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devdoc/format.html"><code class="docutils literal"><span class="pre">Format</span></code> classes</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Content <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Function manipulating <code class="docutils literal"><span class="pre">CHFL_RESIDUE</span></code></a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="chfl_topology.html" title="Previous Chapter: Function manipulating CHFL_TOPOLOGY"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Function mani...</span>
+    </a>
+  </li>
+  <li>
+    <a href="chfl_selection.html" title="Next Chapter: Function manipulating CHFL_SELECTION"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Function mani... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="function-manipulating-chfl-residue">
+<span id="capi-residue"></span><h1>Function manipulating <code class="docutils literal"><span class="pre">CHFL_RESIDUE</span></code><a class="headerlink" href="#function-manipulating-chfl-residue" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="_CPPv212chfl_residuePKc6size_t">
+<span id="chfl_residue__cCP.s"></span><span class="target" id="chemfileschemfiles_8h_1ae0396976f3ef8153960969301c7d0da2"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, size_t <em>resid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212chfl_residuePKc6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new residue. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The status code </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>The residue name </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">resid</span></code> - <p>The residue identifier, or `size_t(-1)` if the residue do not have an identifier </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY6size_t">
+<span id="chfl_residue_for_atom__CHFL_TOPOLOGYCPC.s"></span><span class="target" id="chemfileschemfiles_8h_1ae20fbce14402fe122dc239b0d15f1c11"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue_for_atom</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a the residue containing a given atom, or NULL if the atom is not in a residue. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The status code </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">topology</span></code> - <p>The topology </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">i</span></code> - <p>The atom index </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv226chfl_residue_from_topologyPCK13CHFL_TOPOLOGY6size_t">
+<span id="chfl_residue_from_topology__CHFL_TOPOLOGYCPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a015b7de671b82c40e953f3a975fe62b2"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue_from_topology</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv226chfl_residue_from_topologyPCK13CHFL_TOPOLOGY6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a residue from a topology. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The status code </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">topology</span></code> - <p>The topology </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">i</span></code> - <p>The residue index in the topology. This is not always the same as the `resid`. This value should be between 0 and the result of `chfl_topology_residues_count`. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217chfl_residue_namePCK12CHFL_RESIDUEPc6size_t">
+<span id="chfl_residue_name__CHFL_RESIDUECPC.cP.s"></span><span class="target" id="chemfileschemfiles_8h_1a3ce49363876ed9188ffd9e13b321b847"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_name</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, char *<em>name</em>, size_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_residue_namePCK12CHFL_RESIDUEPc6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of a residue. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The status code </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>A string buffer to be filled with the name </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffsize</span></code> - <p>The size of the string buffer </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP6size_t">
+<span id="chfl_residue_id__CHFL_RESIDUECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a13dc9802a42bf50aeceb50f8a1ccc193"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_id</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, size_t *<em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the identifier of a residue in the initial topology file. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The status code </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">id</span></code> - <p>The id of the residue </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv221chfl_residue_add_atomPC12CHFL_RESIDUE6size_t">
+<span id="chfl_residue_add_atom__CHFL_RESIDUEPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a7268bcb76ee079a0f315a1e5cd4552f1"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_add_atom</code><span class="sig-paren">(</span>CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_add_atomPC12CHFL_RESIDUE6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the atom at index `i` in the residue. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The status code </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">i</span></code> - <p>The atomic index </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv224chfl_residue_atoms_countPCK12CHFL_RESIDUEP6size_t">
+<span id="chfl_residue_atoms_count__CHFL_RESIDUECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a90024b8f9f3cbad55c3987947334d93b"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_residue_atoms_countPCK12CHFL_RESIDUEP6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of atoms in a residue. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The status code </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">size</span></code> - <p>The size of the residue </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv221chfl_residue_containsPCK12CHFL_RESIDUE6size_tPb">
+<span id="chfl_residue_contains__CHFL_RESIDUECPC.s.bP"></span><span class="target" id="chemfileschemfiles_8h_1a38ecc02cb7da55eb4ff57979cebaf03b"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_contains</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, size_t <em>i</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_containsPCK12CHFL_RESIDUE6size_tPb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the atom at index `i` is in the residue. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The status code </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">i</span></code> - <p>The atomic index </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">result</span></code> - <p>true if the atom is in the residue, false otherwise </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217chfl_residue_freeP12CHFL_RESIDUE">
+<span id="chfl_residue_free__CHFL_RESIDUEP"></span><span class="target" id="chemfileschemfiles_8h_1ada8cae53e7309b02bef62a5897708b75"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_free</code><span class="sig-paren">(</span>CHFL_RESIDUE *<em>residue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_residue_freeP12CHFL_RESIDUE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy a residue, and free the associated memory. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The status code </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue to destroy </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+  <footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>
+        &copy; Copyright 2015, Guillaume Fraux.<br/>
+        Sources available under MPL-v2 licence on <a href="http://github.com/chemfiles/chemfiles">Github</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

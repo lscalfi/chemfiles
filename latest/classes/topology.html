@@ -33,7 +33,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="Chemfiles 0.7.0-dev documentation" href="../index.html" />
     <link rel="up" title="C++ interface reference" href="index.html" />
-    <link rel="next" title="Atoms and atomic informations" href="atom.html" />
+    <link rel="next" title="Atoms" href="atom.html" />
     <link rel="prev" title="Frames" href="frame.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -71,10 +71,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Chemfiles features overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../selections.html">Selection language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Chemfiles classes overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example.html">Usage examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formats.html">Supported formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selections.html">Selection language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other libraries for reading trajectories</a></li>
 </ul>
 <ul class="current">
@@ -113,7 +113,7 @@
     </a>
   </li>
   <li>
-    <a href="atom.html" title="Next Chapter: Atoms and atomic informations"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Atoms and ato... &raquo;</span>
+    <a href="atom.html" title="Next Chapter: Atoms"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Atoms &raquo;</span>
     </a>
   </li>
               
@@ -142,7 +142,7 @@
     <div class="col-md-12 content">
       
   <div class="section" id="topology">
-<h1>Topology<a class="headerlink" href="#topology" title="Permalink to this headline">¶</a></h1>
+<span id="class-topology"></span><h1>Topology<a class="headerlink" href="#topology" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="_CPPv2N9chemfiles8TopologyE">
 <span id="chemfiles::Topology"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">Topology</code><a class="headerlink" href="#_CPPv2N9chemfiles8TopologyE" title="Permalink to this definition">¶</a></dt>
@@ -251,6 +251,31 @@
 <dt id="_CPPv2N9chemfiles8Topology11clear_bondsEv">
 <span id="chemfiles::Topology::clear_bonds"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1adfecec28c7cc1ad9b38171ae33107e8e"></span>void <code class="descname">clear_bonds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles8Topology11clear_bondsEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove all bonding information in the topology (bonds, angles and dihedrals) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N8Topology11add_residueE7Residue">
+<span id="Topology::add_residue__Residue"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1ae53ca14ed4b8ae4b97181744923f3d19"></span>void <code class="descname">add_residue</code><span class="sig-paren">(</span>Residue <em>residue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8Topology11add_residueE7Residue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a `residue` to this topology.</p>
+<p>This function throws a `chemfiles::Error` if any atom in the `residue` is already in another residue in this topology. In that case, the topology is not modified. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N8Topology10are_linkedERK7ResidueRK7Residue">
+<span id="Topology::are_linked__ResidueCR.ResidueCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1ae338782ed505d598fa9a4a2e61f9bcb4"></span>bool <code class="descname">are_linked</code><span class="sig-paren">(</span><em class="property">const</em> Residue &amp;<em>res_1</em>, <em class="property">const</em> Residue &amp;<em>res_2</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology10are_linkedERK7ResidueRK7Residue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if two residues are linked together, i.e. if there is a bond between one atom in the first residue and one atom in the second one. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N8Topology7residueE6size_t">
+<span id="Topology::residue__s"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1af3ceda4b28fe4f026c8388927820dc14"></span>optional&lt;<em class="property">const</em> Residue&amp;&gt; <code class="descname">residue</code><span class="sig-paren">(</span>size_t <em>atom</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology7residueE6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the residue containing the `atom` at the given index. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9chemfiles8Topology8residuesEv">
+<span id="chemfiles::Topology::residues"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afdea6b211bce5809e34eee3bdeeea2b8"></span><em class="property">const</em> std::vector&lt;Residue&gt; &amp;<code class="descname">residues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles8Topology8residuesEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the residues in the topology. </p>
 </dd></dl>
 
 </div>

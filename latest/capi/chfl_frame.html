@@ -71,10 +71,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Chemfiles features overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../selections.html">Selection language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Chemfiles classes overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example.html">Usage examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formats.html">Supported formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selections.html">Selection language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other libraries for reading trajectories</a></li>
 </ul>
 <ul class="current">
@@ -162,7 +162,7 @@
 
 <dl class="function">
 <dt id="_CPPv222chfl_frame_atoms_countPCK10CHFL_FRAMEP6size_t">
-<span id="chfl_frame_atoms_count__CHFL_FRAMECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a85aebd9e005a24e1076207096357e987"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t *<em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_frame_atoms_countPCK10CHFL_FRAMEP6size_t" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_atoms_count__CHFL_FRAMECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a85aebd9e005a24e1076207096357e987"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t *<em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_frame_atoms_countPCK10CHFL_FRAMEP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current number of atoms in the frame. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -181,7 +181,7 @@
 
 <dl class="function">
 <dt id="_CPPv217chfl_frame_resizePC10CHFL_FRAME6size_t">
-<span id="chfl_frame_resize__CHFL_FRAMEPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a6301d7966dbc54acaf291d41f3807a9e"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_resize</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t <em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_frame_resizePC10CHFL_FRAME6size_t" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_resize__CHFL_FRAMEPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a6301d7966dbc54acaf291d41f3807a9e"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_resize</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t <em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_frame_resizePC10CHFL_FRAME6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resize the positions and the velocities in frame, to make space for `natoms` atoms. </p>
 <p>This function may invalidate any pointer to the positions or the velocities if the new size is bigger than the old one. In all the cases, previous data is conserved. This function conserve the presence of absence of velocities.</p>
 <p><dl class="docutils">
@@ -201,7 +201,7 @@
 
 <dl class="function">
 <dt id="_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPP13chfl_vector_tP6size_t">
-<span id="chfl_frame_positions__CHFL_FRAMEPC.chfl_vector_tPP.sP"></span><span class="target" id="chemfileschemfiles_8h_1a73e55bdb786b553841d3986900985574"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_positions</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPP13chfl_vector_tP6size_t" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_positions__CHFL_FRAMEPC.chfl_vector_tPP.sP"></span><span class="target" id="chemfileschemfiles_8h_1a73e55bdb786b553841d3986900985574"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_positions</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPP13chfl_vector_tP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a pointer to the positions array from a frame. </p>
 <p>The positions are stored as a N x 3 array, this function set a pointer to point to the first element of this array, and give the value of N. If the frame is resized (by writing to it, or calling `chfl_frame_resize`), the pointer is invalidated.</p>
 <p><dl class="docutils">
@@ -223,7 +223,7 @@
 
 <dl class="function">
 <dt id="_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPP13chfl_vector_tP6size_t">
-<span id="chfl_frame_velocities__CHFL_FRAMEPC.chfl_vector_tPP.sP"></span><span class="target" id="chemfileschemfiles_8h_1ad09985e33f1e3aaf34685dd690849fa0"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_velocities</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPP13chfl_vector_tP6size_t" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_velocities__CHFL_FRAMEPC.chfl_vector_tPP.sP"></span><span class="target" id="chemfileschemfiles_8h_1ad09985e33f1e3aaf34685dd690849fa0"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_velocities</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPP13chfl_vector_tP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a pointer to the velocities array from a frame. </p>
 <p>The velocities are stored as a `N x 3` array, this function set a pointer to point to the first element of this array, and give the value of N. If the frame is resized (by writing to it, or calling `chfl_frame_resize`), the pointer is invalidated.</p>
 <p>If the frame do not have velocity, this will return an error. Use `chfl_frame_add_velocities` to add velocities to a frame before calling this function.</p>
@@ -246,7 +246,7 @@
 
 <dl class="function">
 <dt id="_CPPv225chfl_frame_has_velocitiesPCK10CHFL_FRAMEPb">
-<span id="chfl_frame_has_velocities__CHFL_FRAMECPC.bP"></span><span class="target" id="chemfileschemfiles_8h_1a380f937c5bb83f1e2e25b80de5907262"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_has_velocities</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, bool *<em>has_velocities</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_frame_has_velocitiesPCK10CHFL_FRAMEPb" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_has_velocities__CHFL_FRAMECPC.bP"></span><span class="target" id="chemfileschemfiles_8h_1a380f937c5bb83f1e2e25b80de5907262"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_has_velocities</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, bool *<em>has_velocities</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_frame_has_velocitiesPCK10CHFL_FRAMEPb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ask wether this frame contains velocity data or not. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -265,7 +265,7 @@
 
 <dl class="function">
 <dt id="_CPPv225chfl_frame_add_velocitiesPC10CHFL_FRAME">
-<span id="chfl_frame_add_velocities__CHFL_FRAMEPC"></span><span class="target" id="chemfileschemfiles_8h_1a888158f0ecae9003e30f578ab32e36a9"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_add_velocities</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_frame_add_velocitiesPC10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_add_velocities__CHFL_FRAMEPC"></span><span class="target" id="chemfileschemfiles_8h_1a888158f0ecae9003e30f578ab32e36a9"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_add_velocities</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_frame_add_velocitiesPC10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add velocity storage to this frame. </p>
 <p>The storage is initialized with the result of `chfl_frame_atoms_count` as number of atoms. If the frame already have velocities, this does nothing.</p>
 <p><dl class="docutils">
@@ -283,7 +283,7 @@
 
 <dl class="function">
 <dt id="_CPPv219chfl_frame_set_cellPC10CHFL_FRAMEPCK9CHFL_CELL">
-<span id="chfl_frame_set_cell__CHFL_FRAMEPC.CHFL_CELLCPC"></span><span class="target" id="chemfileschemfiles_8h_1a6e93d1ea0f942a036c62ee66a4ba72ac"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_set_cell</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, <em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_frame_set_cellPC10CHFL_FRAMEPCK9CHFL_CELL" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_set_cell__CHFL_FRAMEPC.CHFL_CELLCPC"></span><span class="target" id="chemfileschemfiles_8h_1a6e93d1ea0f942a036c62ee66a4ba72ac"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_set_cell</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, <em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_frame_set_cellPC10CHFL_FRAMEPCK9CHFL_CELL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the UnitCell of a Frame. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -302,7 +302,7 @@
 
 <dl class="function">
 <dt id="_CPPv223chfl_frame_set_topologyPC10CHFL_FRAMEPCK13CHFL_TOPOLOGY">
-<span id="chfl_frame_set_topology__CHFL_FRAMEPC.CHFL_TOPOLOGYCPC"></span><span class="target" id="chemfileschemfiles_8h_1a8e0b77a661934fed4964a6afce515ae6"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_set_topology</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, <em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223chfl_frame_set_topologyPC10CHFL_FRAMEPCK13CHFL_TOPOLOGY" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_set_topology__CHFL_FRAMEPC.CHFL_TOPOLOGYCPC"></span><span class="target" id="chemfileschemfiles_8h_1a8e0b77a661934fed4964a6afce515ae6"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_set_topology</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, <em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223chfl_frame_set_topologyPC10CHFL_FRAMEPCK13CHFL_TOPOLOGY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the Topology of a Frame. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -321,7 +321,7 @@
 
 <dl class="function">
 <dt id="_CPPv215chfl_frame_stepPCK10CHFL_FRAMEP6size_t">
-<span id="chfl_frame_step__CHFL_FRAMECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1ada1b1238f2e24289b43c53e85e22d399"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_step</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t *<em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_frame_stepPCK10CHFL_FRAMEP6size_t" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_step__CHFL_FRAMECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1ada1b1238f2e24289b43c53e85e22d399"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_step</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t *<em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_frame_stepPCK10CHFL_FRAMEP6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the Frame step, i.e. the frame number in the trajectory. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -340,7 +340,7 @@
 
 <dl class="function">
 <dt id="_CPPv219chfl_frame_set_stepPC10CHFL_FRAME6size_t">
-<span id="chfl_frame_set_step__CHFL_FRAMEPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a22626f73c8f8dc1eaea8c591db2a5e41"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_set_step</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t <em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_frame_set_stepPC10CHFL_FRAME6size_t" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_set_step__CHFL_FRAMEPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a22626f73c8f8dc1eaea8c591db2a5e41"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_set_step</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t <em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_frame_set_stepPC10CHFL_FRAME6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the Frame step. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -359,7 +359,7 @@
 
 <dl class="function">
 <dt id="_CPPv225chfl_frame_guess_topologyPC10CHFL_FRAME">
-<span id="chfl_frame_guess_topology__CHFL_FRAMEPC"></span><span class="target" id="chemfileschemfiles_8h_1aec7cb822ad34462c1e4fcfe3f373535a"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_guess_topology</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_frame_guess_topologyPC10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_guess_topology__CHFL_FRAMEPC"></span><span class="target" id="chemfileschemfiles_8h_1aec7cb822ad34462c1e4fcfe3f373535a"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_guess_topology</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_frame_guess_topologyPC10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Guess the bonds, angles and dihedrals in the system. </p>
 <p>The bonds are guessed using a distance-based algorithm, and then angles and dihedrals are guessed from the bonds.</p>
 <p><dl class="docutils">
@@ -377,7 +377,7 @@
 
 <dl class="function">
 <dt id="_CPPv215chfl_frame_freeP10CHFL_FRAME">
-<span id="chfl_frame_free__CHFL_FRAMEP"></span><span class="target" id="chemfileschemfiles_8h_1af571750d2f7d3d5d22735b3754eb4feb"></span>chfl_status <code class="descclassname"></code><code class="descname">chfl_frame_free</code><span class="sig-paren">(</span>CHFL_FRAME *<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_frame_freeP10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
+<span id="chfl_frame_free__CHFL_FRAMEP"></span><span class="target" id="chemfileschemfiles_8h_1af571750d2f7d3d5d22735b3754eb4feb"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_free</code><span class="sig-paren">(</span>CHFL_FRAME *<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_frame_freeP10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Destroy a frame, and free the associated memory. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>

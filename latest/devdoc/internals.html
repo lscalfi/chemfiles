@@ -70,10 +70,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Chemfiles features overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../selections.html">Selection language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Chemfiles classes overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example.html">Usage examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formats.html">Supported formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selections.html">Selection language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other libraries for reading trajectories</a></li>
 </ul>
 <ul>
@@ -148,14 +148,14 @@
 <h1>Chemfiles internals<a class="headerlink" href="#chemfiles-internals" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="sources-organisation">
 <h2>Sources organisation<a class="headerlink" href="#sources-organisation" title="Permalink to this headline">¶</a></h2>
-<p>You may find the following directory in the chemfiles sources :</p>
+<p>You will find the following directory in chemfiles source code:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">cmake</span></code>: some CMake modules used for build configuration;</li>
-<li><code class="docutils literal"><span class="pre">doc</span></code>: this documentation;</li>
+<li><code class="docutils literal"><span class="pre">cmake</span></code>: CMake modules used for build configuration;</li>
+<li><code class="docutils literal"><span class="pre">doc</span></code>: the source for this documentation;</li>
 <li><code class="docutils literal"><span class="pre">examples</span></code>: usage examples for C and C++ interfaces;</li>
 <li><code class="docutils literal"><span class="pre">external</span></code>: external libraries used by chemfiles;</li>
 <li><code class="docutils literal"><span class="pre">include</span></code>: the headers of chemfiles;</li>
-<li><code class="docutils literal"><span class="pre">scripts</span></code>: some python scripts used for developpement.</li>
+<li><code class="docutils literal"><span class="pre">scripts</span></code>: some python and bash scripts used in developpement.</li>
 <li><code class="docutils literal"><span class="pre">src</span></code>: the sources of the library;</li>
 <li><code class="docutils literal"><span class="pre">tests</span></code>: the sources of the unit tests;</li>
 </ul>
@@ -163,10 +163,13 @@
 <div class="section" id="classes-organisation">
 <h2>Classes organisation<a class="headerlink" href="#classes-organisation" title="Permalink to this headline">¶</a></h2>
 <p>Chemfiles is written in C++11, in an object-oriented fashion. A <code class="docutils literal"><span class="pre">Trajectory</span></code>
-is built on the top of two other private classes: a <a class="reference internal" href="file.html#file-class"><span class="std std-ref">File</span></a> and a
-<a class="reference internal" href="format.html#format-class"><span class="std std-ref">Format</span></a>. The <code class="docutils literal"><span class="pre">File</span></code> classes provides IO operation, and the
-<code class="docutils literal"><span class="pre">Format</span></code> classes do all the work for reading/writing information from the <code class="docutils literal"><span class="pre">File</span></code>.</p>
-<img alt="../_images/classes.png" class="align-center" src="../_images/classes.png" />
+is built on the top of two other private classes: a <a class="reference internal" href="file.html#class-file"><span class="std std-ref">File</span></a> and
+a <a class="reference internal" href="format.html#class-format"><span class="std std-ref">Format</span></a>. These are pure abstract class defining the
+interface for reading and writing data.</p>
+<p>Adding new formats and tweaking behaviour of existing formats should be done
+either in the <code class="docutils literal"><span class="pre">File</span></code> implementation for everything related to interactions
+with the actual file, or in the <code class="docutils literal"><span class="pre">Format</span></code> implementation for everything related
+with parsing data from the file.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="file.html"><code class="docutils literal"><span class="pre">File</span></code> classes</a><ul>
@@ -181,7 +184,9 @@ is built on the top of two other private classes: a <a class="reference internal
 </li>
 </ul>
 </div>
-<p>All the File to Format associations are managed by the TrajectoryFactory class.</p>
+<p>Every <code class="docutils literal"><span class="pre">Format</span></code> class is associated to a <code class="docutils literal"><span class="pre">File</span></code> class, and the associations
+are managed by the <code class="docutils literal"><span class="pre">TrajectoryFactory</span></code> class. New file and formats should be
+registered with this class.</p>
 <dl class="class">
 <dt id="_CPPv2N9chemfiles17TrajectoryFactoryE">
 <span id="chemfiles::TrajectoryFactory"></span><span class="target" id="chemfilesclasschemfiles_1_1_trajectory_factory"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">TrajectoryFactory</code><a class="headerlink" href="#_CPPv2N9chemfiles17TrajectoryFactoryE" title="Permalink to this definition">¶</a></dt>

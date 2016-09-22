@@ -32,8 +32,8 @@
     <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="Chemfiles 0.7.0-dev documentation" href="index.html" />
-    <link rel="next" title="Usage examples" href="example.html" />
-    <link rel="prev" title="Chemfiles features overview" href="overview.html" />
+    <link rel="next" title="Other libraries for reading trajectories" href="others.html" />
+    <link rel="prev" title="Supported formats" href="formats.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -70,10 +70,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Chemfiles features overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Selection language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Chemfiles classes overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example.html">Usage examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formats.html">Supported formats</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Selection language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="others.html">Other libraries for reading trajectories</a></li>
 </ul>
 <ul>
@@ -112,11 +112,11 @@
               
                 
   <li>
-    <a href="overview.html" title="Previous Chapter: Chemfiles features overview"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Chemfiles fea...</span>
+    <a href="formats.html" title="Previous Chapter: Supported formats"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Supported for...</span>
     </a>
   </li>
   <li>
-    <a href="example.html" title="Next Chapter: Usage examples"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Usage examples &raquo;</span>
+    <a href="others.html" title="Next Chapter: Other libraries for reading trajectories"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Other librari... &raquo;</span>
     </a>
   </li>
               
@@ -146,7 +146,7 @@
       
   <div class="section" id="selection-language">
 <span id="id1"></span><h1>Selection language<a class="headerlink" href="#selection-language" title="Permalink to this headline">¶</a></h1>
-<p>Chemfiles selection language allows to select some atoms in a <a class="reference internal" href="overview.html#overview-frame"><span class="std std-ref">Frame</span></a> matching a set of constraints. For examples, <code class="docutils literal"><span class="pre">atom:</span> <span class="pre">name</span> <span class="pre">H</span>
+<p>Chemfiles selection language allows to select some atoms in a <a class="reference internal" href="classes/frame.html#class-frame"><span class="std std-ref">Frame</span></a> matching a set of constraints. For examples, <code class="docutils literal"><span class="pre">atom:</span> <span class="pre">name</span> <span class="pre">H</span>
 <span class="pre">and</span> <span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">15</span></code> would select all <em>single atoms</em> whose name is <code class="docutils literal"><span class="pre">H</span></code> and x
 coordinate is bigger than 15.</p>
 <p>Chemfiles selections differs from the well-known <a class="reference external" href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a> selections by the fact

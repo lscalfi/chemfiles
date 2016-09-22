@@ -71,10 +71,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../overview.html">Chemfiles features overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../selections.html">Selection language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Chemfiles classes overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example.html">Usage examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formats.html">Supported formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selections.html">Selection language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others.html">Other libraries for reading trajectories</a></li>
 </ul>
 <ul>
@@ -146,15 +146,16 @@
     <div class="col-md-12 content">
       
   <div class="section" id="file-classes">
-<span id="file-class"></span><h1><code class="docutils literal"><span class="pre">File</span></code> classes<a class="headerlink" href="#file-classes" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal"><span class="pre">File</span></code> classes provide abstraction of the IO operation, allowing for the same
-format to be used with on-disk files, network files, memory-mapped files,
+<span id="class-file"></span><h1><code class="docutils literal"><span class="pre">File</span></code> classes<a class="headerlink" href="#file-classes" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal"><span class="pre">File</span></code> classes provide abstraction of the IO operation, allowing for the
+same format to be used with on-disk files, network files, memory-mapped files,
 compressed files, <em>etc.</em></p>
-<p>Depending on the kind of format, either a <code class="docutils literal"><span class="pre">TextFile</span></code> or a <code class="docutils literal"><span class="pre">BinaryFile</span></code> is needed,
-and will provide different informations.</p>
+<p>Depending on the kind of format, either a <code class="docutils literal"><span class="pre">TextFile</span></code> or a <code class="docutils literal"><span class="pre">BinaryFile</span></code> is
+needed, and will provide different informations.</p>
 <div class="section" id="abstract-classes">
 <h2>Abstract classes<a class="headerlink" href="#abstract-classes" title="Permalink to this headline">¶</a></h2>
-<p>These classes only define the interface, which as to be implemented by all sub-classes.</p>
+<p>These classes define the <code class="docutils literal"><span class="pre">File</span></code> interface, which has to be implemented in
+sub-classes.</p>
 <dl class="class">
 <dt id="_CPPv2N9chemfiles4FileE">
 <span id="chemfiles::File"></span><span class="target" id="chemfilesclasschemfiles_1_1_file"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">File</code><a class="headerlink" href="#_CPPv2N9chemfiles4FileE" title="Permalink to this definition">¶</a></dt>
@@ -288,7 +289,7 @@ and will provide different informations.</p>
 </div>
 <div class="section" id="implemented-classes">
 <h2>Implemented classes<a class="headerlink" href="#implemented-classes" title="Permalink to this headline">¶</a></h2>
-<p>These classes implement the interface defined previously.</p>
+<p>These classes implement the <code class="docutils literal"><span class="pre">File</span></code> interface defined previously.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">doxygenclass: Cannot find class &#8220;chemfiles::BasicFile&#8221; in doxygen xml output for project &#8220;chemfiles&#8221; from directory: /home/travis/build/chemfiles/chemfiles/build/doc/doxygen/xml</p>
