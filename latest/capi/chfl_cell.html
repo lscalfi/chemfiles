@@ -31,6 +31,8 @@
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="Chemfiles 0.7.0-dev documentation" href="../index.html" />
     <link rel="up" title="C interface reference" href="index.html" />
     <link rel="next" title="Function manipulating CHFL_TOPOLOGY" href="chfl_topology.html" />
@@ -293,34 +295,34 @@
 </dd></dl>
 
 <dl class="type">
-<dt id="_CPPv215CHFL_CELL_TYPES">
-<span id="CHFL_CELL_TYPES"></span><span class="target" id="chemfileschemfiles_8h_1a17b2e27e4e562ac90dd61879cbf628fb"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">CHFL_CELL_TYPES</code><a class="headerlink" href="#_CPPv215CHFL_CELL_TYPES" title="Permalink to this definition">¶</a></dt>
-<dd><p>Available cell types in chemfiles. </p>
+<dt id="_CPPv215CHFL_CELL_SHAPE">
+<span id="CHFL_CELL_SHAPE"></span><span class="target" id="chemfileschemfiles_8h_1a3a5e5aaab0afeae5958a3123ae173577"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">CHFL_CELL_SHAPE</code><a class="headerlink" href="#_CPPv215CHFL_CELL_SHAPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Available cell shapes in chemfiles. </p>
 <p><em>Values:</em></p>
 <dl class="member">
 <dt id="_CPPv222CHFL_CELL_ORTHORHOMBIC">
-<span id="CHFL_CELL_ORTHORHOMBIC"></span><span class="target" id="chemfileschemfiles_8h_1a17b2e27e4e562ac90dd61879cbf628fba5a6843f48b2f0b692de9420bbefb02b2"></span><code class="descname">CHFL_CELL_ORTHORHOMBIC</code> =  0<a class="headerlink" href="#_CPPv222CHFL_CELL_ORTHORHOMBIC" title="Permalink to this definition">¶</a></dt>
+<span id="CHFL_CELL_ORTHORHOMBIC"></span><span class="target" id="chemfileschemfiles_8h_1a3a5e5aaab0afeae5958a3123ae173577a5a6843f48b2f0b692de9420bbefb02b2"></span><code class="descname">CHFL_CELL_ORTHORHOMBIC</code> =  0<a class="headerlink" href="#_CPPv222CHFL_CELL_ORTHORHOMBIC" title="Permalink to this definition">¶</a></dt>
 <dd><p>The three angles are 90° </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv219CHFL_CELL_TRICLINIC">
-<span id="CHFL_CELL_TRICLINIC"></span><span class="target" id="chemfileschemfiles_8h_1a17b2e27e4e562ac90dd61879cbf628fbaf1f0a05c66d840f83e03afad1e4d5ba5"></span><code class="descname">CHFL_CELL_TRICLINIC</code> =  1<a class="headerlink" href="#_CPPv219CHFL_CELL_TRICLINIC" title="Permalink to this definition">¶</a></dt>
+<span id="CHFL_CELL_TRICLINIC"></span><span class="target" id="chemfileschemfiles_8h_1a3a5e5aaab0afeae5958a3123ae173577af1f0a05c66d840f83e03afad1e4d5ba5"></span><code class="descname">CHFL_CELL_TRICLINIC</code> =  1<a class="headerlink" href="#_CPPv219CHFL_CELL_TRICLINIC" title="Permalink to this definition">¶</a></dt>
 <dd><p>The three angles may not be 90° </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv218CHFL_CELL_INFINITE">
-<span id="CHFL_CELL_INFINITE"></span><span class="target" id="chemfileschemfiles_8h_1a17b2e27e4e562ac90dd61879cbf628fba962215e3ab35eec6336915b3f04618ea"></span><code class="descname">CHFL_CELL_INFINITE</code> =  2<a class="headerlink" href="#_CPPv218CHFL_CELL_INFINITE" title="Permalink to this definition">¶</a></dt>
+<span id="CHFL_CELL_INFINITE"></span><span class="target" id="chemfileschemfiles_8h_1a3a5e5aaab0afeae5958a3123ae173577a962215e3ab35eec6336915b3f04618ea"></span><code class="descname">CHFL_CELL_INFINITE</code> =  2<a class="headerlink" href="#_CPPv218CHFL_CELL_INFINITE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cell type when there is no periodic boundary conditions. </p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv214chfl_cell_typePCK9CHFL_CELLPC16chfl_cell_type_t">
-<span id="chfl_cell_type__CHFL_CELLCPC.chfl_cell_type_tPC"></span><span class="target" id="chemfileschemfiles_8h_1abd43d5089d161666f4bc495fd7268cdc"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_type</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em>, chfl_cell_type_t *<em class="property">const</em> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214chfl_cell_typePCK9CHFL_CELLPC16chfl_cell_type_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the cell type. </p>
+<dt id="_CPPv215chfl_cell_shapePCK9CHFL_CELLPC17chfl_cell_shape_t">
+<span id="chfl_cell_shape__CHFL_CELLCPC.chfl_cell_shape_tPC"></span><span class="target" id="chemfileschemfiles_8h_1a280fb5b42e2468ca44893b2dbc5d3fa7"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_shape</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em>, chfl_cell_shape_t *<em class="property">const</em> <em>shape</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_cell_shapePCK9CHFL_CELLPC17chfl_cell_shape_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the cell shape. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>The status code </dd>
@@ -328,7 +330,7 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">cell</span></code> - <p>the unit cell to read </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">type</span></code> - <p>the type of the cell </p>
+<li><code class="first docutils literal"><span class="pre">shape</span></code> - <p>the shape of the cell </p>
 </li>
 </ul>
 </dd>
@@ -337,9 +339,9 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv218chfl_cell_set_typePC9CHFL_CELL16chfl_cell_type_t">
-<span id="chfl_cell_set_type__CHFL_CELLPC.chfl_cell_type_t"></span><span class="target" id="chemfileschemfiles_8h_1ace50e958e5e6a82e5ed297977db8142d"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_set_type</code><span class="sig-paren">(</span>CHFL_CELL *<em class="property">const</em> <em>cell</em>, chfl_cell_type_t <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218chfl_cell_set_typePC9CHFL_CELL16chfl_cell_type_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the cell type. </p>
+<dt id="_CPPv219chfl_cell_set_shapePC9CHFL_CELL17chfl_cell_shape_t">
+<span id="chfl_cell_set_shape__CHFL_CELLPC.chfl_cell_shape_t"></span><span class="target" id="chemfileschemfiles_8h_1aa7f1a308ed8909b56e97503c60fd05e7"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_set_shape</code><span class="sig-paren">(</span>CHFL_CELL *<em class="property">const</em> <em>cell</em>, chfl_cell_shape_t <em>shape</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_cell_set_shapePC9CHFL_CELL17chfl_cell_shape_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the cell shape. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>The status code </dd>
@@ -347,7 +349,7 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">cell</span></code> - <p>the cell to modify </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">type</span></code> - <p>the new type of the cell </p>
+<li><code class="first docutils literal"><span class="pre">shape</span></code> - <p>the new shape of the cell </p>
 </li>
 </ul>
 </dd>

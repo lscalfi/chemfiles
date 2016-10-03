@@ -31,6 +31,8 @@
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="Chemfiles 0.7.0-dev documentation" href="../index.html" />
     <link rel="up" title="C++ interface reference" href="index.html" />
     <link rel="next" title="Selections" href="selection.html" />
@@ -149,8 +151,35 @@
 <dd><p>An <a class="reference internal" href="#chemfilesclasschemfiles_1_1_unit_cell"><span class="std std-ref">UnitCell</span></a> represent the box containing the atoms, and its periodicity. </p>
 <p>A unit cell is fully represented by three lenghts (a, b, c); and three angles (alpha, beta, gamma). The angles are stored in degrees, and the lenghts in Angstroms.</p>
 <p>A cell also has a matricial representation, by projecting the three base vector into an orthonormal base. We choose to represent such matrix as an upper triangular matrix:</p>
-<p>| a_x b_x c_x | | 0 b_y c_y | | 0 0 c_z |</p>
-<p>An unit cell also have a cell type, represented by the `CellType` enum. </p>
+<p>| a_x b_x c_x | | 0 b_y c_y | | 0 0 c_z | </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv2N9chemfiles8UnitCell9CellShapeE">
+<span id="chemfiles::UnitCell::CellShape"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a345017052d758d613b573682f88410ca"></span><em class="property">enum </em><code class="descname">CellShape</code><a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell9CellShapeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Possible shapes for the unit cell. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv2N9chemfiles8UnitCell12ORTHORHOMBICE">
+<span id="chemfiles::UnitCell::ORTHORHOMBIC"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a345017052d758d613b573682f88410caafba14d3710da1ef4e1769da67dac5d2d"></span><code class="descname">ORTHORHOMBIC</code> =  0<a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell12ORTHORHOMBICE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Orthorhombic cell, with the three angles equals to 90° </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N9chemfiles8UnitCell9TRICLINICE">
+<span id="chemfiles::UnitCell::TRICLINIC"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a345017052d758d613b573682f88410caaa1e3f9e4092dabb3c282c02223c12b2f"></span><code class="descname">TRICLINIC</code> =  1<a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell9TRICLINICE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triclinic cell, with any values for the angles. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N9chemfiles8UnitCell8INFINITEE">
+<span id="chemfiles::UnitCell::INFINITE"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a345017052d758d613b573682f88410caabaa11061189696d382e045cf4180a166"></span><code class="descname">INFINITE</code> =  2<a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell8INFINITEE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infinite cell, to use when there is no cell. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -190,20 +219,20 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8UnitCell8UnitCellE8CellType">
-<span id="UnitCell::UnitCell__CellType"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a17623a0f7b0bb723432f9569cfc31821"></span><code class="descname">UnitCell</code><span class="sig-paren">(</span>CellType <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8UnitCell8UnitCellE8CellType" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N8UnitCell8UnitCellE9CellShape">
+<span id="UnitCell::UnitCell__CellShape"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a0046d0a27d318a3fedd44da27f7d60cf"></span><code class="descname">UnitCell</code><span class="sig-paren">(</span>CellShape <em>shape</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8UnitCell8UnitCellE9CellShape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a cell of type `type`, with all lenghts set to 0 and all angles set to 90° </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8UnitCell8UnitCellE8CellTyped">
-<span id="UnitCell::UnitCell__CellType.double"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1af4c3ef2035454e2e0470c920926b44f7"></span><code class="descname">UnitCell</code><span class="sig-paren">(</span>CellType <em>type</em>, double <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8UnitCell8UnitCellE8CellTyped" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N8UnitCell8UnitCellE9CellShaped">
+<span id="UnitCell::UnitCell__CellShape.double"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a0fb5c7f84e540670972084b8859b7b73"></span><code class="descname">UnitCell</code><span class="sig-paren">(</span>CellShape <em>shape</em>, double <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8UnitCell8UnitCellE9CellShaped" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a cell of type `type`, with all lenghts set to `a` and all angles set to 90° </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8UnitCell8UnitCellE8CellTypeddd">
-<span id="UnitCell::UnitCell__CellType.double.double.double"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a38a4960352d3e0355048264516297f9c"></span><code class="descname">UnitCell</code><span class="sig-paren">(</span>CellType <em>type</em>, double <em>a</em>, double <em>b</em>, double <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8UnitCell8UnitCellE8CellTypeddd" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N8UnitCell8UnitCellE9CellShapeddd">
+<span id="UnitCell::UnitCell__CellShape.double.double.double"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1af670d445c6019e33ac94c7b1e0dbcf43"></span><code class="descname">UnitCell</code><span class="sig-paren">(</span>CellShape <em>shape</em>, double <em>a</em>, double <em>b</em>, double <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8UnitCell8UnitCellE9CellShapeddd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a cell of type `type`, with lenghts set to `a` ,`b`, `d`, and all angles set to 90° </p>
 </dd></dl>
 
@@ -220,15 +249,15 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles8UnitCell4typeEv">
-<span id="chemfiles::UnitCell::type"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a957c24d67ecdaea7d9da12bcba8947c3"></span><a class="reference internal" href="#_CPPv2N9chemfiles8UnitCell8CellTypeE" title="chemfiles::UnitCell::CellType">CellType</a> <code class="descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell4typeEv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the cell type. </p>
+<dt id="_CPPv2N9chemfiles8UnitCell5shapeEv">
+<span id="chemfiles::UnitCell::shape"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1afd4634cff6b88a5b0630f49f8e5d679e"></span><a class="reference internal" href="#_CPPv2N9chemfiles8UnitCell9CellShapeE" title="chemfiles::UnitCell::CellShape">CellShape</a> <code class="descname">shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell5shapeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the cell shape. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8UnitCell4typeE8CellType">
-<span id="UnitCell::type__CellType"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a07baa4585af15f05ab31e780e6eba46d"></span>void <code class="descname">type</code><span class="sig-paren">(</span>CellType <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8UnitCell4typeE8CellType" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the cell type to `type`. </p>
+<dt id="_CPPv2N8UnitCell5shapeE9CellShape">
+<span id="UnitCell::shape__CellShape"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1a65188940743defd9f57e6e2284f1280a"></span>void <code class="descname">shape</code><span class="sig-paren">(</span>CellShape <em>shape</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8UnitCell5shapeE9CellShape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the cell shape to `shape`. </p>
 </dd></dl>
 
 <dl class="function">
@@ -316,30 +345,6 @@
 </dd></dl>
 
 </div>
-</dd></dl>
-
-<dl class="type">
-<dt id="_CPPv2N9chemfiles8UnitCell8CellTypeE">
-<span id="chemfiles::UnitCell::CellType"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1aab7d15fe453cda82b88ef0ae2a06b7a6"></span><em class="property">enum </em><code class="descclassname">chemfiles::UnitCell::</code><code class="descname">CellType</code><a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell8CellTypeE" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>Values:</em></p>
-<dl class="member">
-<dt id="_CPPv2N9chemfiles8UnitCell12ORTHORHOMBICE">
-<span id="chemfiles::UnitCell::ORTHORHOMBIC"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1aab7d15fe453cda82b88ef0ae2a06b7a6afba14d3710da1ef4e1769da67dac5d2d"></span><code class="descname">ORTHORHOMBIC</code> =  0<a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell12ORTHORHOMBICE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Orthorhombic cell, with the three angles equals to 90° </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N9chemfiles8UnitCell9TRICLINICE">
-<span id="chemfiles::UnitCell::TRICLINIC"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1aab7d15fe453cda82b88ef0ae2a06b7a6aa1e3f9e4092dabb3c282c02223c12b2f"></span><code class="descname">TRICLINIC</code> =  1<a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell9TRICLINICE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Triclinic cell, with any values for the angles. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N9chemfiles8UnitCell8INFINITEE">
-<span id="chemfiles::UnitCell::INFINITE"></span><span class="target" id="chemfilesclasschemfiles_1_1_unit_cell_1aab7d15fe453cda82b88ef0ae2a06b7a6abaa11061189696d382e045cf4180a166"></span><code class="descname">INFINITE</code> =  2<a class="headerlink" href="#_CPPv2N9chemfiles8UnitCell8INFINITEE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Infinite cell, to use when there is no cell. </p>
-</dd></dl>
-
 </dd></dl>
 
 </div>
