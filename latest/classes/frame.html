@@ -149,7 +149,8 @@
 <dt id="_CPPv2N9chemfiles5FrameE">
 <span id="chemfiles::Frame"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">Frame</code><a class="headerlink" href="#_CPPv2N9chemfiles5FrameE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A frame contains data from one simulation step. </p>
-<p>The <a class="reference internal" href="#chemfilesclasschemfiles_1_1_frame"><span class="std std-ref">Frame</span></a> class holds data from one step of a simulation: the current topology, the positions, and the velocities of the particles in the system. If some information is missing (topology or velocity or unit cell), the corresponding data is filled with a default value. Specifically:<ul class="simple">
+<p>The <a class="reference internal" href="#chemfilesclasschemfiles_1_1_frame"><span class="std std-ref">Frame</span></a> class holds data from one step of a simulation: the current topology, the positions, and the velocities of the particles in the system. If some information is missing (topology or velocity or unit cell), the corresponding data is filled with a default value. Specifically:</p>
+<p><ul class="simple">
 <li>`velocities` is the `nullopt` version of `optional&lt;Array3D&gt;`. Here, `optional&lt;T&gt;` refers to the optional template as defined in [std::experimental::optional][optional]</li>
 <li>`cell` is an infinite unit cell;</li>
 <li>`topology` is empty, and contains no data.</li>
