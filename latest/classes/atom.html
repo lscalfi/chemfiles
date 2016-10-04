@@ -148,7 +148,7 @@
 <dl class="class">
 <dt id="_CPPv2N9chemfiles4AtomE">
 <span id="chemfiles::Atom"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">Atom</code><a class="headerlink" href="#_CPPv2N9chemfiles4AtomE" title="Permalink to this definition">¶</a></dt>
-<dd><p>An <a class="reference internal" href="#chemfilesclasschemfiles_1_1_atom"><span class="std std-ref">Atom</span></a> is a particle in the current <a class="reference internal" href="frame.html#chemfilesclasschemfiles_1_1_frame"><span class="std std-ref">Frame</span></a>. It can be used to store and retrieve informations about a particle, such as mass, name, atomic number, etc. </p>
+<dd><p>An <a class="reference internal" href="#chemfilesclasschemfiles_1_1_atom"><span class="std std-ref">Atom</span></a> is a particle in the current <a class="reference internal" href="frame.html#chemfilesclasschemfiles_1_1_frame"><span class="std std-ref">Frame</span></a>. It can be used to store and retrieve informations about a particle, such as mass, element name, atomic number, etc. </p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="type">
@@ -187,37 +187,49 @@
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N4Atom4AtomENSt6stringE">
-<span id="Atom::Atom__ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1ac95185790ab05873f98666b1e2b10793"></span><code class="descname">Atom</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomENSt6stringE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an element from its `name`. </p>
+<span id="Atom::Atom__ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a8434a2c8ac9925ba4d9147ccc0d9785b"></span><code class="descname">Atom</code><span class="sig-paren">(</span>std::string <em>element</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an atom from its &#8216;element&#8217; with &#8216;label&#8217;=&#8217;element&#8217;. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N4Atom4AtomE8AtomTypeNSt6stringE">
-<span id="Atom::Atom__AtomType.ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1aedc62699e1222183b22049aa0477bc36"></span><code class="descname">Atom</code><span class="sig-paren">(</span>AtomType <em>type</em>, std::string <em>name</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomE8AtomTypeNSt6stringE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an element from its `name` and its type. </p>
+<dt id="_CPPv2N4Atom4AtomENSt6stringENSt6stringE">
+<span id="Atom::Atom__ss.ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a4d79dbf85dc749bbc22852fea1939056"></span><code class="descname">Atom</code><span class="sig-paren">(</span>std::string <em>element</em>, std::string <em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an atom from its &#8216;element&#8217; and its label. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N4Atom4AtomE8AtomTypeNSt6stringENSt6stringE">
+<span id="Atom::Atom__AtomType.ss.ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a428d9bfa535a700cdd3262b6fca034cf"></span><code class="descname">Atom</code><span class="sig-paren">(</span>AtomType <em>type</em>, std::string <em>element</em> = &quot;&quot;, std::string <em>label</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomE8AtomTypeNSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an atom from its &#8216;element&#8217; and its type. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N4Atom4AtomEv">
 <span id="Atom::Atom"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1aa0147d7e49ab90f559b66e38d3d12863"></span><code class="descname">Atom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomEv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Default is to create an UNDEFINED atom type with no name. </p>
+<dd><p>Default is to create an UNDEFINED atom type with no element or label. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4Atom4nameEv">
-<span id="chemfiles::Atom::name"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1aeddb1e41e262f85de21de13aed21dd82"></span><em class="property">const</em> std::string &amp;<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom4nameEv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a const (non-modifiable) reference to the atom name. </p>
+<dt id="_CPPv2N9chemfiles4Atom7elementEv">
+<span id="chemfiles::Atom::element"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1af304bdc8cc2da77afff293b420dff5e6"></span><em class="property">const</em> std::string &amp;<code class="descname">element</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom7elementEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a const (non-modifiable) reference to the atom element name. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9chemfiles4Atom5labelEv">
+<span id="chemfiles::Atom::label"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a96093e175a985b5f4b45559eca6b9ef9"></span><em class="property">const</em> std::string &amp;<code class="descname">label</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom5labelEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a const (non-modifiable) reference to the atom label. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles4Atom4massEv">
-<span id="chemfiles::Atom::mass"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a6b0d52b301c6598b1afc08695a9781e1"></span>double <code class="descname">mass</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom4massEv" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::Atom::mass"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a6f186f21efb1a89d1f1b15469271017a"></span>float <code class="descname">mass</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom4massEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the atom mass. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles4Atom6chargeEv">
-<span id="chemfiles::Atom::charge"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a89583666d67bbe7385075393db13f9df"></span>double <code class="descname">charge</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom6chargeEv" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::Atom::charge"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a24e7c536310e80d9cf310902a851b3b7"></span>float <code class="descname">charge</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom6chargeEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the atom charge. </p>
 </dd></dl>
 
@@ -228,20 +240,26 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4Atom8set_nameERKNSt6stringE">
-<span id="chemfiles::Atom::set_name__ssCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1ad515b6a7381916bdf0b5edca4e44facc"></span>void <code class="descname">set_name</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom8set_nameERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the atom name. </p>
+<dt id="_CPPv2N9chemfiles4Atom11set_elementERKNSt6stringE">
+<span id="chemfiles::Atom::set_element__ssCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1acd97284533857ce9e49dee4f1aaefe3b"></span>void <code class="descname">set_element</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>element</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom11set_elementERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the atom element name. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4Atom8set_massEd">
-<span id="chemfiles::Atom::set_mass__double"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1ad71ebfc6103b1167a10d5537c9b9675b"></span>void <code class="descname">set_mass</code><span class="sig-paren">(</span>double <em>mass</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom8set_massEd" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N9chemfiles4Atom9set_labelERKNSt6stringE">
+<span id="chemfiles::Atom::set_label__ssCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a0755aa62553ed5be68099973a933dbe1"></span>void <code class="descname">set_label</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom9set_labelERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the atom label. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9chemfiles4Atom8set_massEf">
+<span id="chemfiles::Atom::set_mass__float"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a2f5e8061a75796e0605aa4079d9f671f"></span>void <code class="descname">set_mass</code><span class="sig-paren">(</span>float <em>mass</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom8set_massEf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the atom mass. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4Atom10set_chargeEd">
-<span id="chemfiles::Atom::set_charge__double"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1aa5a8d615a18f807b2cc7891eb40dba26"></span>void <code class="descname">set_charge</code><span class="sig-paren">(</span>double <em>charge</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom10set_chargeEd" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2N9chemfiles4Atom10set_chargeEf">
+<span id="chemfiles::Atom::set_charge__float"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1ad6368aaa1714ceedc5bb3795fd981b42"></span>void <code class="descname">set_charge</code><span class="sig-paren">(</span>float <em>charge</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom10set_chargeEf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the atom charge. </p>
 </dd></dl>
 
@@ -259,13 +277,13 @@
 
 <dl class="function">
 <dt id="_CPPv2N4Atom10vdw_radiusEv">
-<span id="Atom::vdw_radius"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1ac8a8a9101b40a9beb5bec815607298c5"></span>double <code class="descname">vdw_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N4Atom10vdw_radiusEv" title="Permalink to this definition">¶</a></dt>
+<span id="Atom::vdw_radius"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1ada145fc3d4202000f5813d368024120f"></span>float <code class="descname">vdw_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N4Atom10vdw_radiusEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to get the Van der Waals of the atom. Returns -1 if it can not be found. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N4Atom15covalent_radiusEv">
-<span id="Atom::covalent_radius"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a853752c9e13ee2eab1bc78eef775cae7"></span>double <code class="descname">covalent_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N4Atom15covalent_radiusEv" title="Permalink to this definition">¶</a></dt>
+<span id="Atom::covalent_radius"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1ab9e734c211b4c0179c487b7edfc4d2e3"></span>float <code class="descname">covalent_radius</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N4Atom15covalent_radiusEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to get the covalent radius of the atom. Returns -1 if it can not be found. </p>
 </dd></dl>
 
