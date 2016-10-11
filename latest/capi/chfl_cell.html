@@ -146,15 +146,19 @@
   <div class="section" id="function-manipulating-chfl-cell">
 <span id="capi-cell"></span><h1>Function manipulating <code class="docutils literal"><span class="pre">CHFL_CELL</span></code><a class="headerlink" href="#function-manipulating-chfl-cell" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv29chfl_cellK13chfl_vector_t">
-<span id="chfl_cell__chfl_vector_tC"></span><span class="target" id="chemfileschemfiles_8h_1a076dee32df57fccd87f1b46aeb3befc2"></span>CHFL_CELL *<code class="descclassname"></code><code class="descname">chfl_cell</code><span class="sig-paren">(</span><em class="property">const</em> chfl_vector_t <em>lenghts</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29chfl_cellK13chfl_vector_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an ORTHORHOMBIC unit cell from the three lenghts. </p>
+<dt id="_CPPv29chfl_cellddd">
+<span id="chfl_cell__double.double.double"></span><span class="target" id="chemfileschemfiles_8h_1acb756da11d6fe5881fc0bb341a885e7b"></span>CHFL_CELL *<code class="descclassname"></code><code class="descname">chfl_cell</code><span class="sig-paren">(</span>double <em>a</em>, double <em>b</em>, double <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29chfl_cellddd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an ORTHORHOMBIC UnitCell from the three lenghts. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>A pointer to the unit cell, or NULL in case of error </dd>
+<dd>A pointer to the UnitCell, or NULL in case of error </dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">lenghts</span></code> - <p>the three lenght of the cell (in Angstroms) </p>
+<li><code class="first docutils literal"><span class="pre">a</span></code> - <p>first lenght of the cell (in Angstroms) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">b</span></code> - <p>second lenght of the cell (in Angstroms) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">c</span></code> - <p>third lenght of the cell (in Angstroms) </p>
 </li>
 </ul>
 </dd>
@@ -165,10 +169,10 @@
 <dl class="function">
 <dt id="_CPPv220chfl_cell_from_framePCK10CHFL_FRAME">
 <span id="chfl_cell_from_frame__CHFL_FRAMECPC"></span><span class="target" id="chemfileschemfiles_8h_1a8ebd9d48235ed33b498d7276a6a98613"></span>CHFL_CELL *<code class="descclassname"></code><code class="descname">chfl_cell_from_frame</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_cell_from_framePCK10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the unit cell from a frame. </p>
+<dd><p>Get the UnitCell from a frame. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>A pointer to the unit cell, or NULL in case of error </dd>
+<dd>A pointer to the UnitCell, or NULL in case of error </dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">frame</span></code> - <p>the frame </p>
@@ -180,8 +184,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv217chfl_cell_lengthsPCK9CHFL_CELL13chfl_vector_t">
-<span id="chfl_cell_lengths__CHFL_CELLCPC.chfl_vector_t"></span><span class="target" id="chemfileschemfiles_8h_1aa227acda954fba9dded3ed92c60de353"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_lengths</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em>, chfl_vector_t <em>lenghts</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_cell_lengthsPCK9CHFL_CELL13chfl_vector_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217chfl_cell_lengthsPCK9CHFL_CELLPdPdPd">
+<span id="chfl_cell_lengths__CHFL_CELLCPC.doubleP.doubleP.doubleP"></span><span class="target" id="chemfileschemfiles_8h_1a5753b330ea20e89fec533f661d5c0f28"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_lengths</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em>, double *<em>a</em>, double *<em>b</em>, double *<em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_cell_lengthsPCK9CHFL_CELLPdPdPd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the cell lenghts. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -190,7 +194,11 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">cell</span></code> - <p>the unit cell to read </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">lenghts</span></code> - <p>the three lenght of the cell (in Angstroms) </p>
+<li><code class="first docutils literal"><span class="pre">a</span></code> - <p>first lenght of the cell (in Angstroms) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">b</span></code> - <p>second lenght of the cell (in Angstroms) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">c</span></code> - <p>third lenght of the cell (in Angstroms) </p>
 </li>
 </ul>
 </dd>
@@ -199,8 +207,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221chfl_cell_set_lengthsPC9CHFL_CELLK13chfl_vector_t">
-<span id="chfl_cell_set_lengths__CHFL_CELLPC.chfl_vector_tC"></span><span class="target" id="chemfileschemfiles_8h_1a69f6fd2923002fc08f9840c57cb8beba"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_set_lengths</code><span class="sig-paren">(</span>CHFL_CELL *<em class="property">const</em> <em>cell</em>, <em class="property">const</em> chfl_vector_t <em>lenghts</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_cell_set_lengthsPC9CHFL_CELLK13chfl_vector_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221chfl_cell_set_lengthsPC9CHFL_CELLddd">
+<span id="chfl_cell_set_lengths__CHFL_CELLPC.double.double.double"></span><span class="target" id="chemfileschemfiles_8h_1a0d419036377f1353102d956ea562b86c"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_set_lengths</code><span class="sig-paren">(</span>CHFL_CELL *<em class="property">const</em> <em>cell</em>, double <em>a</em>, double <em>b</em>, double <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_cell_set_lengthsPC9CHFL_CELLddd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the unit cell lenghts. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -209,7 +217,11 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">cell</span></code> - <p>the unit cell to modify </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">lenghts</span></code> - <p>the three lenght of the cell (in Angstroms) </p>
+<li><code class="first docutils literal"><span class="pre">a</span></code> - <p>first lenght of the cell (in Angstroms) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">b</span></code> - <p>second lenght of the cell (in Angstroms) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">c</span></code> - <p>third lenght of the cell (in Angstroms) </p>
 </li>
 </ul>
 </dd>
@@ -218,8 +230,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv216chfl_cell_anglesPCK9CHFL_CELL13chfl_vector_t">
-<span id="chfl_cell_angles__CHFL_CELLCPC.chfl_vector_t"></span><span class="target" id="chemfileschemfiles_8h_1a08fab7892a574a78404eda740376c860"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_angles</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em>, chfl_vector_t <em>angles</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216chfl_cell_anglesPCK9CHFL_CELL13chfl_vector_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216chfl_cell_anglesPCK9CHFL_CELLPdPdPd">
+<span id="chfl_cell_angles__CHFL_CELLCPC.doubleP.doubleP.doubleP"></span><span class="target" id="chemfileschemfiles_8h_1a0d59ff59babff42ec7016e77123d3a4c"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_angles</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em>, double *<em>alpha</em>, double *<em>beta</em>, double *<em>gamma</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216chfl_cell_anglesPCK9CHFL_CELLPdPdPd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the cell angles, in degrees. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -228,7 +240,11 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">cell</span></code> - <p>the cell to read </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">angles</span></code> - <p>the three angles of the cell (in degree) </p>
+<li><code class="first docutils literal"><span class="pre">alpha</span></code> - <p>angle of the cell between the vectors `b` and `c` (in degree) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">beta</span></code> - <p>angle of the cell between the vectors `a` and `c` (in degree) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">gamma</span></code> - <p>angle of the cell between the vectors `a` and `b` (in degree) </p>
 </li>
 </ul>
 </dd>
@@ -237,8 +253,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv220chfl_cell_set_anglesPC9CHFL_CELLK13chfl_vector_t">
-<span id="chfl_cell_set_angles__CHFL_CELLPC.chfl_vector_tC"></span><span class="target" id="chemfileschemfiles_8h_1a81e5fb8aba5f4e97e157c4ac9528f5db"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_set_angles</code><span class="sig-paren">(</span>CHFL_CELL *<em class="property">const</em> <em>cell</em>, <em class="property">const</em> chfl_vector_t <em>angles</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_cell_set_anglesPC9CHFL_CELLK13chfl_vector_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220chfl_cell_set_anglesPC9CHFL_CELLddd">
+<span id="chfl_cell_set_angles__CHFL_CELLPC.double.double.double"></span><span class="target" id="chemfileschemfiles_8h_1a8429c3f37a9edebccbb4e275d0a1c591"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_set_angles</code><span class="sig-paren">(</span>CHFL_CELL *<em class="property">const</em> <em>cell</em>, double <em>alpha</em>, double <em>beta</em>, double <em>gamma</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_cell_set_anglesPC9CHFL_CELLddd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the cell angles, in degrees. This is only possible for TRICLINIC cells. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -247,7 +263,11 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">cell</span></code> - <p>the unit cell to modify </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">angles</span></code> - <p>the three angles of the cell (in degree) </p>
+<li><code class="first docutils literal"><span class="pre">alpha</span></code> - <p>angle of the cell between the vectors `b` and `c` (in degree) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">beta</span></code> - <p>angle of the cell between the vectors `a` and `c` (in degree) </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">gamma</span></code> - <p>angle of the cell between the vectors `a` and `b` (in degree) </p>
 </li>
 </ul>
 </dd>
@@ -256,8 +276,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv216chfl_cell_matrixPCK9CHFL_CELLA3_13chfl_vector_t">
-<span id="chfl_cell_matrix__CHFL_CELLCPC.chfl_vector_tA"></span><span class="target" id="chemfileschemfiles_8h_1adafbe69de1de2daf99e2d19270832838"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_matrix</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em>, chfl_vector_t <em>matrix</em>[3]<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216chfl_cell_matrixPCK9CHFL_CELLA3_13chfl_vector_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv216chfl_cell_matrixPCK9CHFL_CELLPA3_d">
+<span class="target" id="chemfileschemfiles_8h_1aab2790c8dc5e055624e0983d1c5bb4e5"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_cell_matrix</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_CELL *<em class="property">const</em> <em>cell</em>, double (*<em>matrix</em>)[3]<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216chfl_cell_matrixPCK9CHFL_CELLPA3_d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the unit cell matricial representation. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
