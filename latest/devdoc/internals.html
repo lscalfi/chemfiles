@@ -189,73 +189,10 @@ with parsing data from the file.</p>
 <p>Every <code class="docutils literal"><span class="pre">Format</span></code> class is associated to a <code class="docutils literal"><span class="pre">File</span></code> class, and the associations
 are managed by the <code class="docutils literal"><span class="pre">TrajectoryFactory</span></code> class. New file and formats should be
 registered with this class.</p>
-<dl class="class">
-<dt id="_CPPv2N9chemfiles17TrajectoryFactoryE">
-<span id="chemfiles::TrajectoryFactory"></span><span class="target" id="chemfilesclasschemfiles_1_1_trajectory_factory"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">TrajectoryFactory</code><a class="headerlink" href="#_CPPv2N9chemfiles17TrajectoryFactoryE" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class allow to register at compile time various <a class="reference internal" href="format.html#chemfilesclasschemfiles_1_1_format"><span class="std std-ref">Format</span></a> and the associated <a class="reference internal" href="file.html#chemfilesclasschemfiles_1_1_file"><span class="std std-ref">File</span></a> class, giving at runtime the good format when asked politely.</p>
-<p>Each couple (<a class="reference internal" href="file.html#chemfilesclasschemfiles_1_1_file"><span class="std std-ref">File</span></a>, <a class="reference internal" href="format.html#chemfilesclasschemfiles_1_1_format"><span class="std std-ref">Format</span></a>) is represented by a trajectory_builder_t instance, and can be registered by an extension, or by a <a class="reference internal" href="format.html#chemfilesclasschemfiles_1_1_format"><span class="std std-ref">Format</span></a> name. </p>
-<div class="breathe-sectiondef container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv2N17TrajectoryFactory6formatERKNSt6stringE">
-<span id="TrajectoryFactory::format__ssCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_trajectory_factory_1af0099ec82d72fc2deee680744b843199"></span>trajectory_builder_t <code class="descname">format</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17TrajectoryFactory6formatERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a trajectory_builder from a format type name. </p>
-<p>
-Throws an error if the format can not be found <dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>A trajectory_builder corresponding to the format, if the format name is found in the list of registered formats.</dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>the format name </p>
-</li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N17TrajectoryFactory12by_extensionERKNSt6stringE">
-<span id="TrajectoryFactory::by_extension__ssCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_trajectory_factory_1aeebe80f78665c4c1b16de55b8a57cd2a"></span>trajectory_builder_t <code class="descname">by_extension</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>ext</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17TrajectoryFactory12by_extensionERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a trajectory_builder from a format `extention`. </p>
-<p>
-Throws an error if the format can not be found <dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>A trajectory_builder corresponding to the format, if the format extension is found in the list of registered extensions.</dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">ext</span></code> - <p>the format extention </p>
-</li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N17TrajectoryFactory15register_formatERKNSt6stringE20trajectory_builder_t">
-<span id="TrajectoryFactory::register_format__ssCR.trajectory_builder_t"></span><span class="target" id="chemfilesclasschemfiles_1_1_trajectory_factory_1a04bb7fae8f6750ec0dadc5138bb15ef0"></span>void <code class="descname">register_format</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, trajectory_builder_t <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17TrajectoryFactory15register_formatERKNSt6stringE20trajectory_builder_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register a trajectory_builder in the internal format names list. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N17TrajectoryFactory18register_extensionERKNSt6stringE20trajectory_builder_t">
-<span id="TrajectoryFactory::register_extension__ssCR.trajectory_builder_t"></span><span class="target" id="chemfilesclasschemfiles_1_1_trajectory_factory_1ae81768fcb04d6ce2d19b165735116f46"></span>void <code class="descname">register_extension</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>ext</em>, trajectory_builder_t <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17TrajectoryFactory18register_extensionERKNSt6stringE20trajectory_builder_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register an trajectory_builder in the internal extensions list. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenclass: Cannot find class &#8220;chemfiles::TrajectoryFactory&#8221; in doxygen xml output for project &#8220;chemfiles&#8221; from directory: /home/travis/build/chemfiles/chemfiles/build/doc/doxygen/xml</p>
 </div>
-<div class="breathe-sectiondef container">
-<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
-<dl class="function">
-<dt id="_CPPv2N17TrajectoryFactory3getEv">
-<span id="TrajectoryFactory::get"></span><span class="target" id="chemfilesclasschemfiles_1_1_trajectory_factory_1ad78cb971c7d849c4d8c4d3acebe3651b"></span>TrajectoryFactory &amp;<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17TrajectoryFactory3getEv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the instance of the <a class="reference internal" href="#chemfilesclasschemfiles_1_1_trajectory_factory"><span class="std std-ref">TrajectoryFactory</span></a>. </p>
-</dd></dl>
-
-</div>
-</dd></dl>
-
 </div>
 </div>
 
