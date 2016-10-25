@@ -146,8 +146,8 @@
   <div class="section" id="function-manipulating-chfl-residue">
 <span id="capi-residue"></span><h1>Function manipulating <code class="docutils literal"><span class="pre">CHFL_RESIDUE</span></code><a class="headerlink" href="#function-manipulating-chfl-residue" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv212chfl_residuePKc6size_t">
-<span id="chfl_residue__cCP.s"></span><span class="target" id="chemfileschemfiles_8h_1ae0396976f3ef8153960969301c7d0da2"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, size_t <em>resid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212chfl_residuePKc6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv212chfl_residuePKc8uint64_t">
+<span id="chfl_residue__cCP.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1aa94fa7916368eb6916c3cb9dabff18dc"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, uint64_t <em>resid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212chfl_residuePKc8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new residue. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -156,7 +156,7 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">name</span></code> - <p>The residue name </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">resid</span></code> - <p>The residue identifier, or `size_t(-1)` if the residue do not have an identifier </p>
+<li><code class="first docutils literal"><span class="pre">resid</span></code> - <p>The residue identifier, or `uint64_t(-1)` if the residue do not have an identifier </p>
 </li>
 </ul>
 </dd>
@@ -165,8 +165,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY6size_t">
-<span id="chfl_residue_for_atom__CHFL_TOPOLOGYCPC.s"></span><span class="target" id="chemfileschemfiles_8h_1ae20fbce14402fe122dc239b0d15f1c11"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue_for_atom</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY8uint64_t">
+<span id="chfl_residue_for_atom__CHFL_TOPOLOGYCPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a66ec65c08ffcf0a86300b8f992c0f0a3"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue_for_atom</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a the residue containing a given atom, or NULL if the atom is not in a residue. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -184,8 +184,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv226chfl_residue_from_topologyPCK13CHFL_TOPOLOGY6size_t">
-<span id="chfl_residue_from_topology__CHFL_TOPOLOGYCPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a015b7de671b82c40e953f3a975fe62b2"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue_from_topology</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv226chfl_residue_from_topologyPCK13CHFL_TOPOLOGY6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv226chfl_residue_from_topologyPCK13CHFL_TOPOLOGY8uint64_t">
+<span id="chfl_residue_from_topology__CHFL_TOPOLOGYCPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a73969bd7e41554f526d92201c7741575"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue_from_topology</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv226chfl_residue_from_topologyPCK13CHFL_TOPOLOGY8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a residue from a topology. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -203,8 +203,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv217chfl_residue_namePCK12CHFL_RESIDUEPc6size_t">
-<span id="chfl_residue_name__CHFL_RESIDUECPC.cP.s"></span><span class="target" id="chemfileschemfiles_8h_1a3ce49363876ed9188ffd9e13b321b847"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_name</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, char *<em>name</em>, size_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_residue_namePCK12CHFL_RESIDUEPc6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217chfl_residue_namePCK12CHFL_RESIDUEPc8uint64_t">
+<span id="chfl_residue_name__CHFL_RESIDUECPC.cP.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a3b7bb1b5e1eec9b312d4b75f628bc5e2"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_name</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, char *<em>name</em>, uint64_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_residue_namePCK12CHFL_RESIDUEPc8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the name of a residue. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -224,8 +224,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP6size_t">
-<span id="chfl_residue_id__CHFL_RESIDUECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a13dc9802a42bf50aeceb50f8a1ccc193"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_id</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, size_t *<em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP8uint64_t">
+<span id="chfl_residue_id__CHFL_RESIDUECPC.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1a3b48e210e8c3d444dcd056d604d87d7f"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_id</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, uint64_t *<em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the identifier of a residue in the initial topology file. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -243,8 +243,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221chfl_residue_add_atomPC12CHFL_RESIDUE6size_t">
-<span id="chfl_residue_add_atom__CHFL_RESIDUEPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a7268bcb76ee079a0f315a1e5cd4552f1"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_add_atom</code><span class="sig-paren">(</span>CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_add_atomPC12CHFL_RESIDUE6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221chfl_residue_add_atomPC12CHFL_RESIDUE8uint64_t">
+<span id="chfl_residue_add_atom__CHFL_RESIDUEPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a7874f12e8137a2c52b67e8eace03644b"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_add_atom</code><span class="sig-paren">(</span>CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_add_atomPC12CHFL_RESIDUE8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add the atom at index `i` in the residue. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -262,8 +262,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv224chfl_residue_atoms_countPCK12CHFL_RESIDUEP6size_t">
-<span id="chfl_residue_atoms_count__CHFL_RESIDUECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a90024b8f9f3cbad55c3987947334d93b"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_residue_atoms_countPCK12CHFL_RESIDUEP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv224chfl_residue_atoms_countPCK12CHFL_RESIDUEP8uint64_t">
+<span id="chfl_residue_atoms_count__CHFL_RESIDUECPC.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1afcd2b41e6ea7761690cb116908367096"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, uint64_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_residue_atoms_countPCK12CHFL_RESIDUEP8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of atoms in a residue. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -281,8 +281,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221chfl_residue_containsPCK12CHFL_RESIDUE6size_tPb">
-<span id="chfl_residue_contains__CHFL_RESIDUECPC.s.bP"></span><span class="target" id="chemfileschemfiles_8h_1a38ecc02cb7da55eb4ff57979cebaf03b"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_contains</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, size_t <em>i</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_containsPCK12CHFL_RESIDUE6size_tPb" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221chfl_residue_containsPCK12CHFL_RESIDUE8uint64_tPb">
+<span id="chfl_residue_contains__CHFL_RESIDUECPC.uint64_t.bP"></span><span class="target" id="chemfileschemfiles_8h_1a8bcff52dec265580c548115f1387cccb"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_contains</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, uint64_t <em>i</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_containsPCK12CHFL_RESIDUE8uint64_tPb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the atom at index `i` is in the residue. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>

@@ -146,8 +146,8 @@
   <div class="section" id="function-manipulating-chfl-frame">
 <span id="capi-frame"></span><h1>Function manipulating <code class="docutils literal"><span class="pre">CHFL_FRAME</span></code><a class="headerlink" href="#function-manipulating-chfl-frame" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv210chfl_frame6size_t">
-<span id="chfl_frame__s"></span><span class="target" id="chemfileschemfiles_8h_1a4028357754400956bee8d38c7221e1dc"></span>CHFL_FRAME *<code class="descclassname"></code><code class="descname">chfl_frame</code><span class="sig-paren">(</span>size_t <em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210chfl_frame6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv210chfl_frame8uint64_t">
+<span id="chfl_frame__uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a5e438a93560f49ed60dae8bf8328a20d"></span>CHFL_FRAME *<code class="descclassname"></code><code class="descname">chfl_frame</code><span class="sig-paren">(</span>uint64_t <em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210chfl_frame8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an empty frame with initial capacity of `natoms`. It will be resized by the library as needed. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -163,8 +163,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv222chfl_frame_atoms_countPCK10CHFL_FRAMEP6size_t">
-<span id="chfl_frame_atoms_count__CHFL_FRAMECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1a85aebd9e005a24e1076207096357e987"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t *<em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_frame_atoms_countPCK10CHFL_FRAMEP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv222chfl_frame_atoms_countPCK10CHFL_FRAMEP8uint64_t">
+<span id="chfl_frame_atoms_count__CHFL_FRAMECPC.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1aa9b468611e38f63013fc6116dd6f156c"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, uint64_t *<em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_frame_atoms_countPCK10CHFL_FRAMEP8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current number of atoms in the frame. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -182,8 +182,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv217chfl_frame_resizePC10CHFL_FRAME6size_t">
-<span id="chfl_frame_resize__CHFL_FRAMEPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a6301d7966dbc54acaf291d41f3807a9e"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_resize</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t <em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_frame_resizePC10CHFL_FRAME6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv217chfl_frame_resizePC10CHFL_FRAME8uint64_t">
+<span id="chfl_frame_resize__CHFL_FRAMEPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a4d2a08d6f9141c53393e2aa72947a48c"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_resize</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, uint64_t <em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_frame_resizePC10CHFL_FRAME8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resize the positions and the velocities in frame, to make space for `natoms` atoms. </p>
 <p>This function may invalidate any pointer to the positions or the velocities if the new size is bigger than the old one. In all the cases, previous data is conserved. This function conserve the presence of absence of velocities.</p>
 <p><dl class="docutils">
@@ -202,8 +202,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPP13chfl_vector_tP6size_t">
-<span id="chfl_frame_positions__CHFL_FRAMEPC.chfl_vector_tPP.sP"></span><span class="target" id="chemfileschemfiles_8h_1a73e55bdb786b553841d3986900985574"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_positions</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPP13chfl_vector_tP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPP13chfl_vector_tP8uint64_t">
+<span id="chfl_frame_positions__CHFL_FRAMEPC.chfl_vector_tPP.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1a0cade862bc404e7f580999d8cbd91ee8"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_positions</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, uint64_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_frame_positionsPC10CHFL_FRAMEPP13chfl_vector_tP8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a pointer to the positions array from a frame. </p>
 <p>The positions are stored as a N x 3 array, this function set a pointer to point to the first element of this array, and give the value of N. If the frame is resized (by writing to it, or calling `chfl_frame_resize`), the pointer is invalidated.</p>
 <p><dl class="docutils">
@@ -224,8 +224,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPP13chfl_vector_tP6size_t">
-<span id="chfl_frame_velocities__CHFL_FRAMEPC.chfl_vector_tPP.sP"></span><span class="target" id="chemfileschemfiles_8h_1ad09985e33f1e3aaf34685dd690849fa0"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_velocities</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPP13chfl_vector_tP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPP13chfl_vector_tP8uint64_t">
+<span id="chfl_frame_velocities__CHFL_FRAMEPC.chfl_vector_tPP.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1a4341b6f37771a3a9620879efaeaaa25c"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_velocities</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, chfl_vector_t **<em>data</em>, uint64_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_frame_velocitiesPC10CHFL_FRAMEPP13chfl_vector_tP8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a pointer to the velocities array from a frame. </p>
 <p>The velocities are stored as a `N x 3` array, this function set a pointer to point to the first element of this array, and give the value of N. If the frame is resized (by writing to it, or calling `chfl_frame_resize`), the pointer is invalidated.</p>
 <p>If the frame do not have velocity, this will return an error. Use `chfl_frame_add_velocities` to add velocities to a frame before calling this function.</p>
@@ -322,8 +322,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv215chfl_frame_stepPCK10CHFL_FRAMEP6size_t">
-<span id="chfl_frame_step__CHFL_FRAMECPC.sP"></span><span class="target" id="chemfileschemfiles_8h_1ada1b1238f2e24289b43c53e85e22d399"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_step</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t *<em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_frame_stepPCK10CHFL_FRAMEP6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv215chfl_frame_stepPCK10CHFL_FRAMEP8uint64_t">
+<span id="chfl_frame_step__CHFL_FRAMECPC.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1ad53ee138f63730f6fd4e905824616b38"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_step</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, uint64_t *<em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_frame_stepPCK10CHFL_FRAMEP8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the Frame step, i.e. the frame number in the trajectory. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -341,8 +341,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv219chfl_frame_set_stepPC10CHFL_FRAME6size_t">
-<span id="chfl_frame_set_step__CHFL_FRAMEPC.s"></span><span class="target" id="chemfileschemfiles_8h_1a22626f73c8f8dc1eaea8c591db2a5e41"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_set_step</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, size_t <em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_frame_set_stepPC10CHFL_FRAME6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv219chfl_frame_set_stepPC10CHFL_FRAME8uint64_t">
+<span id="chfl_frame_set_step__CHFL_FRAMEPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a2d6f95932c5b0e47fa4d04f5af5af94d"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_frame_set_step</code><span class="sig-paren">(</span>CHFL_FRAME *<em class="property">const</em> <em>frame</em>, uint64_t <em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_frame_set_stepPC10CHFL_FRAME8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the Frame step. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
