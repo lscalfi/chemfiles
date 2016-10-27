@@ -190,11 +190,15 @@ treated as left-associatives.</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">all</span></code>: select all the atoms;</li>
 <li><code class="docutils literal"><span class="pre">none</span></code>: select none of the atoms;</li>
-<li><code class="docutils literal"><span class="pre">element</span></code>: select atoms based on their element;</li>
+<li><code class="docutils literal"><span class="pre">type</span></code>: select atoms based on their type;</li>
 <li><code class="docutils literal"><span class="pre">name</span></code>: select atoms based on their name. Some formats store both an atomic
-name (H3) and an atom element (H), this is why you can use two different
+name (H3) and an atom type (H), this is why you can use two different
 selectors depending on the actual data;</li>
 <li><code class="docutils literal"><span class="pre">index</span></code>: select atoms based on their index in the frame;</li>
+<li><code class="docutils literal"><span class="pre">resname</span></code>: select atoms based on their residue name. An atom without residue
+information will never be selected.</li>
+<li><code class="docutils literal"><span class="pre">resid</span></code>: select atoms based on their residue name. An atom without residue
+information will never be selected.</li>
 <li><code class="docutils literal"><span class="pre">mass</span></code>: select atoms based on their mass;</li>
 <li><code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">z</span></code>: select atoms based on their position cartesian components;</li>
 <li><code class="docutils literal"><span class="pre">vx</span></code>, <code class="docutils literal"><span class="pre">vy</span></code> and <code class="docutils literal"><span class="pre">vz</span></code>: select atoms based on their velocity cartesian components;</li>
