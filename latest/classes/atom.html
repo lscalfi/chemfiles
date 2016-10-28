@@ -148,40 +148,77 @@
 <dl class="class">
 <dt id="_CPPv2N9chemfiles4AtomE">
 <span id="chemfiles::Atom"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">Atom</code><a class="headerlink" href="#_CPPv2N9chemfiles4AtomE" title="Permalink to this definition">¶</a></dt>
-<dd><p>An `Atom` is a particle in the current `Frame`.</p>
-<p>An atom stores the following atomic properties:</p>
-<p><ul class="simple">
-<li>atom name;</li>
-<li>atom type;</li>
-<li>atom mass;</li>
-<li>atom charge.</li>
-</ul>
-</p>
-<p>The atom name is usually an unique identifier (&#8220;H1&#8221;, &#8220;C_a&#8221;) while the atom type will be shared between all particles of the same type: &#8220;H&#8221;, &#8220;Ow&#8221;, &#8220;CH3&#8221;. </p>
+<dd><p>An <a class="reference internal" href="#chemfilesclasschemfiles_1_1_atom"><span class="std std-ref">Atom</span></a> is a particle in the current <a class="reference internal" href="frame.html#chemfilesclasschemfiles_1_1_frame"><span class="std std-ref">Frame</span></a>. It can be used to store and retrieve informations about a particle, such as mass, element name, atomic number, etc. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv2N9chemfiles4Atom8AtomTypeE">
+<span id="chemfiles::Atom::AtomType"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a389e4d85f743a0f6241c120f25f4e25b"></span><em class="property">enum </em><code class="descname">AtomType</code><a class="headerlink" href="#_CPPv2N9chemfiles4Atom8AtomTypeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>An <a class="reference internal" href="#chemfilesclasschemfiles_1_1_atom"><span class="std std-ref">Atom</span></a> can be of various kind. This is encoded by a value in this enum. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv2N9chemfiles4Atom7ELEMENTE">
+<span id="chemfiles::Atom::ELEMENT"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a389e4d85f743a0f6241c120f25f4e25bab01efd6ca6a27f63d13a92b1c3e47c7f"></span><code class="descname">ELEMENT</code> =  0<a class="headerlink" href="#_CPPv2N9chemfiles4Atom7ELEMENTE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element from the periodic table of elements. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N9chemfiles4Atom14COARSE_GRAINEDE">
+<span id="chemfiles::Atom::COARSE_GRAINED"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a389e4d85f743a0f6241c120f25f4e25bab243d8f47226e6d405498c2204ef8df4"></span><code class="descname">COARSE_GRAINED</code> =  1<a class="headerlink" href="#_CPPv2N9chemfiles4Atom14COARSE_GRAINEDE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coarse-grained atom are composed of more than one element: CH3 groups, amino-acids are coarse-grained atoms. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N9chemfiles4Atom5DUMMYE">
+<span id="chemfiles::Atom::DUMMY"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a389e4d85f743a0f6241c120f25f4e25ba8436c8cdc73643695bd1600e6d4cf9ab"></span><code class="descname">DUMMY</code> =  2<a class="headerlink" href="#_CPPv2N9chemfiles4Atom5DUMMYE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dummy site, with no physical reality. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N9chemfiles4Atom9UNDEFINEDE">
+<span id="chemfiles::Atom::UNDEFINED"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a389e4d85f743a0f6241c120f25f4e25ba8f157d438391fc6ce1aff2759bf9857c"></span><code class="descname">UNDEFINED</code> =  3<a class="headerlink" href="#_CPPv2N9chemfiles4Atom9UNDEFINEDE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undefined atom-type. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N4Atom4AtomENSt6stringE">
-<span id="Atom::Atom__ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a02e0edd43db1af34758f2d729a985bd0"></span><code class="descname">Atom</code><span class="sig-paren">(</span>std::string <em>name</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomENSt6stringE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an atom with the given `name` and set the atom `type` to be the same as `name`. </p>
+<span id="Atom::Atom__ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a8434a2c8ac9925ba4d9147ccc0d9785b"></span><code class="descname">Atom</code><span class="sig-paren">(</span>std::string <em>element</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an atom from its &#8216;element&#8217; with &#8216;label&#8217;=&#8217;element&#8217;. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N4Atom4AtomENSt6stringENSt6stringE">
-<span id="Atom::Atom__ss.ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a9a142be9224cff57030d707af2d2db04"></span><code class="descname">Atom</code><span class="sig-paren">(</span>std::string <em>name</em>, std::string <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an atom from the given `name` and `type`. </p>
+<span id="Atom::Atom__ss.ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a4d79dbf85dc749bbc22852fea1939056"></span><code class="descname">Atom</code><span class="sig-paren">(</span>std::string <em>element</em>, std::string <em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomENSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an atom from its &#8216;element&#8217; and its label. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4Atom4nameEv">
-<span id="chemfiles::Atom::name"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1aeddb1e41e262f85de21de13aed21dd82"></span><em class="property">const</em> std::string &amp;<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom4nameEv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a const (non-modifiable) reference to the atom name. </p>
+<dt id="_CPPv2N4Atom4AtomE8AtomTypeNSt6stringENSt6stringE">
+<span id="Atom::Atom__AtomType.ss.ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1ad6ca58efc3d8469ad15d821aa291f7d5"></span><code class="descname">Atom</code><span class="sig-paren">(</span>AtomType <em>type</em>, std::string <em>element</em>, std::string <em>label</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomE8AtomTypeNSt6stringENSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an atom from its &#8216;element&#8217; and its type. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4Atom4typeEv">
-<span id="chemfiles::Atom::type"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a1a0814ff3ac837a407764999ccd0d789"></span><em class="property">const</em> std::string &amp;<code class="descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom4typeEv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a const (non-modifiable) reference to the atom type. </p>
+<dt id="_CPPv2N4Atom4AtomEv">
+<span id="Atom::Atom"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1aa0147d7e49ab90f559b66e38d3d12863"></span><code class="descname">Atom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4Atom4AtomEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default is to create an UNDEFINED atom type with no element or label. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9chemfiles4Atom7elementEv">
+<span id="chemfiles::Atom::element"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1af304bdc8cc2da77afff293b420dff5e6"></span><em class="property">const</em> std::string &amp;<code class="descname">element</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom7elementEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a const (non-modifiable) reference to the atom element name. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9chemfiles4Atom5labelEv">
+<span id="chemfiles::Atom::label"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a96093e175a985b5f4b45559eca6b9ef9"></span><em class="property">const</em> std::string &amp;<code class="descname">label</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom5labelEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a const (non-modifiable) reference to the atom label. </p>
 </dd></dl>
 
 <dl class="function">
@@ -197,15 +234,21 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4Atom8set_typeENSt6stringE">
-<span id="chemfiles::Atom::set_type__ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a13a19b3a2928989863c50c79344d422d"></span>void <code class="descname">set_type</code><span class="sig-paren">(</span>std::string <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom8set_typeENSt6stringE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the atom type. </p>
+<dt id="_CPPv2N9chemfiles4Atom4typeEv">
+<span id="chemfiles::Atom::type"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a2fb96f7ac51e13d5fe51b877878214bf"></span><a class="reference internal" href="#_CPPv2N9chemfiles4Atom8AtomTypeE" title="chemfiles::Atom::AtomType">AtomType</a> <code class="descname">type</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4Atom4typeEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the atom type. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4Atom8set_nameENSt6stringE">
-<span id="chemfiles::Atom::set_name__ss"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1ab4d9a9c63f49cf9c0b6f1e508beb382c"></span>void <code class="descname">set_name</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom8set_nameENSt6stringE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the atom name. </p>
+<dt id="_CPPv2N9chemfiles4Atom11set_elementERKNSt6stringE">
+<span id="chemfiles::Atom::set_element__ssCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1acd97284533857ce9e49dee4f1aaefe3b"></span>void <code class="descname">set_element</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>element</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom11set_elementERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the atom element name. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9chemfiles4Atom9set_labelERKNSt6stringE">
+<span id="chemfiles::Atom::set_label__ssCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a0755aa62553ed5be68099973a933dbe1"></span>void <code class="descname">set_label</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom9set_labelERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the atom label. </p>
 </dd></dl>
 
 <dl class="function">
@@ -221,9 +264,15 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="_CPPv2N9chemfiles4Atom8set_typeE8AtomType">
+<span id="chemfiles::Atom::set_type__AtomType"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a356d26e4eaff2c3ec2f9b9baba1e7c0f"></span>void <code class="descname">set_type</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N9chemfiles4Atom8AtomTypeE" title="chemfiles::Atom::AtomType">AtomType</a> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9chemfiles4Atom8set_typeE8AtomType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the atom type. </p>
+</dd></dl>
+
+<dl class="function">
 <dt id="_CPPv2N4Atom9full_nameEv">
 <span id="Atom::full_name"></span><span class="target" id="chemfilesclasschemfiles_1_1_atom_1a55de41eb303282ccc212f1a036b13780"></span>std::string <code class="descname">full_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N4Atom9full_nameEv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Try to get the full atomic name, return and empty string if this is impossible </p>
+<dd><p>Try to get the full element name, return and empty string if this is impossible </p>
 </dd></dl>
 
 <dl class="function">

@@ -147,14 +147,14 @@
 <span id="capi-atom"></span><h1>Function manipulating <code class="docutils literal"><span class="pre">CHFL_ATOM</span></code><a class="headerlink" href="#function-manipulating-chfl-atom" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="_CPPv29chfl_atomPKc">
-<span id="chfl_atom__cCP"></span><span class="target" id="chemfileschemfiles_8h_1aa907c3b268f22ca196654e0398198277"></span>CHFL_ATOM *<code class="descclassname"></code><code class="descname">chfl_atom</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29chfl_atomPKc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an atom from a name. </p>
+<span id="chfl_atom__cCP"></span><span class="target" id="chemfileschemfiles_8h_1a5b89a714f3aeef313d69e4766f9f0259"></span>CHFL_ATOM *<code class="descclassname"></code><code class="descname">chfl_atom</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>element</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29chfl_atomPKc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an atom from an element name. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>A pointer to the new atom, or NULL in case of error </dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>The new atom name </p>
+<li><code class="first docutils literal"><span class="pre">element</span></code> - <p>The new atom element </p>
 </li>
 </ul>
 </dd>
@@ -276,50 +276,18 @@
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv214chfl_atom_namePCK9CHFL_ATOMPCc8uint64_t">
-<span id="chfl_atom_name__CHFL_ATOMCPC.cPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1acfc3b4f2f0e9d53ce32866043a844f61"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_name</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_ATOM *<em class="property">const</em> <em>atom</em>, char *<em class="property">const</em> <em>name</em>, uint64_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214chfl_atom_namePCK9CHFL_ATOMPCc8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the name of an atom. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">atom</span></code> - <p>The atom </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>A string buffer to be filled with the atom name </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">buffsize</span></code> - <p>The size of the string buffer </p>
-</li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv218chfl_atom_set_namePC9CHFL_ATOMPKc">
-<span id="chfl_atom_set_name__CHFL_ATOMPC.cCP"></span><span class="target" id="chemfileschemfiles_8h_1ad99c22f31d9f8c22ce083368d17b5581"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_set_name</code><span class="sig-paren">(</span>CHFL_ATOM *<em class="property">const</em> <em>atom</em>, <em class="property">const</em> char *<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218chfl_atom_set_namePC9CHFL_ATOMPKc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the name of an atom. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">atom</span></code> - <p>The atom </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>A null terminated string containing the new atom name </p>
-</li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenfunction: Cannot find function &#8220;chfl_atom_name&#8221; in doxygen xml output for project &#8220;chemfiles&#8221; from directory: /home/travis/build/chemfiles/chemfiles/build/doc/doxygen/xml</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">doxygenfunction: Cannot find function &#8220;chfl_atom_set_name&#8221; in doxygen xml output for project &#8220;chemfiles&#8221; from directory: /home/travis/build/chemfiles/chemfiles/build/doc/doxygen/xml</p>
+</div>
 <dl class="function">
 <dt id="_CPPv219chfl_atom_full_namePCK9CHFL_ATOMPCc8uint64_t">
-<span id="chfl_atom_full_name__CHFL_ATOMCPC.cPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a066421e2f373179650c98641e5e9a722"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_full_name</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_ATOM *<em class="property">const</em> <em>atom</em>, char *<em class="property">const</em> <em>name</em>, uint64_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_atom_full_namePCK9CHFL_ATOMPCc8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Try to get the full name of an atom from the atom type. </p>
+<span id="chfl_atom_full_name__CHFL_ATOMCPC.cPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1aa9070381de4556821f5655a16507ac27"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_full_name</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_ATOM *<em class="property">const</em> <em>atom</em>, char *<em class="property">const</em> <em>element</em>, uint64_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_atom_full_namePCK9CHFL_ATOMPCc8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to get the full name of an atom from the element name. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>The status code </dd>
@@ -327,7 +295,7 @@
 <dd><ul class="breatheparameterlist first last">
 <li><code class="first docutils literal"><span class="pre">atom</span></code> - <p>The atom </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>A string buffer to be filled with the full name </p>
+<li><code class="first docutils literal"><span class="pre">element</span></code> - <p>A string buffer to be filled with the element name </p>
 </li>
 <li><code class="first docutils literal"><span class="pre">buffsize</span></code> - <p>The size of the string buffer </p>
 </li>
@@ -340,7 +308,7 @@
 <dl class="function">
 <dt id="_CPPv220chfl_atom_vdw_radiusPCK9CHFL_ATOMPd">
 <span id="chfl_atom_vdw_radius__CHFL_ATOMCPC.doubleP"></span><span class="target" id="chemfileschemfiles_8h_1adc63bca7ba976781e694121464203f97"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_vdw_radius</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_ATOM *<em class="property">const</em> <em>atom</em>, double *<em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_atom_vdw_radiusPCK9CHFL_ATOMPd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Try to get the Van der Waals radius of an atom from the atom type. </p>
+<dd><p>Try to get the Van der Waals radius of an atom from the element name. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>The status code </dd>
@@ -359,7 +327,7 @@
 <dl class="function">
 <dt id="_CPPv225chfl_atom_covalent_radiusPCK9CHFL_ATOMPd">
 <span id="chfl_atom_covalent_radius__CHFL_ATOMCPC.doubleP"></span><span class="target" id="chemfileschemfiles_8h_1a9b6c0192102f2dc93dd9643a4f15d825"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_covalent_radius</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_ATOM *<em class="property">const</em> <em>atom</em>, double *<em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_atom_covalent_radiusPCK9CHFL_ATOMPd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Try to get the covalent radius of an atom from the atom type. </p>
+<dd><p>Try to get the covalent radius of an atom from the element name. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>The status code </dd>
@@ -378,7 +346,7 @@
 <dl class="function">
 <dt id="_CPPv223chfl_atom_atomic_numberPCK9CHFL_ATOMP7int64_t">
 <span id="chfl_atom_atomic_number__CHFL_ATOMCPC.int64_tP"></span><span class="target" id="chemfileschemfiles_8h_1a8ff7fea7a5934f0bee60f8f38d3f7638"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_atomic_number</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_ATOM *<em class="property">const</em> <em>atom</em>, int64_t *<em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223chfl_atom_atomic_numberPCK9CHFL_ATOMP7int64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Try to get the atomic number of an atom from the atom type. </p>
+<dd><p>Try to get the atomic number of an atom from the element name. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>The status code </dd>
@@ -394,24 +362,49 @@
 </p>
 </dd></dl>
 
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">doxygenenum: Cannot find enum &#8220;CHFL_ATOM_TYPES&#8221; in doxygen xml output for project &#8220;chemfiles&#8221; from directory: /home/travis/build/chemfiles/chemfiles/build/doc/doxygen/xml</p>
-</div>
+<dl class="type">
+<dt id="_CPPv215CHFL_ATOM_TYPES">
+<span id="CHFL_ATOM_TYPES"></span><span class="target" id="chemfileschemfiles_8h_1afd3a0fd79890b9c1e95c0107c44ba957"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">CHFL_ATOM_TYPES</code><a class="headerlink" href="#_CPPv215CHFL_ATOM_TYPES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Available types of atoms. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv217CHFL_ATOM_ELEMENT">
+<span id="CHFL_ATOM_ELEMENT"></span><span class="target" id="chemfileschemfiles_8h_1afd3a0fd79890b9c1e95c0107c44ba957ac8e13c435dce63819080ab0049392e3e"></span><code class="descname">CHFL_ATOM_ELEMENT</code> =  0<a class="headerlink" href="#_CPPv217CHFL_ATOM_ELEMENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element from the periodic table of elements. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv224CHFL_ATOM_COARSE_GRAINED">
+<span id="CHFL_ATOM_COARSE_GRAINED"></span><span class="target" id="chemfileschemfiles_8h_1afd3a0fd79890b9c1e95c0107c44ba957a782855e8ca334221f6544a375cde07ae"></span><code class="descname">CHFL_ATOM_COARSE_GRAINED</code> =  1<a class="headerlink" href="#_CPPv224CHFL_ATOM_COARSE_GRAINED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coarse-grained atom are composed of more than one element: CH3 groups, amino-acids are coarse-grained atoms. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv215CHFL_ATOM_DUMMY">
+<span id="CHFL_ATOM_DUMMY"></span><span class="target" id="chemfileschemfiles_8h_1afd3a0fd79890b9c1e95c0107c44ba957a5685245d40cf0c356a0efa3cda081d6e"></span><code class="descname">CHFL_ATOM_DUMMY</code> =  2<a class="headerlink" href="#_CPPv215CHFL_ATOM_DUMMY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dummy site, with no physical reality. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv219CHFL_ATOM_UNDEFINED">
+<span id="CHFL_ATOM_UNDEFINED"></span><span class="target" id="chemfileschemfiles_8h_1afd3a0fd79890b9c1e95c0107c44ba957aa4ca7ecfebf83cbebe98e327b780853e"></span><code class="descname">CHFL_ATOM_UNDEFINED</code> =  3<a class="headerlink" href="#_CPPv219CHFL_ATOM_UNDEFINED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undefined atom type. </p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="function">
-<dt id="_CPPv214chfl_atom_typePCK9CHFL_ATOMPCc8uint64_t">
-<span id="chfl_atom_type__CHFL_ATOMCPC.cPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1ae2bd5cbc7488dd9551123668e9332e07"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_type</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_ATOM *<em class="property">const</em> <em>atom</em>, char *<em class="property">const</em> <em>type</em>, uint64_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214chfl_atom_typePCK9CHFL_ATOMPCc8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the type of an atom. </p>
+<dt id="_CPPv214chfl_atom_typePCK9CHFL_ATOMPC16chfl_atom_type_t">
+<span id="chfl_atom_type__CHFL_ATOMCPC.chfl_atom_type_tPC"></span><span class="target" id="chemfileschemfiles_8h_1a0a66e5c05731d22faf5bfc98b85cde64"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_type</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_ATOM *<em class="property">const</em> <em>atom</em>, chfl_atom_type_t *<em class="property">const</em> <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214chfl_atom_typePCK9CHFL_ATOMPC16chfl_atom_type_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the atom type. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>The status code </dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">atom</span></code> - <p>The atom </p>
+<li><code class="first docutils literal"><span class="pre">atom</span></code> - <p>the atom to read </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">type</span></code> - <p>A string buffer to be filled with the atom type </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">buffsize</span></code> - <p>The size of the string buffer </p>
+<li><code class="first docutils literal"><span class="pre">type</span></code> - <p>the type of the atom </p>
 </li>
 </ul>
 </dd>
@@ -420,17 +413,17 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv218chfl_atom_set_typePC9CHFL_ATOMPKc">
-<span id="chfl_atom_set_type__CHFL_ATOMPC.cCP"></span><span class="target" id="chemfileschemfiles_8h_1ae27b24322b8031e6028d5df506ad4873"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_set_type</code><span class="sig-paren">(</span>CHFL_ATOM *<em class="property">const</em> <em>atom</em>, <em class="property">const</em> char *<em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218chfl_atom_set_typePC9CHFL_ATOMPKc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the type of an atom. </p>
+<dt id="_CPPv218chfl_atom_set_typePC9CHFL_ATOM16chfl_atom_type_t">
+<span id="chfl_atom_set_type__CHFL_ATOMPC.chfl_atom_type_t"></span><span class="target" id="chemfileschemfiles_8h_1aed2b07696e308d6301b4a1e83f9c7c5e"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_atom_set_type</code><span class="sig-paren">(</span>CHFL_ATOM *<em class="property">const</em> <em>atom</em>, chfl_atom_type_t <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218chfl_atom_set_typePC9CHFL_ATOM16chfl_atom_type_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the atom type. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>The status code </dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">atom</span></code> - <p>The atom </p>
+<li><code class="first docutils literal"><span class="pre">atom</span></code> - <p>the atom to modify </p>
 </li>
-<li><code class="first docutils literal"><span class="pre">type</span></code> - <p>A null terminated string containing the new atom type </p>
+<li><code class="first docutils literal"><span class="pre">type</span></code> - <p>the new type of the atom </p>
 </li>
 </ul>
 </dd>

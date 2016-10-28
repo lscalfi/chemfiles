@@ -165,7 +165,11 @@ specifically proteins from the PDB data bank, the residues should correspond to
 amino-acids in the protein.</p>
 <p>The <code class="docutils literal"><span class="pre">Atom</span></code> class contains basic information about the atoms in the system: the
 name (if it is disponible), mass, kind of atom and so on. Atoms are not limited
-to plain chemical elements.</p>
+to plain chemical elements. Four types of atoms are defined: <em>Element</em> are Atoms
+from the periodic classification; <em>coarse grained</em> atoms are particles taking
+together more than one element (<em>CH4</em> or <em>H2O</em> are examples); <em>Dummy</em> atoms are
+fictitous points associated with some data, like the fourth site in the TIP4P
+model of water; and <em>Undefined</em> atoms are all the other atoms types.</p>
 <p>The <code class="docutils literal"><span class="pre">UnitCell</span></code> class describe the boundary conditions of the system: where are
 the boundaries, and what is the periodicity of theses boundaries. An unit cell
 can be of three types: <em>Infinite</em>, <em>Orthorombic</em> or <em>Triclinic</em>. Inifinite cells
