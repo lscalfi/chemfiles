@@ -158,32 +158,32 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="pre-compiled-binaries">
 <h2>Pre-compiled binaries<a class="headerlink" href="#pre-compiled-binaries" title="Permalink to this headline">¶</a></h2>
-<p>A few precompiled binary of the latest release are provided through the <a class="reference external" href="http://conda.pydata.org/docs/">conda</a>
-cross-plateform package manager. These binary provide the C++, C and Python
-interfaces. To install them, you can use:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install -c https://conda.anaconda.org/luthaf chemfiles
+<p>A precompiled version of the latest release is provided through the <a class="reference external" href="http://conda.pydata.org/docs/">conda</a>
+cross-plateform package manager, in the <code class="docutils literal"><span class="pre">conda-forge</span></code> community channel. This
+version provides the C++, C and Python interfaces for OS X and Linux. To install
+them, you can use:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install -c conda-forge chemfiles
 </pre></div>
 </div>
 </div>
 <div class="section" id="building-from-sources">
 <h2>Building from sources<a class="headerlink" href="#building-from-sources" title="Permalink to this headline">¶</a></h2>
-<p>If you want full control over the way the code is built, you can built chemfiles from
-sources.</p>
+<p>Provided you have all the required depenencies, you can also build chemfiles
+from sources.</p>
 <div class="section" id="core-library-dependencies">
 <h3>Core library dependencies<a class="headerlink" href="#core-library-dependencies" title="Permalink to this headline">¶</a></h3>
-<p>In order to build the core library, you will need a C++11 compiler, like g++&gt;4.9 or
-clang++&gt;3.3. Chemfiles is tested against GCC, Clang and Intel C++ compilers, and
-is ISO C++11, so it should compile with other compilers as well. Please report
-any sucessfull compilation with other compilers!</p>
-<p>Some optional functionalities of chemfiles needs aditional library. As the
-functionalities are activated when configuring the build, these additionals libraries
-are optionals. Here is the list of these libraries:</p>
+<p>In order to build the core library, you will need a C++11 capable compiler.
+Chemfiles is automatically tested agaist GCC (&gt;= 4.8) on Linux, OSX and Windows
+(mingw-w64); clang (&gt;= 3.3) on Linux and OS X and MSCV 14 on Windows. It was
+also compiled sucessfully with Intel C++ compilers. Please report any sucessfull
+compilation with other compilers!</p>
+<p>Some optional functionalities of chemfiles needs aditional library:</p>
 <ul class="simple">
 <li>The <a class="reference external" href="http://www.unidata.ucar.edu/software/netcdf/">NetCDF</a> library is needed to read and write the AMBER NetCDF format.
 It is available in all the package managers.</li>
 </ul>
-<p>Finally, chemfiles needs uses the <a class="reference external" href="http://cmake.org/">CMake</a> build system, which is also available
-in all the package managers.</p>
+<p>Finally, chemfiles needs uses the <a class="reference external" href="http://cmake.org/">CMake</a> build system, which is available in
+all the package managers.</p>
 <div class="section" id="on-unix-like-systems-linux-os-x">
 <h4>On UNIX-like systems (Linux, OS X, ...)<a class="headerlink" href="#on-unix-like-systems-linux-os-x" title="Permalink to this headline">¶</a></h4>
 <p>All these dependencies can be installed in one command:</p>
@@ -191,9 +191,12 @@ in all the package managers.</p>
 apt-get update
 apt-get install cmake libnetcdf-dev
 
-<span class="c1"># On yum based distributions</span>
-yum install epel-release <span class="c1"># The EPEL repository have the netcdf lib</span>
-yum install cmake netcdf-devel netcdf-cxx-devel
+<span class="c1"># On yum based distribution (CentOS/RHEL)</span>
+yum install epel-release <span class="c1"># The EPEL repository contains the netcdf lib</span>
+yum install cmake netcdf-devel
+
+<span class="c1"># On dnf based distribution (Fedora)</span>
+dnf install cmake netcdf-devel
 
 <span class="c1"># On OS X with Homebrew</span>
 brew tap homebrew/science
@@ -203,10 +206,10 @@ brew install cmake netcdf
 </div>
 <div class="section" id="on-windows">
 <h4>On Windows<a class="headerlink" href="#on-windows" title="Permalink to this headline">¶</a></h4>
-<p>You can use either MSVC 2015 compiler, or <a class="reference external" href="http://mingw-w64.org/doku.php">mingw-w64</a> provided gcc. <a class="reference external" href="http://msys2.github.io/">MSYS2</a> offer a
-package manager to install all the needed libraries. I recomend using it if you have
-no preference over your compiler. After the initial installation steps, you can run
-the following to install a recent C++ compiler:</p>
+<p>You can use either MSVC 2015 compiler, or <a class="reference external" href="http://mingw-w64.org/doku.php">mingw-w64</a> provided gcc. <a class="reference external" href="http://msys2.github.io/">MSYS2</a>
+offer a package manager to install all the needed libraries. I recomend using it
+if you have no preference over your compiler. After the initial installation
+steps, you can run the following to install a recent C++ compiler:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># On 64-bits windows</span>
 pacman -S mingw64/mingw-w64-x86_64-gcc
 
@@ -219,32 +222,25 @@ pacman -S mingw32/mingw-w64-i686-gcc
 </div>
 <div class="section" id="build-steps">
 <h3>Build steps<a class="headerlink" href="#build-steps" title="Permalink to this headline">¶</a></h3>
-<p>You can get the source code from either git, or from the <a class="reference external" href="https://github.com/Luthaf/chemfiles/releases">release</a> page of Github.
-In the later case, just unpack the archive wherever you want the source code to live.
-To get the latest developpement version, use git:</p>
+<p>You can get the source code from either git, or from the <a class="reference external" href="https://github.com/Luthaf/chemfiles/releases">release</a> page of
+Github. In the later case, just unpack the archive wherever you want the source
+code to live. To get the latest developpement version, use git:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> where/you/whant/chemfiles/to/live
 git clone https://github.com/chemfiles/chemfiles
 <span class="nb">cd</span> chemfiles
 </pre></div>
 </div>
-<p>If you want to run the unit and regression tests, you will need the tests data files,
-which are provided as submodules.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>git submodule update --init
-</pre></div>
-</div>
-<p>The following command can build and install chemfiles on a standard POSIX environement.</p>
+<p>The following command build and install chemfiles</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> chemfiles
 mkdir build
 <span class="nb">cd</span> build
 cmake .. <span class="c1"># various options are allowed here</span>
-make
+cmake --build .
 <span class="c1"># if you whant to run the tests before installing:</span>
 ctest
-make install
+cmake --build . --target install
 </pre></div>
 </div>
-<p>To use the other generator from CMake (XCode, VisualStudio, …), please refer to
-the doccumentation of CMake.</p>
 <p>The <strong class="command">cmake</strong> step can be further configured by using the curse-based GUI
 (<strong class="command">ccmake .</strong>) or providing some command-line arguments. Here are the
 most important options:</p>
