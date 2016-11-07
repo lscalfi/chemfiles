@@ -194,14 +194,14 @@ sub-classes.</p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4File8filenameEv">
-<span id="chemfiles::File::filename"></span><span class="target" id="chemfilesclasschemfiles_1_1_file_1af78fa2d30a4938fc61a739c7de5c9790"></span><em class="property">const</em> std::string &amp;<code class="descname">filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4File8filenameEv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK9chemfiles4File8filenameEv">
+<span id="chemfiles::File::filenameC"></span><span class="target" id="chemfilesclasschemfiles_1_1_file_1af78fa2d30a4938fc61a739c7de5c9790"></span><em class="property">const</em> std::string &amp;<code class="descname">filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK9chemfiles4File8filenameEv" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#chemfilesclasschemfiles_1_1_file"><span class="std std-ref">File</span></a> name, i.e. complete path to this file on disk. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles4File4modeEv">
-<span id="chemfiles::File::mode"></span><span class="target" id="chemfilesclasschemfiles_1_1_file_1a35d297a4d86d0c16e52ef544e3174834"></span><a class="reference internal" href="#_CPPv2N9chemfiles4File4ModeE" title="chemfiles::File::Mode">Mode</a> <code class="descname">mode</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles4File4modeEv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK9chemfiles4File4modeEv">
+<span id="chemfiles::File::modeC"></span><span class="target" id="chemfilesclasschemfiles_1_1_file_1a35d297a4d86d0c16e52ef544e3174834"></span><a class="reference internal" href="#_CPPv2N9chemfiles4File4ModeE" title="chemfiles::File::Mode">Mode</a> <code class="descname">mode</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK9chemfiles4File4modeEv" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#chemfilesclasschemfiles_1_1_file"><span class="std std-ref">File</span></a> opening mode. </p>
 </dd></dl>
 
@@ -218,49 +218,49 @@ sub-classes.</p>
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N9chemfiles8TextFile7getlineEv">
-<span id="chemfiles::TextFile::getline"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_text_file_1ab0de0c810515941acaca257807af15cc"></span><em class="property">const</em> std::string &amp;<code class="descname">getline</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile7getlineEv" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::TextFile::getline"></span><span class="target" id="chemfilesclasschemfiles_1_1_text_file_1ab0de0c810515941acaca257807af15cc"></span><em class="property">virtual</em> <em class="property">const</em> std::string &amp;<code class="descname">getline</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile7getlineEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a line from the file. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles8TextFilersERNSt6stringE">
-<span id="chemfiles::TextFile::rshift-operator__ssR"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_text_file_1a596d67dd3b2162aa4fa748c205bd22dc"></span><a class="reference internal" href="#_CPPv2N9chemfiles8TextFileE" title="chemfiles::TextFile">TextFile</a> &amp;<code class="descname">operator&gt;&gt;</code><span class="sig-paren">(</span>std::string &amp;<em>line</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFilersERNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::TextFile::rshift-operator__ssR"></span><span class="target" id="chemfilesclasschemfiles_1_1_text_file_1a596d67dd3b2162aa4fa748c205bd22dc"></span><em class="property">virtual</em> <a class="reference internal" href="#_CPPv2N9chemfiles8TextFileE" title="chemfiles::TextFile">TextFile</a> &amp;<code class="descname">operator&gt;&gt;</code><span class="sig-paren">(</span>std::string &amp;<em>line</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFilersERNSt6stringE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a line from the file, stream version. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles8TextFile9readlinesE6size_t">
-<span id="chemfiles::TextFile::readlines__s"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_text_file_1ad2edad2fb329b13d4e16c30c9fc6c9b2"></span><em class="property">const</em> std::vector&lt;std::string&gt; &amp;<code class="descname">readlines</code><span class="sig-paren">(</span>size_t <em>n</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile9readlinesE6size_t" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::TextFile::readlines__s"></span><span class="target" id="chemfilesclasschemfiles_1_1_text_file_1ad2edad2fb329b13d4e16c30c9fc6c9b2"></span><em class="property">virtual</em> <em class="property">const</em> std::vector&lt;std::string&gt; &amp;<code class="descname">readlines</code><span class="sig-paren">(</span>size_t <em>n</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile9readlinesE6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read `n` lines from the file. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles8TextFile6rewindEv">
-<span id="chemfiles::TextFile::rewind"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_text_file_1ac912871fd4a6fd302226e52b8e359710"></span>void <code class="descname">rewind</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile6rewindEv" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::TextFile::rewind"></span><span class="target" id="chemfilesclasschemfiles_1_1_text_file_1ac912871fd4a6fd302226e52b8e359710"></span><em class="property">virtual</em> void <code class="descname">rewind</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile6rewindEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the file cursor. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles8TextFile6nlinesEv">
-<span id="chemfiles::TextFile::nlines"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_text_file_1ae58894b663678c3b9b9126c7f9f0f1cb"></span>size_t <code class="descname">nlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile6nlinesEv" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::TextFile::nlines"></span><span class="target" id="chemfilesclasschemfiles_1_1_text_file_1ae58894b663678c3b9b9126c7f9f0f1cb"></span><em class="property">virtual</em> size_t <code class="descname">nlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile6nlinesEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of lines in the file. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles8TextFile3eofEv">
-<span id="chemfiles::TextFile::eof"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_text_file_1af61dceb0c51e603a0133c1595c11928f"></span>bool <code class="descname">eof</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile3eofEv" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::TextFile::eof"></span><span class="target" id="chemfilesclasschemfiles_1_1_text_file_1af61dceb0c51e603a0133c1595c11928f"></span><em class="property">virtual</em> bool <code class="descname">eof</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile3eofEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Are we at the end of the file ? </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles8TextFile9writelineERKNSt6stringE">
-<span id="chemfiles::TextFile::writeline__ssCR"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_text_file_1a7abcee9b1e574f4f314545e2e6316a39"></span>void <code class="descname">writeline</code><span class="sig-paren">(</span><em class="property">const</em> std::string&amp;<span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile9writelineERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::TextFile::writeline__ssCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_text_file_1a7abcee9b1e574f4f314545e2e6316a39"></span><em class="property">virtual</em> void <code class="descname">writeline</code><span class="sig-paren">(</span><em class="property">const</em> std::string&amp;<span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile9writelineERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a string to the file. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles8TextFile10writelinesERKNSt6vectorINSt6stringEEE">
-<span id="chemfiles::TextFile::writelines__std::vector:ss:CR"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_text_file_1af5b8633b22ace2d6ce1ecebcb6aa4eaa"></span>void <code class="descname">writelines</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;std::string&gt;&amp;<span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile10writelinesERKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::TextFile::writelines__std::vector:ss:CR"></span><span class="target" id="chemfilesclasschemfiles_1_1_text_file_1af5b8633b22ace2d6ce1ecebcb6aa4eaa"></span><em class="property">virtual</em> void <code class="descname">writelines</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;std::string&gt;&amp;<span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles8TextFile10writelinesERKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a vector of lines to the file. </p>
 </dd></dl>
 

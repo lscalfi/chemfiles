@@ -157,7 +157,7 @@ formats.</p>
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N6Format9read_stepE6size_tR5Frame">
-<span id="Format::read_step__s.FrameR"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_format_1a6f0123869061451f63bd3cbfe28e17a9"></span>void <code class="descname">read_step</code><span class="sig-paren">(</span>size_t <em>step</em>, Frame &amp;<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6Format9read_stepE6size_tR5Frame" title="Permalink to this definition">¶</a></dt>
+<span id="Format::read_step__s.FrameR"></span><span class="target" id="chemfilesclasschemfiles_1_1_format_1a6f0123869061451f63bd3cbfe28e17a9"></span>void <code class="descname">read_step</code><span class="sig-paren">(</span>size_t <em>step</em>, Frame &amp;<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6Format9read_stepE6size_tR5Frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a specific step from the associated file. </p>
 <p>
 This function can throw an exception in case of error. <dl class="docutils">
@@ -175,7 +175,7 @@ This function can throw an exception in case of error. <dl class="docutils">
 
 <dl class="function">
 <dt id="_CPPv2N6Format4readER5Frame">
-<span id="Format::read__FrameR"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_format_1a2ea00a560141414be2a9ca6df7d6eaa0"></span>void <code class="descname">read</code><span class="sig-paren">(</span>Frame &amp;<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6Format4readER5Frame" title="Permalink to this definition">¶</a></dt>
+<span id="Format::read__FrameR"></span><span class="target" id="chemfilesclasschemfiles_1_1_format_1a2ea00a560141414be2a9ca6df7d6eaa0"></span>void <code class="descname">read</code><span class="sig-paren">(</span>Frame &amp;<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6Format4readER5Frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a specific step from the associated file. </p>
 <p>
 This function can throw an exception in case of error. <dl class="docutils">
@@ -191,7 +191,7 @@ This function can throw an exception in case of error. <dl class="docutils">
 
 <dl class="function">
 <dt id="_CPPv2N6Format5writeERK5Frame">
-<span id="Format::write__FrameCR"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_format_1a3d0dd5090644bef622abd1adfd583270"></span>void <code class="descname">write</code><span class="sig-paren">(</span><em class="property">const</em> Frame &amp;<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6Format5writeERK5Frame" title="Permalink to this definition">¶</a></dt>
+<span id="Format::write__FrameCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_format_1a3d0dd5090644bef622abd1adfd583270"></span>void <code class="descname">write</code><span class="sig-paren">(</span><em class="property">const</em> Frame &amp;<em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N6Format5writeERK5Frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a step (frame) to the associated file. </p>
 <p>
 This function can throw an exception in case of error. <dl class="docutils">
@@ -207,7 +207,7 @@ This function can throw an exception in case of error. <dl class="docutils">
 
 <dl class="function">
 <dt id="_CPPv2N9chemfiles6Format6nstepsEv">
-<span id="chemfiles::Format::nsteps"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_format_1ab21a31d4d11bbc0a95079ff74e71292a"></span>size_t <code class="descname">nsteps</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles6Format6nstepsEv" title="Permalink to this definition">¶</a></dt>
+<span id="chemfiles::Format::nsteps"></span><span class="target" id="chemfilesclasschemfiles_1_1_format_1ab21a31d4d11bbc0a95079ff74e71292a"></span><em class="property">virtual</em> size_t <code class="descname">nsteps</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv2N9chemfiles6Format6nstepsEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of frames in the associated file. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -217,8 +217,8 @@ This function can throw an exception in case of error. <dl class="docutils">
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles6Format11descriptionEv">
-<span id="chemfiles::Format::description"></span>virtual <span class="target" id="chemfilesclasschemfiles_1_1_format_1acf6a4c488a14aa184bc3bf79a9dbf875"></span>std::string <code class="descname">description</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const = 0<a class="headerlink" href="#_CPPv2N9chemfiles6Format11descriptionEv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK9chemfiles6Format11descriptionEv">
+<span id="chemfiles::Format::descriptionC"></span><span class="target" id="chemfilesclasschemfiles_1_1_format_1acf6a4c488a14aa184bc3bf79a9dbf875"></span><em class="property">virtual</em> std::string <code class="descname">description</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv2NK9chemfiles6Format11descriptionEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>A short string describing the format. </p>
 </dd></dl>
 

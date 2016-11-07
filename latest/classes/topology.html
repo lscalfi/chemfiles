@@ -166,8 +166,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles8TopologyixE6size_t">
-<span class="target" id="chemfilesclasschemfiles_1_1_topology_1a2f388568626471297806d30d70dd6987"></span><em class="property">const</em> <a class="reference internal" href="atom.html#_CPPv2N9chemfiles4AtomE" title="chemfiles::Atom">Atom</a> &amp;<code class="descname">operator[]</code><span class="sig-paren">(</span>size_t <em>index</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles8TopologyixE6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK9chemfiles8TopologyixE6size_t">
+<span id="chemfiles::Topology::subscript-operator__sC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a2f388568626471297806d30d70dd6987"></span><em class="property">const</em> <a class="reference internal" href="atom.html#_CPPv2N9chemfiles4AtomE" title="chemfiles::Atom">Atom</a> &amp;<code class="descname">operator[]</code><span class="sig-paren">(</span>size_t <em>index</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK9chemfiles8TopologyixE6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a const (non-modifiable) reference to the atom at the position `index` </p>
 </dd></dl>
 
@@ -196,8 +196,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles8Topology6natomsEv">
-<span id="chemfiles::Topology::natoms"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1af3c2cb7d4cb884e8bd077aa1858e4866"></span>size_t <code class="descname">natoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles8Topology6natomsEv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK9chemfiles8Topology6natomsEv">
+<span id="chemfiles::Topology::natomsC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1af3c2cb7d4cb884e8bd077aa1858e4866"></span>size_t <code class="descname">natoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK9chemfiles8Topology6natomsEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of atoms in the topology. </p>
 </dd></dl>
 
@@ -214,38 +214,38 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8Topology6isbondE6size_t6size_t">
-<span id="Topology::isbond__s.s"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1abfacfa2af67338a94a05921cf7314e20"></span>bool <code class="descname">isbond</code><span class="sig-paren">(</span>size_t <em>i</em>, size_t <em>j</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology6isbondE6size_t6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK8Topology6isbondE6size_t6size_t">
+<span id="Topology::isbond__s.sC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1abfacfa2af67338a94a05921cf7314e20"></span>bool <code class="descname">isbond</code><span class="sig-paren">(</span>size_t <em>i</em>, size_t <em>j</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology6isbondE6size_t6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check wether the atoms at indexes `i` and `j` are bonded or not. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8Topology7isangleE6size_t6size_t6size_t">
-<span id="Topology::isangle__s.s.s"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a5a71ab68e72ba9857ffd5eae0bd4872b"></span>bool <code class="descname">isangle</code><span class="sig-paren">(</span>size_t <em>i</em>, size_t <em>j</em>, size_t <em>k</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology7isangleE6size_t6size_t6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK8Topology7isangleE6size_t6size_t6size_t">
+<span id="Topology::isangle__s.s.sC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a5a71ab68e72ba9857ffd5eae0bd4872b"></span>bool <code class="descname">isangle</code><span class="sig-paren">(</span>size_t <em>i</em>, size_t <em>j</em>, size_t <em>k</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology7isangleE6size_t6size_t6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check wether the atoms at indexes `i`, `j` and `k` constitues an angle </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8Topology10isdihedralE6size_t6size_t6size_t6size_t">
-<span id="Topology::isdihedral__s.s.s.s"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a64b1e3b995ad47a7d7c0e451bb964dea"></span>bool <code class="descname">isdihedral</code><span class="sig-paren">(</span>size_t <em>i</em>, size_t <em>j</em>, size_t <em>k</em>, size_t <em>m</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology10isdihedralE6size_t6size_t6size_t6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK8Topology10isdihedralE6size_t6size_t6size_t6size_t">
+<span id="Topology::isdihedral__s.s.s.sC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a64b1e3b995ad47a7d7c0e451bb964dea"></span>bool <code class="descname">isdihedral</code><span class="sig-paren">(</span>size_t <em>i</em>, size_t <em>j</em>, size_t <em>k</em>, size_t <em>m</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology10isdihedralE6size_t6size_t6size_t6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check wether the atoms at indexes `i` `j`, `k` and `m` constitues a dihedral angle </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8Topology5bondsEv">
-<span id="Topology::bonds"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a241821c23858634717cb5eccd2ef8ad8"></span>std::vector&lt;Bond&gt; <code class="descname">bonds</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology5bondsEv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK8Topology5bondsEv">
+<span id="Topology::bondsC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a241821c23858634717cb5eccd2ef8ad8"></span>std::vector&lt;Bond&gt; <code class="descname">bonds</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology5bondsEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the bonds in the system. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8Topology6anglesEv">
-<span id="Topology::angles"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afa7d2548ce0e45bd65ce01464043b2cc"></span>std::vector&lt;Angle&gt; <code class="descname">angles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology6anglesEv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK8Topology6anglesEv">
+<span id="Topology::anglesC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afa7d2548ce0e45bd65ce01464043b2cc"></span>std::vector&lt;Angle&gt; <code class="descname">angles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology6anglesEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the angles in the system. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8Topology9dihedralsEv">
-<span id="Topology::dihedrals"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afbd8d729e1da24a08c087b0a2beec1ae"></span>std::vector&lt;Dihedral&gt; <code class="descname">dihedrals</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology9dihedralsEv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK8Topology9dihedralsEv">
+<span id="Topology::dihedralsC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afbd8d729e1da24a08c087b0a2beec1ae"></span>std::vector&lt;Dihedral&gt; <code class="descname">dihedrals</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology9dihedralsEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the dihedral angles in the system. </p>
 </dd></dl>
 
@@ -263,20 +263,20 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8Topology10are_linkedERK7ResidueRK7Residue">
-<span id="Topology::are_linked__ResidueCR.ResidueCR"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1ae338782ed505d598fa9a4a2e61f9bcb4"></span>bool <code class="descname">are_linked</code><span class="sig-paren">(</span><em class="property">const</em> Residue &amp;<em>res_1</em>, <em class="property">const</em> Residue &amp;<em>res_2</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology10are_linkedERK7ResidueRK7Residue" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK8Topology10are_linkedERK7ResidueRK7Residue">
+<span id="Topology::are_linked__ResidueCR.ResidueCRC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1ae338782ed505d598fa9a4a2e61f9bcb4"></span>bool <code class="descname">are_linked</code><span class="sig-paren">(</span><em class="property">const</em> Residue &amp;<em>res_1</em>, <em class="property">const</em> Residue &amp;<em>res_2</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology10are_linkedERK7ResidueRK7Residue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if two residues are linked together, i.e. if there is a bond between one atom in the first residue and one atom in the second one. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N8Topology7residueE6size_t">
-<span id="Topology::residue__s"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1af3ceda4b28fe4f026c8388927820dc14"></span>optional&lt;<em class="property">const</em> Residue&amp;&gt; <code class="descname">residue</code><span class="sig-paren">(</span>size_t <em>atom</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N8Topology7residueE6size_t" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK8Topology7residueE6size_t">
+<span id="Topology::residue__sC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1af3ceda4b28fe4f026c8388927820dc14"></span>optional&lt;<em class="property">const</em> Residue&amp;&gt; <code class="descname">residue</code><span class="sig-paren">(</span>size_t <em>atom</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology7residueE6size_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the residue containing the `atom` at the given index. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2N9chemfiles8Topology8residuesEv">
-<span id="chemfiles::Topology::residues"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afdea6b211bce5809e34eee3bdeeea2b8"></span><em class="property">const</em> std::vector&lt;Residue&gt; &amp;<code class="descname">residues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9chemfiles8Topology8residuesEv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK9chemfiles8Topology8residuesEv">
+<span id="chemfiles::Topology::residuesC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afdea6b211bce5809e34eee3bdeeea2b8"></span><em class="property">const</em> std::vector&lt;Residue&gt; &amp;<code class="descname">residues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK9chemfiles8Topology8residuesEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all the residues in the topology. </p>
 </dd></dl>
 
