@@ -3,9 +3,15 @@
 Function manipulating ``CHFL_SELECTION``
 ----------------------------------------
 
+.. doxygentypedef:: CHFL_SELECTION
+
 .. doxygenfunction:: chfl_selection
 
+.. doxygenfunction:: chfl_selection_copy
+
 .. doxygenfunction:: chfl_selection_size
+
+.. doxygenfunction:: chfl_selection_string
 
 .. doxygenfunction:: chfl_selection_evalutate
 

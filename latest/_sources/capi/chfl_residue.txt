@@ -3,11 +3,15 @@
 Function manipulating ``CHFL_RESIDUE``
 --------------------------------------
 
+.. doxygentypedef:: CHFL_RESIDUE
+
 .. doxygenfunction:: chfl_residue
 
 .. doxygenfunction:: chfl_residue_for_atom
 
 .. doxygenfunction:: chfl_residue_from_topology
+
+.. doxygenfunction:: chfl_residue_copy
 
 .. doxygenfunction:: chfl_residue_name
 

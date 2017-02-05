@@ -145,175 +145,236 @@
       
   <div class="section" id="function-manipulating-chfl-residue">
 <span id="capi-residue"></span><h1>Function manipulating <code class="docutils literal"><span class="pre">CHFL_RESIDUE</span></code><a class="headerlink" href="#function-manipulating-chfl-residue" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="_CPPv212CHFL_RESIDUE">
+<span id="CHFL_RESIDUE"></span><span class="target" id="chemfilestypes_8h_1ae55e99c97ad4b4a2af16ddecb3fd6c23"></span><em class="property">typedef </em><em class="property">struct</em> <a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> <code class="descclassname"></code><code class="descname">CHFL_RESIDUE</code><a class="headerlink" href="#_CPPv212CHFL_RESIDUE" title="Permalink to this definition">¶</a></dt>
+<dd><p>An opaque type handling a residue.</p>
+<p>A `CHFL_RESIDUE` is a group of atoms belonging to the same logical unit. They can be small molecules, amino-acids in a protein, monomers in polymers, etc. </p>
+</dd></dl>
+
 <dl class="function">
 <dt id="_CPPv212chfl_residuePKc8uint64_t">
-<span id="chfl_residue__cCP.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1aa94fa7916368eb6916c3cb9dabff18dc"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, uint64_t <em>resid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212chfl_residuePKc8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new residue. </p>
-<p><dl class="docutils">
+<span id="chfl_residue__cCP.uint64_t"></span><span class="target" id="chemfilesresidue_8h_1aa94fa7916368eb6916c3cb9dabff18dc"></span><a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<code class="descclassname"></code><code class="descname">chfl_residue</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, uint64_t <em>resid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212chfl_residuePKc8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new residue with the given `name` and residue index `resid`. If the residue has no index, the special value of `uint64_t(-1)` should be used.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">residue</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* handle error */</span>
+<span class="p">}</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>The residue name </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">resid</span></code> - <p>The residue identifier, or `uint64_t(-1)` if the residue do not have an identifier </p>
-</li>
-</ul>
-</dd>
+<dd>A pointer to the residue, or NULL in case of error. You can use `chfl_last_error` to learn about the error. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY8uint64_t">
-<span id="chfl_residue_for_atom__CHFL_TOPOLOGYCPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a66ec65c08ffcf0a86300b8f992c0f0a3"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue_for_atom</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a the residue containing a given atom, or NULL if the atom is not in a residue. </p>
-<p><dl class="docutils">
+<span id="chfl_residue_for_atom__CHFL_TOPOLOGYCPC.uint64_t"></span><span class="target" id="chemfilesresidue_8h_1a66ec65c08ffcf0a86300b8f992c0f0a3"></span><a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<code class="descclassname"></code><code class="descname">chfl_residue_for_atom</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="chfl_topology.html#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a copy of the residue containing the atom at index `i` in the `topology`.</p>
+<p>This function will return `NULL` if the atom is not in a residue, or if the index `i` is bigger than `chfl_topology_atoms_count`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
+
+<span class="c1">// Build topology ...</span>
+
+<span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue_for_atom</span><span class="p">(</span><span class="n">topology</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">residue</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* handle error */</span>
+<span class="p">}</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+<span class="n">chfl_topology_free</span><span class="p">(</span><span class="n">topology</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">topology</span></code> - <p>The topology </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">i</span></code> - <p>The atom index </p>
-</li>
-</ul>
-</dd>
+<dd>A pointer to the residue, or NULL in case of error. You can use `chfl_last_error` to learn about the error. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv226chfl_residue_from_topologyPCK13CHFL_TOPOLOGY8uint64_t">
-<span id="chfl_residue_from_topology__CHFL_TOPOLOGYCPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a73969bd7e41554f526d92201c7741575"></span>CHFL_RESIDUE *<code class="descclassname"></code><code class="descname">chfl_residue_from_topology</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_TOPOLOGY *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv226chfl_residue_from_topologyPCK13CHFL_TOPOLOGY8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a residue from a topology. </p>
-<p><dl class="docutils">
+<span id="chfl_residue_from_topology__CHFL_TOPOLOGYCPC.uint64_t"></span><span class="target" id="chemfilesresidue_8h_1a73969bd7e41554f526d92201c7741575"></span><a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<code class="descclassname"></code><code class="descname">chfl_residue_from_topology</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="chfl_topology.html#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv226chfl_residue_from_topologyPCK13CHFL_TOPOLOGY8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the residue at index `i` from a `topology`.</p>
+<p>If `i` is bigger than the result of `chfl_topology_residues_count`, this function will return `NULL`.</p>
+<p>The residue index in the topology is not always the same as the residue `id`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
+
+<span class="c1">// Build topology ...</span>
+
+<span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue_from_topology</span><span class="p">(</span><span class="n">topology</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">residue</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* handle error */</span>
+<span class="p">}</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+<span class="n">chfl_topology_free</span><span class="p">(</span><span class="n">topology</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">topology</span></code> - <p>The topology </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">i</span></code> - <p>The residue index in the topology. This is not always the same as the `resid`. This value should be between 0 and the result of `chfl_topology_residues_count`. </p>
-</li>
-</ul>
-</dd>
+<dd>A pointer to the residue, or NULL in case of error. You can use `chfl_last_error` to learn about the error. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217chfl_residue_copyPCK12CHFL_RESIDUE">
+<span id="chfl_residue_copy__CHFL_RESIDUECPC"></span><span class="target" id="chemfilesresidue_8h_1a89d3f282ace07f2eef17227a1995d992"></span><a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<code class="descclassname"></code><code class="descname">chfl_residue_copy</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<em class="property">const</em> <em>residue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_residue_copyPCK12CHFL_RESIDUE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a copy of a `residue`.</p>
+<p>The caller of this function should free the associated memory using `chfl_residue_free`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">chfl_residue_copy</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">copy</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* handle error */</span>
+<span class="p">}</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">copy</span><span class="p">);</span>
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A pointer to the new residue, or NULL in case of error. You can use `chfl_last_error` to learn about the error. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv217chfl_residue_namePCK12CHFL_RESIDUEPc8uint64_t">
-<span id="chfl_residue_name__CHFL_RESIDUECPC.cP.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a3b7bb1b5e1eec9b312d4b75f628bc5e2"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_name</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, char *<em>name</em>, uint64_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_residue_namePCK12CHFL_RESIDUEPc8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the name of a residue. </p>
-<p><dl class="docutils">
+<span id="chfl_residue_name__CHFL_RESIDUECPC.cP.uint64_t"></span><span class="target" id="chemfilesresidue_8h_1a3b7bb1b5e1eec9b312d4b75f628bc5e2"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_name</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<em class="property">const</em> <em>residue</em>, char *<em>name</em>, uint64_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_residue_namePCK12CHFL_RESIDUEPc8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of a `residue` in the string buffer `name`.</p>
+<p>The buffer size must be passed in `buffsize`. This function will truncate the residue name to fit in the buffer.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="n">chfl_residue_name</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;water&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>A string buffer to be filled with the name </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">buffsize</span></code> - <p>The size of the string buffer </p>
-</li>
-</ul>
-</dd>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP8uint64_t">
-<span id="chfl_residue_id__CHFL_RESIDUECPC.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1a3b48e210e8c3d444dcd056d604d87d7f"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_id</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, uint64_t *<em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the identifier of a residue in the initial topology file. </p>
-<p><dl class="docutils">
+<span id="chfl_residue_id__CHFL_RESIDUECPC.uint64_tP"></span><span class="target" id="chemfilesresidue_8h_1a3b48e210e8c3d444dcd056d604d87d7f"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_id</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<em class="property">const</em> <em>residue</em>, uint64_t *<em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the index of a `residue` in the initial topology file in the integer pointed to by `id`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="kt">uint64_t</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">chfl_residue_id</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">id</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">id</span></code> - <p>The id of the residue </p>
-</li>
-</ul>
-</dd>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv221chfl_residue_add_atomPC12CHFL_RESIDUE8uint64_t">
-<span id="chfl_residue_add_atom__CHFL_RESIDUEPC.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a7874f12e8137a2c52b67e8eace03644b"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_add_atom</code><span class="sig-paren">(</span>CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_add_atomPC12CHFL_RESIDUE8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the atom at index `i` in the residue. </p>
-<p><dl class="docutils">
+<span id="chfl_residue_add_atom__CHFL_RESIDUEPC.uint64_t"></span><span class="target" id="chemfilesresidue_8h_1a7874f12e8137a2c52b67e8eace03644b"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_add_atom</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<em class="property">const</em> <em>residue</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_add_atomPC12CHFL_RESIDUE8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the atom at index `i` in the `residue`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="n">chfl_residue_add_atom</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">chfl_residue_add_atom</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<span class="n">chfl_residue_add_atom</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">28</span><span class="p">);</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">i</span></code> - <p>The atomic index </p>
-</li>
-</ul>
-</dd>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv224chfl_residue_atoms_countPCK12CHFL_RESIDUEP8uint64_t">
-<span id="chfl_residue_atoms_count__CHFL_RESIDUECPC.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1afcd2b41e6ea7761690cb116908367096"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, uint64_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_residue_atoms_countPCK12CHFL_RESIDUEP8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the number of atoms in a residue. </p>
-<p><dl class="docutils">
+<span id="chfl_residue_atoms_count__CHFL_RESIDUECPC.uint64_tP"></span><span class="target" id="chemfilesresidue_8h_1afcd2b41e6ea7761690cb116908367096"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_atoms_count</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<em class="property">const</em> <em>residue</em>, uint64_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_residue_atoms_countPCK12CHFL_RESIDUEP8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of atoms in a `residue` in the integer pointed to by `size`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="n">chfl_residue_add_atom</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">chfl_residue_add_atom</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<span class="n">chfl_residue_add_atom</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">28</span><span class="p">);</span>
+
+<span class="kt">uint64_t</span> <span class="n">atoms</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">chfl_residue_atoms_count</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">atoms</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">atoms</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">size</span></code> - <p>The size of the residue </p>
-</li>
-</ul>
-</dd>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv221chfl_residue_containsPCK12CHFL_RESIDUE8uint64_tPb">
-<span id="chfl_residue_contains__CHFL_RESIDUECPC.uint64_t.bP"></span><span class="target" id="chemfileschemfiles_8h_1a8bcff52dec265580c548115f1387cccb"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_contains</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_RESIDUE *<em class="property">const</em> <em>residue</em>, uint64_t <em>i</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_containsPCK12CHFL_RESIDUE8uint64_tPb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the atom at index `i` is in the residue. </p>
-<p><dl class="docutils">
+<span id="chfl_residue_contains__CHFL_RESIDUECPC.uint64_t.bP"></span><span class="target" id="chemfilesresidue_8h_1a8bcff52dec265580c548115f1387cccb"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_contains</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<em class="property">const</em> <em>residue</em>, uint64_t <em>i</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_containsPCK12CHFL_RESIDUE8uint64_tPb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the atom at index `i` is in the `residue`, and store the result in `result`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="n">chfl_residue_add_atom</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">chfl_residue_add_atom</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<span class="n">chfl_residue_add_atom</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">28</span><span class="p">);</span>
+
+<span class="kt">bool</span> <span class="n">contained</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="n">chfl_residue_contains</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">contained</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">contained</span> <span class="o">==</span> <span class="nb">true</span><span class="p">);</span>
+
+<span class="n">chfl_residue_contains</span><span class="p">(</span><span class="n">residue</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">contained</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">contained</span> <span class="o">==</span> <span class="nb">false</span><span class="p">);</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">i</span></code> - <p>The atomic index </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">result</span></code> - <p>true if the atom is in the residue, false otherwise </p>
-</li>
-</ul>
-</dd>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv217chfl_residue_freeP12CHFL_RESIDUE">
-<span id="chfl_residue_free__CHFL_RESIDUEP"></span><span class="target" id="chemfileschemfiles_8h_1ada8cae53e7309b02bef62a5897708b75"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_free</code><span class="sig-paren">(</span>CHFL_RESIDUE *<em>residue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_residue_freeP12CHFL_RESIDUE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Destroy a residue, and free the associated memory. </p>
-<p><dl class="docutils">
+<dt id="_CPPv217chfl_residue_freePC12CHFL_RESIDUE">
+<span id="chfl_residue_free__CHFL_RESIDUEPC"></span><span class="target" id="chemfilesresidue_8h_1a84fc1788e76926e855857784bd77893c"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_free</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<em class="property">const</em> <em>residue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_residue_freePC12CHFL_RESIDUE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free the memory associated with a `residue`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">residue</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* handle error */</span>
+<span class="p">}</span>
+
+<span class="n">chfl_residue_free</span><span class="p">(</span><span class="n">residue</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">residue</span></code> - <p>The residue to destroy </p>
-</li>
-</ul>
-</dd>
+<dd>`CHFL_SUCCESS` </dd>
 </dl>
 </p>
 </dd></dl>

@@ -111,7 +111,7 @@
               
                 
   <li>
-    <a href="index.html" title="Previous Chapter: C interface reference"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; C interface r...</span>
+    <a href="index.html" title="Previous Chapter: C interface reference"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; C interface reference</span>
     </a>
   </li>
   <li>
@@ -146,188 +146,132 @@
   <div class="section" id="functions-for-errors-handling">
 <h1>Functions for errors handling<a class="headerlink" href="#functions-for-errors-handling" title="Permalink to this headline">¶</a></h1>
 <p>Apart from the <em>constructor</em> functions (the functions returning pointers to the
-types defined above); all the functions return a status code, which is 0 if
-nothing went wrong, and another value in case of error. The following function
-allow for error handling from the C side.</p>
-<dl class="function">
-<dt id="_CPPv213chfl_strerror11chfl_status">
-<span id="chfl_strerror__chfl_status"></span><span class="target" id="chemfileschemfiles_8h_1a88b709ad9f45e4056d5b5f34a41f1fca"></span><em class="property">const</em> char *<code class="descclassname"></code><code class="descname">chfl_strerror</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213chfl_strerror11chfl_status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the error message corresponding to an error code. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>A null-terminated string encoding the textual representation of the status. </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">code</span></code> - <p>The status code </p>
-</li>
-</ul>
-</dd>
-</dl>
-</p>
+chemfiles types); all the functions return a status code from the
+<code class="docutils literal"><span class="pre">chfl_status</span></code> enum:</p>
+<dl class="type">
+<dt id="_CPPv211chfl_status">
+<span id="chfl_status"></span><span class="target" id="chemfilestypes_8h_1a2f73eb04ff5dac054ef993c530c51b59"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">chfl_status</code><a class="headerlink" href="#_CPPv211chfl_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>`chfl_status` list the possible values for the return status code of chemfiles functions. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv212CHFL_SUCCESS">
+<span id="CHFL_SUCCESS"></span><span class="target" id="chemfilestypes_8h_1a2f73eb04ff5dac054ef993c530c51b59a0faa8eb88fb8bcdbb8fea3699bc8bab2"></span><code class="descname">CHFL_SUCCESS</code> =  0<a class="headerlink" href="#_CPPv212CHFL_SUCCESS" title="Permalink to this definition">¶</a></dt>
+<dd><p>The operation was successful. </p>
 </dd></dl>
 
+<dl class="member">
+<dt id="_CPPv217CHFL_MEMORY_ERROR">
+<span id="CHFL_MEMORY_ERROR"></span><span class="target" id="chemfilestypes_8h_1a2f73eb04ff5dac054ef993c530c51b59aaafa9c392ee2954d1b400b0951ba9ce6"></span><code class="descname">CHFL_MEMORY_ERROR</code> =  1<a class="headerlink" href="#_CPPv217CHFL_MEMORY_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Status code for error concerning memory: out of memory, wrong size for pre-allocated buffers, *etc.* </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv215CHFL_FILE_ERROR">
+<span id="CHFL_FILE_ERROR"></span><span class="target" id="chemfilestypes_8h_1a2f73eb04ff5dac054ef993c530c51b59ab54a0ee991866736a32efb6e9bec2554"></span><code class="descname">CHFL_FILE_ERROR</code> =  2<a class="headerlink" href="#_CPPv215CHFL_FILE_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Status code for error concerning files: the file do not exist, the user does not have rights to open it, *etc.* </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv217CHFL_FORMAT_ERROR">
+<span id="CHFL_FORMAT_ERROR"></span><span class="target" id="chemfilestypes_8h_1a2f73eb04ff5dac054ef993c530c51b59a91a73606f53ba8a2229d4fd3d33b1af1"></span><code class="descname">CHFL_FORMAT_ERROR</code> =  3<a class="headerlink" href="#_CPPv217CHFL_FORMAT_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Status code for error in file formating, i.e. for invalid files. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv220CHFL_SELECTION_ERROR">
+<span id="CHFL_SELECTION_ERROR"></span><span class="target" id="chemfilestypes_8h_1a2f73eb04ff5dac054ef993c530c51b59afe372a55872986a08dcca8a3969983dc"></span><code class="descname">CHFL_SELECTION_ERROR</code> =  4<a class="headerlink" href="#_CPPv220CHFL_SELECTION_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Status code when selection strings are invalid. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv218CHFL_GENERIC_ERROR">
+<span id="CHFL_GENERIC_ERROR"></span><span class="target" id="chemfilestypes_8h_1a2f73eb04ff5dac054ef993c530c51b59a8cbb75bdfcccefb65419de3d3a1d305e"></span><code class="descname">CHFL_GENERIC_ERROR</code> =  5<a class="headerlink" href="#_CPPv218CHFL_GENERIC_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Status code for any other error from Chemfiles. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv214CHFL_CXX_ERROR">
+<span id="CHFL_CXX_ERROR"></span><span class="target" id="chemfilestypes_8h_1a2f73eb04ff5dac054ef993c530c51b59a8b48d2211408e1bc5815229335232aad"></span><code class="descname">CHFL_CXX_ERROR</code> =  6<a class="headerlink" href="#_CPPv214CHFL_CXX_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Status code for error in the C++ standard library. </p>
+</dd></dl>
+
+</dd></dl>
+
+<p>The following function allow to handle errors:</p>
 <dl class="function">
 <dt id="_CPPv215chfl_last_errorv">
-<span id="chfl_last_error__void"></span><span class="target" id="chemfileschemfiles_8h_1a42463a8d7f7b39e35608c54b45cc5a3b"></span><em class="property">const</em> char *<code class="descclassname"></code><code class="descname">chfl_last_error</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_last_errorv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the last error message. </p>
-<p><dl class="docutils">
+<span id="chfl_last_error__void"></span><span class="target" id="chemfileserrors_8h_1a42463a8d7f7b39e35608c54b45cc5a3b"></span><em class="property">const</em> char *<code class="descclassname"></code><code class="descname">chfl_last_error</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_last_errorv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the last error message.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// Generate an error</span>
+<span class="n">chfl_trajectory_open</span><span class="p">(</span><span class="s">&quot;noformat&quot;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">);</span>
+
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">error</span> <span class="o">=</span> <span class="n">chfl_last_error</span><span class="p">();</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="s">&quot;Can not find a format associated with the </span><span class="se">\&quot;\&quot;</span><span class="s"> extension.&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>A null-terminated string encoding the textual representation of the last error. </dd>
+<dd>A null-terminated string containing the last error message </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv217chfl_clear_errorsv">
-<span id="chfl_clear_errors__void"></span><span class="target" id="chemfileschemfiles_8h_1a8422670732257efed91262d3281fcd2b"></span><a class="reference internal" href="#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_clear_errors</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_clear_errorsv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clear the last error message. </p>
-<p><dl class="docutils">
+<span id="chfl_clear_errors__void"></span><span class="target" id="chemfileserrors_8h_1a8422670732257efed91262d3281fcd2b"></span><a class="reference internal" href="#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_clear_errors</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_clear_errorsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the last error message.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// Generate an error</span>
+<span class="n">chfl_trajectory_open</span><span class="p">(</span><span class="s">&quot;noformat&quot;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">);</span>
+
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">error</span> <span class="o">=</span> <span class="n">chfl_last_error</span><span class="p">();</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="n">chfl_clear_errors</span><span class="p">();</span>
+
+<span class="n">error</span> <span class="o">=</span> <span class="n">chfl_last_error</span><span class="p">();</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="type">
-<dt id="_CPPv214CHFL_LOG_LEVEL">
-<span id="CHFL_LOG_LEVEL"></span><span class="target" id="chemfileschemfiles_8h_1a8b9533a01abd47dfde7e2b5bdd5352ce"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">CHFL_LOG_LEVEL</code><a class="headerlink" href="#_CPPv214CHFL_LOG_LEVEL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Available logging level. </p>
-<p><em>Values:</em></p>
-<dl class="member">
-<dt id="_CPPv214CHFL_LOG_ERROR">
-<span id="CHFL_LOG_ERROR"></span><span class="target" id="chemfileschemfiles_8h_1a8b9533a01abd47dfde7e2b5bdd5352ceaee4886dff973137ddbeb2774bde7ce69"></span><code class="descname">CHFL_LOG_ERROR</code> =  0<a class="headerlink" href="#_CPPv214CHFL_LOG_ERROR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Only log on errors. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv216CHFL_LOG_WARNING">
-<span id="CHFL_LOG_WARNING"></span><span class="target" id="chemfileschemfiles_8h_1a8b9533a01abd47dfde7e2b5bdd5352cea749c930fd8e2afa9c8466a906940b4f8"></span><code class="descname">CHFL_LOG_WARNING</code> =  1<a class="headerlink" href="#_CPPv216CHFL_LOG_WARNING" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log warnings and erors. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv213CHFL_LOG_INFO">
-<span id="CHFL_LOG_INFO"></span><span class="target" id="chemfileschemfiles_8h_1a8b9533a01abd47dfde7e2b5bdd5352cea209d3b22d149f96cada6b9c88dcb768c"></span><code class="descname">CHFL_LOG_INFO</code> =  2<a class="headerlink" href="#_CPPv213CHFL_LOG_INFO" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log infos, warnings and errors. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv214CHFL_LOG_DEBUG">
-<span id="CHFL_LOG_DEBUG"></span><span class="target" id="chemfileschemfiles_8h_1a8b9533a01abd47dfde7e2b5bdd5352ceabccf3c91b7e8d1bbd1aeeba656a8909e"></span><code class="descname">CHFL_LOG_DEBUG</code> =  3<a class="headerlink" href="#_CPPv214CHFL_LOG_DEBUG" title="Permalink to this definition">¶</a></dt>
-<dd><p>Log everything. </p>
-</dd></dl>
-
+<dt id="_CPPv221chfl_warning_callback">
+<span id="chfl_warning_callback"></span><span class="target" id="chemfileserrors_8h_1ab55ba591ca72604ef3bbf1a6c213d30a"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">chfl_warning_callback</code>)<span class="sig-paren">(</span><em class="property">const</em> char *message<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_warning_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback type that can be used to process warning events. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv213chfl_loglevelPC16chfl_log_level_t">
-<span id="chfl_loglevel__chfl_log_level_tPC"></span><span class="target" id="chemfileschemfiles_8h_1aee22e418f4ab61bb6c0432efcf074e27"></span><a class="reference internal" href="#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_loglevel</code><span class="sig-paren">(</span>chfl_log_level_t *<em class="property">const</em> <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213chfl_loglevelPC16chfl_log_level_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the current maximal logging level. </p>
-<p><dl class="docutils">
+<dt id="_CPPv225chfl_set_warning_callback21chfl_warning_callback">
+<span id="chfl_set_warning_callback__chfl_warning_callback"></span><span class="target" id="chemfileserrors_8h_1a7962fc0c102c5105193edae28f922458"></span><a class="reference internal" href="#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_set_warning_callback</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv221chfl_warning_callback" title="chfl_warning_callback">chfl_warning_callback</a> <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_set_warning_callback21chfl_warning_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the global warning `callback` to be used for each warning event.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">LAST_WARNING</span><span class="p">[</span><span class="mi">1024</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">warning_callback</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">strncpy</span><span class="p">(</span><span class="n">LAST_WARNING</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="mi">1024</span><span class="p">);</span>
+    <span class="n">LAST_WARNING</span><span class="p">[</span><span class="mi">1023</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">chfl_set_warning_callback</span><span class="p">(</span><span class="n">warning_callback</span><span class="p">);</span>
+
+    <span class="c1">// Generate a warning event</span>
+    <span class="n">chfl_trajectory_open</span><span class="p">(</span><span class="s">&quot;noformat&quot;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">);</span>
+
+    <span class="n">assert</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">LAST_WARNING</span><span class="p">,</span> <span class="s">&quot;Can not find a format associated with the </span><span class="se">\&quot;\&quot;</span><span class="s"> extension.&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">level</span></code> - <p>The logging level </p>
-</li>
-</ul>
-</dd>
+<dd>`CHFL_SUCCESS` </dd>
 </dl>
 </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv217chfl_set_loglevel16chfl_log_level_t">
-<span id="chfl_set_loglevel__chfl_log_level_t"></span><span class="target" id="chemfileschemfiles_8h_1a8ea9478c248dec70dff53b08886cd243"></span><a class="reference internal" href="#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_set_loglevel</code><span class="sig-paren">(</span>chfl_log_level_t <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217chfl_set_loglevel16chfl_log_level_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the current maximal logging level to `level`. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">level</span></code> - <p>The new logging level </p>
-</li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv212chfl_logfilePKc">
-<span id="chfl_logfile__cCP"></span><span class="target" id="chemfileschemfiles_8h_1af034e8751ef1d291fd90aff43c45e0e2"></span><a class="reference internal" href="#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_logfile</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212chfl_logfilePKc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Redirect the logs to `file`, overwriting the file if it exists. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">file</span></code> - <p>The filename for the new log file. </p>
-</li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv215chfl_log_stderrv">
-<span id="chfl_log_stderr__void"></span><span class="target" id="chemfileschemfiles_8h_1a9340505bdcf105c00684d8a1bea7b093"></span><a class="reference internal" href="#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_log_stderr</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_log_stderrv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Redirect the logs to the standard error output. This is enabled by default. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-</dl>
-</p>
-</dd></dl>
-
-<p>The return values for this status code correspond to the following enum:</p>
-<dl class="type">
-<dt id="_CPPv211chfl_status">
-<span id="chfl_status"></span><span class="target" id="chemfileschemfiles_8h_1a2f73eb04ff5dac054ef993c530c51b59"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">chfl_status</code><a class="headerlink" href="#_CPPv211chfl_status" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>Values:</em></p>
-<dl class="member">
-<dt id="_CPPv212CHFL_SUCCESS">
-<span id="CHFL_SUCCESS"></span><span class="target" id="chemfileschemfiles_8h_1a2f73eb04ff5dac054ef993c530c51b59a0faa8eb88fb8bcdbb8fea3699bc8bab2"></span><code class="descname">CHFL_SUCCESS</code> =  0<a class="headerlink" href="#_CPPv212CHFL_SUCCESS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Status code for success. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv217CHFL_MEMORY_ERROR">
-<span id="CHFL_MEMORY_ERROR"></span><span class="target" id="chemfileschemfiles_8h_1a2f73eb04ff5dac054ef993c530c51b59aaafa9c392ee2954d1b400b0951ba9ce6"></span><code class="descname">CHFL_MEMORY_ERROR</code> =  1<a class="headerlink" href="#_CPPv217CHFL_MEMORY_ERROR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Memory error: out of memory, wrong size for arrays parameters, ... </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv215CHFL_FILE_ERROR">
-<span id="CHFL_FILE_ERROR"></span><span class="target" id="chemfileschemfiles_8h_1a2f73eb04ff5dac054ef993c530c51b59ab54a0ee991866736a32efb6e9bec2554"></span><code class="descname">CHFL_FILE_ERROR</code> =  2<a class="headerlink" href="#_CPPv215CHFL_FILE_ERROR" title="Permalink to this definition">¶</a></dt>
-<dd><p>File error: file do not exist, you do not have rights to open it, ... </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv217CHFL_FORMAT_ERROR">
-<span id="CHFL_FORMAT_ERROR"></span><span class="target" id="chemfileschemfiles_8h_1a2f73eb04ff5dac054ef993c530c51b59a91a73606f53ba8a2229d4fd3d33b1af1"></span><code class="descname">CHFL_FORMAT_ERROR</code> =  3<a class="headerlink" href="#_CPPv217CHFL_FORMAT_ERROR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Error in file formating. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv220CHFL_SELECTION_ERROR">
-<span id="CHFL_SELECTION_ERROR"></span><span class="target" id="chemfileschemfiles_8h_1a2f73eb04ff5dac054ef993c530c51b59afe372a55872986a08dcca8a3969983dc"></span><code class="descname">CHFL_SELECTION_ERROR</code> =  4<a class="headerlink" href="#_CPPv220CHFL_SELECTION_ERROR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Error in selection parsing. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv218CHFL_GENERIC_ERROR">
-<span id="CHFL_GENERIC_ERROR"></span><span class="target" id="chemfileschemfiles_8h_1a2f73eb04ff5dac054ef993c530c51b59a8cbb75bdfcccefb65419de3d3a1d305e"></span><code class="descname">CHFL_GENERIC_ERROR</code> =  5<a class="headerlink" href="#_CPPv218CHFL_GENERIC_ERROR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Any other error from Chemfiles. </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv214CHFL_CXX_ERROR">
-<span id="CHFL_CXX_ERROR"></span><span class="target" id="chemfileschemfiles_8h_1a2f73eb04ff5dac054ef993c530c51b59a8b48d2211408e1bc5815229335232aad"></span><code class="descname">CHFL_CXX_ERROR</code> =  6<a class="headerlink" href="#_CPPv214CHFL_CXX_ERROR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Error in the C++ standard library. </p>
-</dd></dl>
-
 </dd></dl>
 
 </div>

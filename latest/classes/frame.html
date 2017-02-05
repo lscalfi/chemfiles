@@ -148,8 +148,7 @@
 <dl class="class">
 <dt id="_CPPv2N9chemfiles5FrameE">
 <span id="chemfiles::Frame"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">Frame</code><a class="headerlink" href="#_CPPv2N9chemfiles5FrameE" title="Permalink to this definition">¶</a></dt>
-<dd><p>A frame contains data from one simulation step. </p>
-<p>The <a class="reference internal" href="#chemfilesclasschemfiles_1_1_frame"><span class="std std-ref">Frame</span></a> class holds data from one step of a simulation: the current topology, the positions, and the velocities of the particles in the system. If some information is missing (topology or velocity or unit cell), the corresponding data is filled with a default value. Specifically:</p>
+<dd><p>A frame contains data from one simulation step The <a class="reference internal" href="#chemfilesclasschemfiles_1_1_frame"><span class="std std-ref">Frame</span></a> class holds data from one step of a simulation: the current topology, the positions, and the velocities of the particles in the system. If some information is missing (topology or velocity or unit cell), the corresponding data is filled with a default value. Specifically:</p>
 <p><ul class="simple">
 <li>`velocities` is the `nullopt` version of `optional&lt;Array3D&gt;`. Here, `optional&lt;T&gt;` refers to the optional template as defined in [std::experimental::optional][optional]</li>
 <li>`cell` is an infinite unit cell;</li>
@@ -157,7 +156,7 @@
 </ul>
 </p>
 <p>[optional]: <a class="reference external" href="http://en.cppreference.com/w/cpp/experimental/optional">http://en.cppreference.com/w/cpp/experimental/optional</a> </p>
-<div class="breathe-sectiondef container">
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N5Frame5FrameEv">
@@ -178,8 +177,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv2NK5Frame5cloneEv">
-<span id="Frame::cloneC"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1acc913e7ab8aba843de50f1c6fde7c317"></span>Frame <code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK5Frame5cloneEv" title="Permalink to this definition">¶</a></dt>
+<dt id="_CPPv2NK9chemfiles5Frame5cloneEv">
+<span id="chemfiles::Frame::cloneC"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1a03908bd309d7629472ff452fa9d637aa"></span><a class="reference internal" href="#_CPPv2N9chemfiles5FrameE" title="chemfiles::Frame">Frame</a> <code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK9chemfiles5Frame5cloneEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a clone (exact copy) of this frame.</p>
 <p>This replace the implicit copy constructor (which is disabled) to make an explicit copy of the frame. </p>
 </dd></dl>
@@ -212,12 +211,6 @@
 <dt id="_CPPv2N5Frame14add_velocitiesEv">
 <span id="Frame::add_velocities"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1acee262e99f26e6db358be73a3abded80"></span>void <code class="descname">add_velocities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5Frame14add_velocitiesEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add velocities to this frame. If velocities are already defined, this functions does nothing. </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2NK5Frame6natomsEv">
-<span id="Frame::natomsC"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1a3873d16cc1d1b3e7bf1d0d4b4485361c"></span>size_t <code class="descname">natoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK5Frame6natomsEv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the number of particles in the system. </p>
 </dd></dl>
 
 <dl class="function">
@@ -266,6 +259,18 @@
 <dt id="_CPPv2N5Frame8add_atomE4Atom8Vector3D8Vector3D">
 <span id="Frame::add_atom__Atom.Vector3D.Vector3D"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1a0bd4ab2359d27103123161321c06b194"></span>void <code class="descname">add_atom</code><span class="sig-paren">(</span>Atom <em>atom</em>, Vector3D <em>position</em>, Vector3D <em>velocity</em> = Vector3D()<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5Frame8add_atomE4Atom8Vector3D8Vector3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an `atom` at the given `position` and optionally with the given `velocity`. The `velocity` value will only be used if this frame contains velocity data. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2NK5Frame6natomsEv">
+<span id="Frame::natomsC"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1a3873d16cc1d1b3e7bf1d0d4b4485361c"></span>size_t <code class="descname">natoms</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK5Frame6natomsEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of atoms in the system. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5Frame6removeE6size_t">
+<span id="Frame::remove__s"></span><span class="target" id="chemfilesclasschemfiles_1_1_frame_1a098ce3757568127c2f329cb4aa8eb7c9"></span>void <code class="descname">remove</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5Frame6removeE6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the atom at index `i` in the system. `i` must be lower than `natoms()`. </p>
 </dd></dl>
 
 <dl class="function">

@@ -148,10 +148,10 @@
 <dl class="class">
 <dt id="_CPPv2N9chemfiles9SelectionE">
 <span id="chemfiles::Selection"></span><span class="target" id="chemfilesclasschemfiles_1_1_selection"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">Selection</code><a class="headerlink" href="#_CPPv2N9chemfiles9SelectionE" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class allow to select atoms in a `Frame`, from a selection language. </p>
+<dd><p>This class allow to select atoms in a `Frame`, from a selection language.</p>
 <p>The selection language is built by combining basic operations. Each basic operation follows the `&lt;selector&gt;[(&lt;variable&gt;)] &lt;operator&gt; </p>
 <p>` structure, where `&lt;operator&gt;` is a comparison operator in `== != &lt; &lt;= &gt; &gt;=`. Refer to the full documentation to know the allowed selectors and how to use them. </p>
-<div class="breathe-sectiondef container">
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N9Selection9SelectionERKNSt6stringE">
@@ -159,9 +159,8 @@
 <dd><p>Create a selection using the given string.</p>
 <p><dl class="docutils">
 <dt><strong>Exceptions</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><a class="reference internal" href="errors.html#chemfilesstructchemfiles_1_1_selection_error"><span class="std std-ref"><span class="pre">SelectionError</span></span></a></code> - <p>if there is a error in the selection string </p>
-</li>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><a class="reference internal" href="errors.html#chemfilesstructchemfiles_1_1_selection_error"><span class="std std-ref"><span class="pre">SelectionError</span></span></a></code>: if there is a error in the selection string </li>
 </ul>
 </dd>
 </dl>
@@ -180,9 +179,8 @@
 <dd><p>Evaluates a selection of size 1 on a given `frame`. This function returns the list of atomic indexes in the frame matching this selection.</p>
 <p><dl class="docutils">
 <dt><strong>Exceptions</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><a class="reference internal" href="errors.html#chemfilesstructchemfiles_1_1_selection_error"><span class="std std-ref"><span class="pre">SelectionError</span></span></a></code> - <p>if the selection size is not 1. </p>
-</li>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><a class="reference internal" href="errors.html#chemfilesstructchemfiles_1_1_selection_error"><span class="std std-ref"><span class="pre">SelectionError</span></span></a></code>: if the selection size is not 1. </li>
 </ul>
 </dd>
 </dl>
@@ -195,6 +193,12 @@
 <dd><p>Size of the matches for this selection. </p>
 </dd></dl>
 
+<dl class="function">
+<dt id="_CPPv2NK9chemfiles9Selection6stringEv">
+<span id="chemfiles::Selection::stringC"></span><span class="target" id="chemfilesclasschemfiles_1_1_selection_1a3811b86b1ff0d9a92071037c744aeca4"></span>std::string <code class="descname">string</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK9chemfiles9Selection6stringEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the string used to build this selection. </p>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -202,7 +206,7 @@
 <dt id="_CPPv2N9chemfiles5MatchE">
 <span id="chemfiles::Match"></span><span class="target" id="chemfilesclasschemfiles_1_1_match"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">Match</code><a class="headerlink" href="#_CPPv2N9chemfiles5MatchE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A match is a set of atomic indexes matching a given selection. The size of a match depends on the associated selection, and can vary from 1 to 4. </p>
-<div class="breathe-sectiondef container">
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2NK9chemfiles5MatchixE6size_t">
@@ -217,7 +221,7 @@
 </dd></dl>
 
 </div>
-<div class="breathe-sectiondef container">
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Static Attributes</p>
 <dl class="member">
 <dt id="_CPPv2N9chemfiles5Match14MAX_MATCH_SIZEE">

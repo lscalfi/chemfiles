@@ -3,9 +3,17 @@
 Function manipulating ``CHFL_CELL``
 -----------------------------------
 
+.. doxygentypedef:: CHFL_CELL
+
 .. doxygenfunction:: chfl_cell
 
+.. doxygenfunction:: chfl_cell_triclinic
+
 .. doxygenfunction:: chfl_cell_from_frame
+
+.. doxygenfunction:: chfl_cell_copy
+
+.. doxygenfunction:: chfl_cell_volume
 
 .. doxygenfunction:: chfl_cell_lengths
 
@@ -17,7 +25,7 @@ Function manipulating ``CHFL_CELL``
 
 .. doxygenfunction:: chfl_cell_matrix
 
-.. doxygenenum:: CHFL_CELL_SHAPE
+.. doxygenenum:: chfl_cell_shape_t
 
 .. doxygenfunction:: chfl_cell_shape
 

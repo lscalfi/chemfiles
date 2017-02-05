@@ -145,93 +145,185 @@
       
   <div class="section" id="function-manipulating-chfl-selection">
 <span id="capi-selection"></span><h1>Function manipulating <code class="docutils literal"><span class="pre">CHFL_SELECTION</span></code><a class="headerlink" href="#function-manipulating-chfl-selection" title="Permalink to this headline">¶</a></h1>
+<dl class="type">
+<dt id="_CPPv214CHFL_SELECTION">
+<span id="CHFL_SELECTION"></span><span class="target" id="chemfilestypes_8h_1a4d83bb22942c7a40c6d78b9597ea1181"></span><em class="property">typedef </em><em class="property">struct</em> <a class="reference internal" href="#_CPPv214CHFL_SELECTION" title="CHFL_SELECTION">CHFL_SELECTION</a> <code class="descclassname"></code><code class="descname">CHFL_SELECTION</code><a class="headerlink" href="#_CPPv214CHFL_SELECTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>An opaque type handling a selection.</p>
+<p>`CHFL_SELECTION` allow to select atoms in a `CHFL_FRAME`, from a selection language. The selection language is built by combining basic operations. Each basic operation follows the `&lt;selector&gt;[(&lt;variable&gt;)] &lt;operator&gt; </p>
+<p>` structure, where `&lt;operator&gt;` is a comparison operator in `== != &lt; &lt;= &gt; &gt;=`. </p>
+</dd></dl>
+
 <dl class="function">
 <dt id="_CPPv214chfl_selectionPKc">
-<span id="chfl_selection__cCP"></span><span class="target" id="chemfileschemfiles_8h_1a43747d4b78e463c98a77dfd264313481"></span>CHFL_SELECTION *<code class="descclassname"></code><code class="descname">chfl_selection</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214chfl_selectionPKc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new selection from the given selection string. </p>
-<p><dl class="docutils">
+<span id="chfl_selection__cCP"></span><span class="target" id="chemfilesselection_8h_1a43747d4b78e463c98a77dfd264313481"></span><a class="reference internal" href="#_CPPv214CHFL_SELECTION" title="CHFL_SELECTION">CHFL_SELECTION</a> *<code class="descclassname"></code><code class="descname">chfl_selection</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214chfl_selectionPKc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new selection from the given `selection` string.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_SELECTION</span><span class="o">*</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">chfl_selection</span><span class="p">(</span><span class="s">&quot;pairs: name(#1) O and name(#2) H&quot;</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">selection</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* handle error */</span>
+<span class="p">}</span>
+
+<span class="n">chfl_selection_free</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>A pointer to the corresponding selection, or NULL in case of error </dd>
+<dd>A pointer to the selection, or NULL in case of error. You can use `chfl_last_error` to learn about the error. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv219chfl_selection_copyPCK14CHFL_SELECTION">
+<span id="chfl_selection_copy__CHFL_SELECTIONCPC"></span><span class="target" id="chemfilesselection_8h_1a254fdbc26fff1c3619e5724ac9485629"></span><a class="reference internal" href="#_CPPv214CHFL_SELECTION" title="CHFL_SELECTION">CHFL_SELECTION</a> *<code class="descclassname"></code><code class="descname">chfl_selection_copy</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv214CHFL_SELECTION" title="CHFL_SELECTION">CHFL_SELECTION</a> *<em class="property">const</em> <em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_selection_copyPCK14CHFL_SELECTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a copy of a `selection`.</p>
+<p>The copy does not contains any state, and `chfl_selection_evalutate` must be called again before using `chfl_selection_matches`.</p>
+<p>The caller of this function should free the associated memory using `chfl_selection_free`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_SELECTION</span><span class="o">*</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">chfl_selection</span><span class="p">(</span><span class="s">&quot;name O&quot;</span><span class="p">);</span>
+<span class="n">CHFL_SELECTION</span><span class="o">*</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">chfl_selection_copy</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">copy</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* handle error */</span>
+<span class="p">}</span>
+
+<span class="n">chfl_selection_free</span><span class="p">(</span><span class="n">copy</span><span class="p">);</span>
+<span class="n">chfl_selection_free</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A pointer to the new selection, or NULL in case of error. You can use `chfl_last_error` to learn about the error. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv219chfl_selection_sizePCK14CHFL_SELECTIONP8uint64_t">
-<span id="chfl_selection_size__CHFL_SELECTIONCPC.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1a29c7523fabfe97b4c4bb976fb8b927a7"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_selection_size</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_SELECTION *<em class="property">const</em> <em>selection</em>, uint64_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_selection_sizePCK14CHFL_SELECTIONP8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the size of the selection, i.e. the number of atoms we are selecting together. </p>
-<p>This value is 1 for the &#8216;atom&#8217; context, 2 for the &#8216;pair&#8217; and &#8216;bond&#8217; context, 3 for the &#8216;three&#8217; and &#8216;angles&#8217; contextes and 4 for the &#8216;four&#8217; and &#8216;dihedral&#8217; contextes.</p>
-<p><dl class="docutils">
+<span id="chfl_selection_size__CHFL_SELECTIONCPC.uint64_tP"></span><span class="target" id="chemfilesselection_8h_1a29c7523fabfe97b4c4bb976fb8b927a7"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_selection_size</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv214CHFL_SELECTION" title="CHFL_SELECTION">CHFL_SELECTION</a> *<em class="property">const</em> <em>selection</em>, uint64_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_selection_sizePCK14CHFL_SELECTIONP8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the size of a `selection` in `size`.</p>
+<p>The size of a selection is the number of atoms we are selecting together. This value is 1 for the &#8216;atom&#8217; context, 2 for the &#8216;pair&#8217; and &#8216;bond&#8217; context, 3 for the &#8216;three&#8217; and &#8216;angles&#8217; contextes and 4 for the &#8216;four&#8217; and &#8216;dihedral&#8217; contextes.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_SELECTION</span><span class="o">*</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">chfl_selection</span><span class="p">(</span><span class="s">&quot;pairs: name(#1) O and name(#2) H&quot;</span><span class="p">);</span>
+
+<span class="kt">uint64_t</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">chfl_selection_size</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="n">chfl_selection_free</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">selection</span></code> - <p>The selection </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">size</span></code> - <p>The size of the selection </p>
-</li>
-</ul>
-</dd>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv221chfl_selection_stringPCK14CHFL_SELECTIONPCc8uint64_t">
+<span id="chfl_selection_string__CHFL_SELECTIONCPC.cPC.uint64_t"></span><span class="target" id="chemfilesselection_8h_1a6141bfca86e9076fe5ce01e0fca44eba"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_selection_string</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv214CHFL_SELECTION" title="CHFL_SELECTION">CHFL_SELECTION</a> *<em class="property">const</em> <em>selection</em>, char *<em class="property">const</em> <em>string</em>, uint64_t <em>buffsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_selection_stringPCK14CHFL_SELECTIONPCc8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the selection string used to create a given `selection` in the `string` buffer.</p>
+<p>The buffer size must be passed in `buffsize`. This function will truncate the selection string to fit in the buffer.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_SELECTION</span><span class="o">*</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">chfl_selection</span><span class="p">(</span><span class="s">&quot;pairs: name(#1) O and name(#2) H&quot;</span><span class="p">);</span>
+
+<span class="kt">char</span> <span class="n">string</span><span class="p">[</span><span class="mi">64</span><span class="p">]</span><span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="n">chfl_selection_string</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">string</span><span class="p">));</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="s">&quot;pairs: name(#1) O and name(#2) H&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="n">chfl_selection_free</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv224chfl_selection_evalutatePC14CHFL_SELECTIONPCK10CHFL_FRAMEP8uint64_t">
-<span id="chfl_selection_evalutate__CHFL_SELECTIONPC.CHFL_FRAMECPC.uint64_tP"></span><span class="target" id="chemfileschemfiles_8h_1a27460e6aa81ea49de3f6737f97df152b"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_selection_evalutate</code><span class="sig-paren">(</span>CHFL_SELECTION *<em class="property">const</em> <em>selection</em>, <em class="property">const</em> CHFL_FRAME *<em class="property">const</em> <em>frame</em>, uint64_t *<em>n_matches</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_selection_evalutatePC14CHFL_SELECTIONPCK10CHFL_FRAMEP8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate a selection for a given frame. </p>
-<p>Use the `chfl_selection_get` function to get the matches for this selection.</p>
-<p><dl class="docutils">
+<span id="chfl_selection_evalutate__CHFL_SELECTIONPC.CHFL_FRAMECPC.uint64_tP"></span><span class="target" id="chemfilesselection_8h_1a4bb84dc13552e396ee78ef99df90ba7e"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_selection_evalutate</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv214CHFL_SELECTION" title="CHFL_SELECTION">CHFL_SELECTION</a> *<em class="property">const</em> <em>selection</em>, <em class="property">const</em> <a class="reference internal" href="chfl_frame.html#_CPPv210CHFL_FRAME" title="CHFL_FRAME">CHFL_FRAME</a> *<em class="property">const</em> <em>frame</em>, uint64_t *<em>nmatches</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_selection_evalutatePC14CHFL_SELECTIONPCK10CHFL_FRAMEP8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate a `selection` for a given `frame`, and store the number of matches in `nmatches`.</p>
+<p>Use the `chfl_selection_matches` function to get the matches for this selection.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_FRAME</span><span class="o">*</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">chfl_frame</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">CHFL_ATOM</span><span class="o">*</span> <span class="n">O</span> <span class="o">=</span> <span class="n">chfl_atom</span><span class="p">(</span><span class="s">&quot;O&quot;</span><span class="p">);</span>
+<span class="n">CHFL_ATOM</span><span class="o">*</span> <span class="n">H</span> <span class="o">=</span> <span class="n">chfl_atom</span><span class="p">(</span><span class="s">&quot;H&quot;</span><span class="p">);</span>
+<span class="n">chfl_frame_add_atom</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">O</span><span class="p">,</span> <span class="p">(</span><span class="n">chfl_vector_t</span><span class="p">){</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="n">chfl_frame_add_atom</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="p">(</span><span class="n">chfl_vector_t</span><span class="p">){</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="n">chfl_frame_add_atom</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="p">(</span><span class="n">chfl_vector_t</span><span class="p">){</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="n">chfl_atom_free</span><span class="p">(</span><span class="n">O</span><span class="p">);</span>
+<span class="n">chfl_atom_free</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+
+<span class="n">CHFL_SELECTION</span><span class="o">*</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">chfl_selection</span><span class="p">(</span><span class="s">&quot;name H&quot;</span><span class="p">);</span>
+
+<span class="kt">uint64_t</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">chfl_selection_evalutate</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="n">chfl_selection_free</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+<span class="n">chfl_frame_free</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">selection</span></code> - <p>The selection </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">frame</span></code> - <p>The frame </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">n_matches</span></code> - <p>The number of matches for the selection </p>
-</li>
-</ul>
-</dd>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv222chfl_selection_matchesPCK14CHFL_SELECTIONA_12chfl_match_t8uint64_t">
-<span id="chfl_selection_matches__CHFL_SELECTIONCPC.chfl_match_tA.uint64_t"></span><span class="target" id="chemfileschemfiles_8h_1a243a7d3c70f463a8940b47943bc80e2d"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_selection_matches</code><span class="sig-paren">(</span><em class="property">const</em> CHFL_SELECTION *<em class="property">const</em> <em>selection</em>, <a class="reference internal" href="#_CPPv212chfl_match_t" title="chfl_match_t">chfl_match_t</a> <em>matches</em>[], uint64_t <em>n_matches</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_selection_matchesPCK14CHFL_SELECTIONA_12chfl_match_t8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the matches for a selection after a call to `chfl_selection_evalutate`. </p>
-<p><dl class="docutils">
+<span id="chfl_selection_matches__CHFL_SELECTIONCPC.chfl_match_tA.uint64_t"></span><span class="target" id="chemfilesselection_8h_1a7821d1bcd805091f7bc91d968cfedd0f"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_selection_matches</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv214CHFL_SELECTION" title="CHFL_SELECTION">CHFL_SELECTION</a> *<em class="property">const</em> <em>selection</em>, <a class="reference internal" href="#_CPPv212chfl_match_t" title="chfl_match_t">chfl_match_t</a> <em>matches</em>[], uint64_t <em>nmatches</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222chfl_selection_matchesPCK14CHFL_SELECTIONA_12chfl_match_t8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the matches for a `selection` after a call to `chfl_selection_evalutate`, in `matches`.</p>
+<p>The size of the `matches` array must be passed in `nmatches`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_FRAME</span><span class="o">*</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">chfl_frame</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">CHFL_ATOM</span><span class="o">*</span> <span class="n">O</span> <span class="o">=</span> <span class="n">chfl_atom</span><span class="p">(</span><span class="s">&quot;O&quot;</span><span class="p">);</span>
+<span class="n">CHFL_ATOM</span><span class="o">*</span> <span class="n">H</span> <span class="o">=</span> <span class="n">chfl_atom</span><span class="p">(</span><span class="s">&quot;H&quot;</span><span class="p">);</span>
+<span class="n">chfl_frame_add_atom</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">O</span><span class="p">,</span> <span class="p">(</span><span class="n">chfl_vector_t</span><span class="p">){</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="n">chfl_frame_add_atom</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="p">(</span><span class="n">chfl_vector_t</span><span class="p">){</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="n">chfl_frame_add_atom</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="p">(</span><span class="n">chfl_vector_t</span><span class="p">){</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="n">chfl_atom_free</span><span class="p">(</span><span class="n">O</span><span class="p">);</span>
+<span class="n">chfl_atom_free</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+
+<span class="n">CHFL_SELECTION</span><span class="o">*</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">chfl_selection</span><span class="p">(</span><span class="s">&quot;name H&quot;</span><span class="p">);</span>
+
+<span class="kt">uint64_t</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">chfl_selection_evalutate</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="n">chfl_match_t</span> <span class="n">matches</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">chfl_selection_matches</span><span class="p">(</span><span class="n">selection</span><span class="p">,</span> <span class="n">matches</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">atoms</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">atoms</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="n">chfl_selection_free</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+<span class="n">chfl_frame_free</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">selection</span></code> - <p>the selection </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">matches</span></code> - <p>a pre-allocated array of size (number of matches) </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">n_matches</span></code> - <p>the number of matches, as indicated by `chfl_selection_evaluate` </p>
-</li>
-</ul>
-</dd>
+<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
 </dl>
 </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv219chfl_selection_freeP14CHFL_SELECTION">
-<span id="chfl_selection_free__CHFL_SELECTIONP"></span><span class="target" id="chemfileschemfiles_8h_1a4cd1a3274e3687031bff76f9b80c6c32"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_selection_free</code><span class="sig-paren">(</span>CHFL_SELECTION *<em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_selection_freeP14CHFL_SELECTION" title="Permalink to this definition">¶</a></dt>
-<dd><p>Destroy a selection, and free the associated memory. </p>
-<p><dl class="docutils">
+<span id="chfl_selection_free__CHFL_SELECTIONP"></span><span class="target" id="chemfilesselection_8h_1a4cd1a3274e3687031bff76f9b80c6c32"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_selection_free</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv214CHFL_SELECTION" title="CHFL_SELECTION">CHFL_SELECTION</a> *<em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219chfl_selection_freeP14CHFL_SELECTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free the memory associated with a `selection`.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_SELECTION</span><span class="o">*</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">chfl_selection</span><span class="p">(</span><span class="s">&quot;pairs: name(#1) O and name(#2) H&quot;</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">selection</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* handle error */</span>
+<span class="p">}</span>
+
+<span class="n">chfl_selection_free</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The status code </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">selection</span></code> - <p>The selection to destroy </p>
-</li>
-</ul>
-</dd>
+<dd>`CHFL_SUCCESS` </dd>
 </dl>
 </p>
 </dd></dl>
@@ -239,9 +331,8 @@
 <dl class="class">
 <dt id="_CPPv212chfl_match_t">
 <span id="chfl_match_t"></span><span class="target" id="chemfilesstructchfl__match__t"></span><em class="property">struct </em><code class="descclassname"></code><code class="descname">chfl_match_t</code><a class="headerlink" href="#_CPPv212chfl_match_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>A match from a selection evaluation. </p>
-<p>A match is a set of atomic indexes matching a given selection. The size of a match depends on the associated selection, and can vary from 1 to 4. </p>
-<div class="breathe-sectiondef container">
+<dd><p>A `chfl_match_t` is a set of atomic indexes matching a given selection. The size of a match depends on the associated selection, and can vary from 1 to `CHFL_MAX_SELECTION_SIZE`. </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
 <dt id="_CPPv2N12chfl_match_t4sizeE">
@@ -252,7 +343,7 @@
 <dl class="member">
 <dt id="_CPPv2N12chfl_match_t5atomsE">
 <span id="chfl_match_t::atoms__uint64_tA"></span><span class="target" id="chemfilesstructchfl__match__t_1a42dfc5f4d3fda00a1b85f5173b49ea53"></span>uint64_t <code class="descname">atoms</code>[CHFL_MAX_SELECTION_SIZE]<a class="headerlink" href="#_CPPv2N12chfl_match_t5atomsE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Indexes matching the associated selection. </p>
+<dd><p>Atomic indexes matching the associated selection. </p>
 </dd></dl>
 
 </div>
@@ -260,7 +351,7 @@
 
 <dl class="macro">
 <dt id="c.CHFL_MAX_SELECTION_SIZE">
-<span class="target" id="chemfileschemfiles_8h_1ac553b6bd9a6db78d5a827156a2cfba09"></span><code class="descname">CHFL_MAX_SELECTION_SIZE</code><a class="headerlink" href="#c.CHFL_MAX_SELECTION_SIZE" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="chemfilesselection_8h_1ac553b6bd9a6db78d5a827156a2cfba09"></span><code class="descname">CHFL_MAX_SELECTION_SIZE</code><a class="headerlink" href="#c.CHFL_MAX_SELECTION_SIZE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximal size for a selection match. </p>
 </dd></dl>
 

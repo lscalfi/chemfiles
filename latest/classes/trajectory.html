@@ -148,9 +148,9 @@
 <dl class="class">
 <dt id="_CPPv2N9chemfiles10TrajectoryE">
 <span id="chemfiles::Trajectory"></span><span class="target" id="chemfilesclasschemfiles_1_1_trajectory"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">Trajectory</code><a class="headerlink" href="#_CPPv2N9chemfiles10TrajectoryE" title="Permalink to this definition">¶</a></dt>
-<dd><p>A <a class="reference internal" href="#chemfilesclasschemfiles_1_1_trajectory"><span class="std std-ref">Trajectory</span></a> is a chemistry file on the hard drive. It is the main entry point of the chemfiles library. </p>
-<p>A <a class="reference internal" href="#chemfilesclasschemfiles_1_1_trajectory"><span class="std std-ref">Trajectory</span></a> is made with a <a class="reference internal" href="../devdoc/file.html#chemfilesclasschemfiles_1_1_file"><span class="std std-ref">File</span></a> and a <a class="reference internal" href="../devdoc/format.html#chemfilesclasschemfiles_1_1_format"><span class="std std-ref">Format</span></a>. The <a class="reference internal" href="../devdoc/file.html#chemfilesclasschemfiles_1_1_file"><span class="std std-ref">File</span></a> implements all the physical operations, while the <a class="reference internal" href="../devdoc/format.html#chemfilesclasschemfiles_1_1_format"><span class="std std-ref">Format</span></a> provides a way to interpret the file. </p>
-<div class="breathe-sectiondef container">
+<dd><p>A `Trajectory` is a chemistry file on the hard drive. It is the entry point of the chemfiles library.</p>
+<p>A `Trajectory` is made with a `File` and a `Format`. The `File` implements all the physical operations, while the `Format` provides a way to interpret the file. </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N10Trajectory10TrajectoryERKNSt6stringEcRKNSt6stringE">
@@ -158,13 +158,10 @@
 <dd><p>Open a file, automatically gessing the file format and type from the extension.</p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">filename</span></code> - <p>The file path. In `w` or `a` modes, the file is created if it does not exist yet. In `r` mode, an exception is thrown is the file does not exist yet. </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">mode</span></code> - <p>Opening mode for the file. Default mode is `r` for read. Other supported modes depends on the underlying format and are `w` for write, and `a` for append. `w` mode discard any previously existing file. </p>
-</li>
-<li><code class="first docutils literal"><span class="pre">format</span></code> - <p>Specific format to use. Needed when there is no way to guess the format from the extension of the file, or when this guess would be wrong. </p>
-</li>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal"><span class="pre">filename</span></code>: The file path. In `w` or `a` modes, the file is created if it does not exist yet. In `r` mode, an exception is thrown is the file does not exist yet. </li>
+<li><code class="docutils literal"><span class="pre">mode</span></code>: Opening mode for the file. Default mode is `r` for read. Other supported modes depends on the underlying format and are `w` for write, and `a` for append. `w` mode discard any previously existing file. </li>
+<li><code class="docutils literal"><span class="pre">format</span></code>: Specific format to use. Needed when there is no way to guess the format from the extension of the file, or when this guess would be wrong. </li>
 </ul>
 </dd>
 </dl>

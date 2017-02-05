@@ -150,8 +150,8 @@
 <span id="chemfiles::Topology"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology"></span><em class="property">class </em><code class="descclassname">chemfiles::</code><code class="descname">Topology</code><a class="headerlink" href="#_CPPv2N9chemfiles8TopologyE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A topology contains the definition of all the atoms in the system, and the liaisons between the particles (bonds, angles, dihedrals, ...).</p>
 <p>Only the atoms and the bonds are stored, the angles and the dihedrals are computed automaticaly.</p>
-<p>Iterating over a <a class="reference internal" href="#chemfilesclasschemfiles_1_1_topology"><span class="std std-ref">Topology</span></a> will yield the atoms in the system. </p>
-<div class="breathe-sectiondef container">
+<p>Iterating over a `Topology` will yield the atoms in the system. </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
 <dt id="_CPPv2N9chemfiles8Topology8TopologyEv">
@@ -179,8 +179,8 @@
 
 <dl class="function">
 <dt id="_CPPv2N8Topology6removeE6size_t">
-<span id="Topology::remove__s"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a34fc18521d1e48a09ccfb9793d376527"></span>void <code class="descname">remove</code><span class="sig-paren">(</span>size_t <em>idx</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8Topology6removeE6size_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete an atom in the system. If `idx` is out of bounds, do nothing. </p>
+<span id="Topology::remove__s"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1aa0a4e8235e6832b4c58c32a60dfe937e"></span>void <code class="descname">remove</code><span class="sig-paren">(</span>size_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N8Topology6removeE6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the atom at index `i` in the system. `i` must be lower than `natoms()`. </p>
 </dd></dl>
 
 <dl class="function">
@@ -233,19 +233,19 @@
 
 <dl class="function">
 <dt id="_CPPv2NK8Topology5bondsEv">
-<span id="Topology::bondsC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a241821c23858634717cb5eccd2ef8ad8"></span>std::vector&lt;Bond&gt; <code class="descname">bonds</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology5bondsEv" title="Permalink to this definition">¶</a></dt>
+<span id="Topology::bondsC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a75438e9cf44e34f852f448a759293609"></span><em class="property">const</em> std::vector&lt;Bond&gt; &amp;<code class="descname">bonds</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology5bondsEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the bonds in the system. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2NK8Topology6anglesEv">
-<span id="Topology::anglesC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afa7d2548ce0e45bd65ce01464043b2cc"></span>std::vector&lt;Angle&gt; <code class="descname">angles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology6anglesEv" title="Permalink to this definition">¶</a></dt>
+<span id="Topology::anglesC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1ae87526ed19bc15d17bed41c6a9b7ef4b"></span><em class="property">const</em> std::vector&lt;Angle&gt; &amp;<code class="descname">angles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology6anglesEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the angles in the system. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2NK8Topology9dihedralsEv">
-<span id="Topology::dihedralsC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1afbd8d729e1da24a08c087b0a2beec1ae"></span>std::vector&lt;Dihedral&gt; <code class="descname">dihedrals</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology9dihedralsEv" title="Permalink to this definition">¶</a></dt>
+<span id="Topology::dihedralsC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a25d4ad43cab36e37fdf7c8476d393e29"></span><em class="property">const</em> std::vector&lt;Dihedral&gt; &amp;<code class="descname">dihedrals</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology9dihedralsEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the dihedral angles in the system. </p>
 </dd></dl>
 
@@ -264,8 +264,9 @@
 
 <dl class="function">
 <dt id="_CPPv2NK8Topology10are_linkedERK7ResidueRK7Residue">
-<span id="Topology::are_linked__ResidueCR.ResidueCRC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1ae338782ed505d598fa9a4a2e61f9bcb4"></span>bool <code class="descname">are_linked</code><span class="sig-paren">(</span><em class="property">const</em> Residue &amp;<em>res_1</em>, <em class="property">const</em> Residue &amp;<em>res_2</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology10are_linkedERK7ResidueRK7Residue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if two residues are linked together, i.e. if there is a bond between one atom in the first residue and one atom in the second one. </p>
+<span id="Topology::are_linked__ResidueCR.ResidueCRC"></span><span class="target" id="chemfilesclasschemfiles_1_1_topology_1a75be4e3c868be1ad5a351913a119eeef"></span>bool <code class="descname">are_linked</code><span class="sig-paren">(</span><em class="property">const</em> Residue &amp;<em>first</em>, <em class="property">const</em> Residue &amp;<em>second</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv2NK8Topology10are_linkedERK7ResidueRK7Residue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if two residues are linked together, i.e. if there is a bond between one atom in the `first` residue and one atom in the `second` one.</p>
+<p>If `first == second`, this function returns `true`. </p>
 </dd></dl>
 
 <dl class="function">

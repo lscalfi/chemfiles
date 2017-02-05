@@ -35,7 +35,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="Chemfiles 0.7.0-dev documentation" href="../index.html" />
     <link rel="next" title="Functions for errors handling" href="errors.html" />
-    <link rel="prev" title="Errors and exceptions" href="../classes/errors.html" />
+    <link rel="prev" title="Errors and warnings" href="../classes/errors.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -110,7 +110,7 @@
               
                 
   <li>
-    <a href="../classes/errors.html" title="Previous Chapter: Errors and exceptions"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Errors and ex...</span>
+    <a href="../classes/errors.html" title="Previous Chapter: Errors and warnings"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Errors and warnings</span>
     </a>
   </li>
   <li>
@@ -144,10 +144,9 @@
       
   <div class="section" id="c-interface-reference">
 <span id="c-api"></span><h1>C interface reference<a class="headerlink" href="#c-interface-reference" title="Permalink to this headline">¶</a></h1>
-<p>The C interface is define in the <code class="docutils literal"><span class="pre">chemfiles.h</span></code> header, which should be
-included in all the programs using chemfiles. All the functions and enums have a
-<code class="docutils literal"><span class="pre">chfl_</span></code> prefix indicating the provenance of the functions. The types are
-defined as opaque pointer types, in all caps. The following types are defined:</p>
+<p>The C interface is define in the <code class="docutils literal"><span class="pre">chemfiles.h</span></code>, in which all the functions and
+enums have a <code class="docutils literal"><span class="pre">chfl_</span></code> prefix for namespacing. Main chemfiles types are the
+following opaque pointer types:</p>
 <ul class="simple">
 <li><a class="reference internal" href="chfl_trajectory.html#capi-trajectory"><span class="std std-ref">CHFL_TRAJECTORY</span></a> maps to the <a class="reference internal" href="../classes/trajectory.html#class-trajectory"><span class="std std-ref">Trajectory</span></a> class;</li>
 <li><a class="reference internal" href="chfl_frame.html#capi-frame"><span class="std std-ref">CHFL_FRAME</span></a> maps to the <a class="reference internal" href="../classes/frame.html#class-frame"><span class="std std-ref">Frame</span></a> class;</li>
@@ -161,14 +160,24 @@ defined as opaque pointer types, in all caps. The following types are defined:</
 Constructors functions (functions returning pointers to types defined above)
 return freshly allocated memory, and calling the <code class="docutils literal"><span class="pre">chfl_*_free</span></code> functions
 return the corresponding memory to the operating system.</p>
-<p>In addition to the functions below, the <a class="reference internal" href="../classes/index.html#exported-macro"><span class="std std-ref">same macro</span></a> as in
-the C++ interface are defined, and the <code class="docutils literal"><span class="pre">chfl_version</span></code> function allow to access
-the version of the Chemfiles library.</p>
+<dl class="type">
+<dt id="_CPPv213chfl_vector_t">
+<span id="chfl_vector_t"></span><span class="target" id="chemfilestypes_8h_1adaded2046d6535bc7d664692b04d9328"></span><em class="property">typedef </em>double <code class="descclassname"></code><code class="descname">chfl_vector_t</code>[3]<a class="headerlink" href="#_CPPv213chfl_vector_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>A 3-dimmensional vector for the chemfiles interface. </p>
+</dd></dl>
+
+<p><code class="docutils literal"><span class="pre">chemfiles.h</span></code> also exports the <a class="reference internal" href="../classes/index.html#exported-macro"><span class="std std-ref">same macro</span></a> as in the
+C++ interface, and the <code class="docutils literal"><span class="pre">chfl_version</span></code> function allow to access the version of
+the Chemfiles library.</p>
 <dl class="function">
 <dt id="_CPPv212chfl_versionv">
-<span id="chfl_version__void"></span><span class="target" id="chemfileschemfiles_8h_1a999b9859e547a4a8f6d054cdaa86455e"></span><em class="property">const</em> char *<code class="descclassname"></code><code class="descname">chfl_version</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212chfl_versionv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the version of the chemfiles library. </p>
-<p><dl class="docutils">
+<span id="chfl_version__void"></span><span class="target" id="chemfilestypes_8h_1a999b9859e547a4a8f6d054cdaa86455e"></span><em class="property">const</em> char *<code class="descclassname"></code><code class="descname">chfl_version</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212chfl_versionv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the version of the chemfiles library.</p>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">version</span> <span class="o">=</span> <span class="n">chfl_version</span><span class="p">();</span>
+<span class="n">assert</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="n">CHEMFILES_VERSION</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+ <dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>A null-terminated string containing the version of Chemfiles. </dd>
 </dl>
