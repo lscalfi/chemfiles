@@ -313,34 +313,16 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv233chfl_trajectory_set_topology_filePC15CHFL_TRAJECTORYPKc">
-<span id="chfl_trajectory_set_topology_file__CHFL_TRAJECTORYPC.cCP"></span><span class="target" id="chemfilestrajectory_8h_1a402dcf5d65c8b4b61ef0ca023c3ddc1e"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_trajectory_set_topology_file</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv215CHFL_TRAJECTORY" title="CHFL_TRAJECTORY">CHFL_TRAJECTORY</a> *<em class="property">const</em> <em>trajectory</em>, <em class="property">const</em> char *<em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv233chfl_trajectory_set_topology_filePC15CHFL_TRAJECTORYPKc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the topology associated with a `trajectory` by reading the first frame of the file at the given `path`; and extracting the topology of this frame.</p>
+<dt id="_CPPv229chfl_trajectory_topology_filePC15CHFL_TRAJECTORYPKcPKc">
+<span id="chfl_trajectory_topology_file__CHFL_TRAJECTORYPC.cCP.cCP"></span><span class="target" id="chemfilestrajectory_8h_1ae629e99d76b80051f3c9a3d6d2eb100d"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_trajectory_topology_file</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv215CHFL_TRAJECTORY" title="CHFL_TRAJECTORY">CHFL_TRAJECTORY</a> *<em class="property">const</em> <em>trajectory</em>, <em class="property">const</em> char *<em>path</em>, <em class="property">const</em> char *<em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv229chfl_trajectory_topology_filePC15CHFL_TRAJECTORYPKcPKc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the topology associated with a trajectory by reading the first frame of the file at the given `path` using the file format in `format`; and extracting the topology of this frame.</p>
+<p>This is needed when the topology file format does not match the extension, or when there is not standard extension for this format. If `format` is an empty string or `NULL`, the format will be guessed from the extension.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TRAJECTORY</span><span class="o">*</span> <span class="n">trajectory</span> <span class="o">=</span> <span class="n">chfl_trajectory_open</span><span class="p">(</span><span class="s">&quot;water.nc&quot;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">);</span>
 
-<span class="n">chfl_trajectory_set_topology_file</span><span class="p">(</span><span class="n">trajectory</span><span class="p">,</span> <span class="s">&quot;water.pdb&quot;</span><span class="p">);</span>
-
+<span class="n">chfl_trajectory_topology_file</span><span class="p">(</span><span class="n">trajectory</span><span class="p">,</span> <span class="s">&quot;water.pdb&quot;</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 <span class="cm">/* Reading the trajectory will use topology from water.pdb */</span>
 
-<span class="n">chfl_trajectory_close</span><span class="p">(</span><span class="n">trajectory</span><span class="p">);</span>
-</pre></div>
-</div>
- <dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The operation status code. You can use `chfl_last_error` to learn about the error if the status code is not `CHFL_SUCCESS`. </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv240chfl_trajectory_set_topology_with_formatPC15CHFL_TRAJECTORYPKcPKc">
-<span id="chfl_trajectory_set_topology_with_format__CHFL_TRAJECTORYPC.cCP.cCP"></span><span class="target" id="chemfilestrajectory_8h_1a32c9301b5d80f9e5019ee2cef1bd3d3a"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_trajectory_set_topology_with_format</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv215CHFL_TRAJECTORY" title="CHFL_TRAJECTORY">CHFL_TRAJECTORY</a> *<em class="property">const</em> <em>trajectory</em>, <em class="property">const</em> char *<em>path</em>, <em class="property">const</em> char *<em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv240chfl_trajectory_set_topology_with_formatPC15CHFL_TRAJECTORYPKcPKc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the topology associated with a trajectory by reading the first frame of the file at the given `path` using the file format in `format`; and extracting the topology of this frame.</p>
-<p>This is needed when the topology file format does not match the extension, or when there is not standard extension for this format. If `format` is an empty string, the format will be guessed from the extension.</p>
-<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TRAJECTORY</span><span class="o">*</span> <span class="n">trajectory</span> <span class="o">=</span> <span class="n">chfl_trajectory_open</span><span class="p">(</span><span class="s">&quot;water.nc&quot;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">);</span>
-
-<span class="n">chfl_trajectory_set_topology_with_format</span><span class="p">(</span><span class="n">trajectory</span><span class="p">,</span> <span class="s">&quot;water.topo&quot;</span><span class="p">,</span> <span class="s">&quot;PDB&quot;</span><span class="p">);</span>
-
+<span class="n">chfl_trajectory_topology_file</span><span class="p">(</span><span class="n">trajectory</span><span class="p">,</span> <span class="s">&quot;water.topo&quot;</span><span class="p">,</span> <span class="s">&quot;PDB&quot;</span><span class="p">);</span>
 <span class="cm">/* Reading the trajectory will use topology from water.topo using the PDB format. */</span>
 
 <span class="n">chfl_trajectory_close</span><span class="p">(</span><span class="n">trajectory</span><span class="p">);</span>
