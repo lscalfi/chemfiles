@@ -186,8 +186,9 @@
 <span id="chfl_atom_from_frame__CHFL_FRAMECPC.uint64_t"></span><span class="target" id="chemfilesatom_8h_1ab167b45535af0926cbb0f64485e0ce0a"></span><a class="reference internal" href="#_CPPv29CHFL_ATOM" title="CHFL_ATOM">CHFL_ATOM</a> *<code class="descclassname"></code><code class="descname">chfl_atom_from_frame</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="chfl_frame.html#_CPPv210CHFL_FRAME" title="CHFL_FRAME">CHFL_FRAME</a> *<em class="property">const</em> <em>frame</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_atom_from_framePCK10CHFL_FRAME8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a copy of the atom at index `i` from a `frame`</p>
 <p>The caller of this function should free the associated memory using `chfl_atom_free`.</p>
-<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_FRAME</span><span class="o">*</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">chfl_frame</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_FRAME</span><span class="o">*</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">chfl_frame</span><span class="p">();</span>
 <span class="cm">/* Update the frame, or read it from a file */</span>
+<span class="n">chfl_frame_resize</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
 
 <span class="n">CHFL_ATOM</span><span class="o">*</span> <span class="n">atom</span> <span class="o">=</span> <span class="n">chfl_atom_from_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 
