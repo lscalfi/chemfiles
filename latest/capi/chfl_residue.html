@@ -149,13 +149,14 @@
 <dt id="_CPPv212CHFL_RESIDUE">
 <span id="CHFL_RESIDUE"></span><span class="target" id="chemfilestypes_8h_1ae55e99c97ad4b4a2af16ddecb3fd6c23"></span><em class="property">typedef </em><em class="property">struct</em> <a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> <code class="descclassname"></code><code class="descname">CHFL_RESIDUE</code><a class="headerlink" href="#_CPPv212CHFL_RESIDUE" title="Permalink to this definition">¶</a></dt>
 <dd><p>An opaque type handling a residue.</p>
-<p>A `CHFL_RESIDUE` is a group of atoms belonging to the same logical unit. They can be small molecules, amino-acids in a protein, monomers in polymers, etc. </p>
+<p>A `CHFL_RESIDUE` is a group of atoms belonging to the same logical unit. They can be small molecules, amino-acids in a protein, monomers in polymers, etc.* </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv212chfl_residuePKc8uint64_t">
 <span id="chfl_residue__cCP.uint64_t"></span><span class="target" id="chemfilesresidue_8h_1aa94fa7916368eb6916c3cb9dabff18dc"></span><a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<code class="descclassname"></code><code class="descname">chfl_residue</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, uint64_t <em>resid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212chfl_residuePKc8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new residue with the given `name` and residue index `resid`. If the residue has no index, the special value of `uint64_t(-1)` should be used.</p>
+<dd><p>Create a new residue with the given `name` and residue identifier `resid`. If the residue has no identifier, the special value of `uint64_t(-1)` should be used.</p>
+<p>The caller of this function should free the allocated memory using `chfl_residue_free`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">residue</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
@@ -177,6 +178,7 @@
 <span id="chfl_residue_for_atom__CHFL_TOPOLOGYCPC.uint64_t"></span><span class="target" id="chemfilesresidue_8h_1a66ec65c08ffcf0a86300b8f992c0f0a3"></span><a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<code class="descclassname"></code><code class="descname">chfl_residue_for_atom</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="chfl_topology.html#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221chfl_residue_for_atomPCK13CHFL_TOPOLOGY8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a copy of the residue containing the atom at index `i` in the `topology`.</p>
 <p>This function will return `NULL` if the atom is not in a residue, or if the index `i` is bigger than `chfl_topology_atoms_count`.</p>
+<p>The caller of this function should free the allocated memory using `chfl_residue_free`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
 
 <span class="c1">// Build topology ...</span>
@@ -204,6 +206,7 @@
 <dd><p>Get the residue at index `i` from a `topology`.</p>
 <p>If `i` is bigger than the result of `chfl_topology_residues_count`, this function will return `NULL`.</p>
 <p>The residue index in the topology is not always the same as the residue `id`.</p>
+<p>The caller of this function should free the allocated memory using `chfl_residue_free`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
 
 <span class="c1">// Build topology ...</span>
@@ -272,7 +275,7 @@
 <dl class="function">
 <dt id="_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP8uint64_t">
 <span id="chfl_residue_id__CHFL_RESIDUECPC.uint64_tP"></span><span class="target" id="chemfilesresidue_8h_1a3b48e210e8c3d444dcd056d604d87d7f"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_residue_id</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<em class="property">const</em> <em>residue</em>, uint64_t *<em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215chfl_residue_idPCK12CHFL_RESIDUEP8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the index of a `residue` in the initial topology file in the integer pointed to by `id`.</p>
+<dd><p>Get the identifier of a `residue` in the initial topology file in the integer pointed to by `id`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;water&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 
 <span class="kt">uint64_t</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>

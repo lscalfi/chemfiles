@@ -149,13 +149,14 @@
 <dt id="_CPPv213CHFL_TOPOLOGY">
 <span id="CHFL_TOPOLOGY"></span><span class="target" id="chemfilestypes_8h_1a76298a301b263e56aad71a91d87e7cb4"></span><em class="property">typedef </em><em class="property">struct</em> <a class="reference internal" href="#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> <code class="descclassname"></code><code class="descname">CHFL_TOPOLOGY</code><a class="headerlink" href="#_CPPv213CHFL_TOPOLOGY" title="Permalink to this definition">¶</a></dt>
 <dd><p>An opaque type handling a topology.</p>
-<p>A `CHFL_TOPOLOGY` contains the definition of all the atoms in the system, and the liaisons between the particles (bonds, angles, dihedrals, ...). </p>
+<p>A `CHFL_TOPOLOGY` contains the definition of all the atoms in the system, and the liaisons between the atoms (bonds, angles, dihedrals, ...). It will also contain all the residues information if it is available. </p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv213chfl_topologyv">
 <span id="chfl_topology__void"></span><span class="target" id="chemfilestopology_8h_1a586a44d41a0ba1b88d9c846be498e556"></span><a class="reference internal" href="#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<code class="descclassname"></code><code class="descname">chfl_topology</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213chfl_topologyv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new empty topology.</p>
+<p>The caller of this function should free the associated memory using `chfl_topology_free`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">topology</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
@@ -176,6 +177,7 @@
 <dt id="_CPPv224chfl_topology_from_framePCK10CHFL_FRAME">
 <span id="chfl_topology_from_frame__CHFL_FRAMECPC"></span><span class="target" id="chemfilestopology_8h_1ac91a1cc968ac9f7fe03e274537c9ea15"></span><a class="reference internal" href="#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<code class="descclassname"></code><code class="descname">chfl_topology_from_frame</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="chfl_frame.html#_CPPv210CHFL_FRAME" title="CHFL_FRAME">CHFL_FRAME</a> *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_topology_from_framePCK10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a copy of the topology of a `frame`.</p>
+<p>The caller of this function should free the associated memory using `chfl_topology_free`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_FRAME</span><span class="o">*</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">chfl_frame</span><span class="p">();</span>
 <span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology_from_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
 
@@ -253,7 +255,7 @@
 <dl class="function">
 <dt id="_CPPv220chfl_topology_resizePC13CHFL_TOPOLOGY8uint64_t">
 <span id="chfl_topology_resize__CHFL_TOPOLOGYPC.uint64_t"></span><span class="target" id="chemfilestopology_8h_1a25b707d45018253e3d933f86b40aa8a0"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_topology_resize</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<em class="property">const</em> <em>topology</em>, uint64_t <em>natoms</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_resizePC13CHFL_TOPOLOGY8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Resize the `topology` to hold `natoms` atoms. If the new number of atoms is bigger than the current number, new atoms will be created with an empty name and type.</p>
+<dd><p>Resize the `topology` to hold `natoms` atoms. If the new number of atoms is bigger than the current number, new atoms will be created with an empty name and type. If it is lower than the current number of atoms, the last atoms will be removed, together with the associated bonds, angles and dihedrals.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
 
 <span class="n">chfl_topology_resize</span><span class="p">(</span><span class="n">topology</span><span class="p">,</span> <span class="mi">67</span><span class="p">);</span>
@@ -302,7 +304,7 @@
 <dt id="_CPPv220chfl_topology_removePC13CHFL_TOPOLOGY8uint64_t">
 <span id="chfl_topology_remove__CHFL_TOPOLOGYPC.uint64_t"></span><span class="target" id="chemfilestopology_8h_1a49fdfe76b4f665e01c70f6a53b107e80"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_topology_remove</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_topology_removePC13CHFL_TOPOLOGY8uint64_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove the atom at index `i` from a `topology`.</p>
-<p>This modify all the atoms indexes after `i`.</p>
+<p>This shifts all the atoms indexes after `i` by 1 (n becomes n-1).</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
 
 <span class="c1">// Add a fex atoms to the topology</span>
@@ -359,7 +361,7 @@
 <dl class="function">
 <dt id="_CPPv225chfl_topology_remove_bondPC13CHFL_TOPOLOGY8uint64_t8uint64_t">
 <span id="chfl_topology_remove_bond__CHFL_TOPOLOGYPC.uint64_t.uint64_t"></span><span class="target" id="chemfilestopology_8h_1a333fde6e8e768a499b951ccbc3466a88"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_topology_remove_bond</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em>, uint64_t <em>j</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_topology_remove_bondPC13CHFL_TOPOLOGY8uint64_t8uint64_t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove any existing bond between the atoms `i` and `j` in the `topology`.</p>
+<dd><p>Remove any existing bond between the atoms at indexes `i` and `j` in the `topology`.</p>
 <p>This function does nothing if there is no bond between `i` and `j`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
 
@@ -440,7 +442,7 @@
 <dl class="function">
 <dt id="_CPPv224chfl_topology_isdihedralPCK13CHFL_TOPOLOGY8uint64_t8uint64_t8uint64_t8uint64_tPb">
 <span id="chfl_topology_isdihedral__CHFL_TOPOLOGYCPC.uint64_t.uint64_t.uint64_t.uint64_t.bP"></span><span class="target" id="chemfilestopology_8h_1a7c38c14c93aa007faf60749447e8d9bd"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_topology_isdihedral</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<em class="property">const</em> <em>topology</em>, uint64_t <em>i</em>, uint64_t <em>j</em>, uint64_t <em>k</em>, uint64_t <em>m</em>, bool *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224chfl_topology_isdihedralPCK13CHFL_TOPOLOGY8uint64_t8uint64_t8uint64_t8uint64_tPb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the atoms at indexes `i`, `j` and `k` form a dihedral angle, and store the result in `result`.</p>
+<dd><p>Check if the atoms at indexes `i`, `j`, `k` and `m` form a dihedral angle, and store the result in `result`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
 
 <span class="n">chfl_topology_add_bond</span><span class="p">(</span><span class="n">topology</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
@@ -627,7 +629,7 @@
 <dl class="function">
 <dt id="_CPPv225chfl_topology_add_residuePC13CHFL_TOPOLOGYPCK12CHFL_RESIDUE">
 <span id="chfl_topology_add_residue__CHFL_TOPOLOGYPC.CHFL_RESIDUECPC"></span><span class="target" id="chemfilestopology_8h_1acbe2f43efe0e08452984de37a7dda38b"></span><a class="reference internal" href="errors.html#_CPPv211chfl_status" title="chfl_status">chfl_status</a> <code class="descclassname"></code><code class="descname">chfl_topology_add_residue</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv213CHFL_TOPOLOGY" title="CHFL_TOPOLOGY">CHFL_TOPOLOGY</a> *<em class="property">const</em> <em>topology</em>, <em class="property">const</em> <a class="reference internal" href="chfl_residue.html#_CPPv212CHFL_RESIDUE" title="CHFL_RESIDUE">CHFL_RESIDUE</a> *<em class="property">const</em> <em>residue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225chfl_topology_add_residuePC13CHFL_TOPOLOGYPCK12CHFL_RESIDUE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a `residue` to this `topology`.</p>
+<dd><p>Add a copy of `residue` to this `topology`.</p>
 <p>The residue id must not already be in the topology, and the residue must contain only atoms that are not already in another residue.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_TOPOLOGY</span><span class="o">*</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">chfl_topology</span><span class="p">();</span>
 <span class="n">CHFL_RESIDUE</span><span class="o">*</span> <span class="n">residue</span> <span class="o">=</span> <span class="n">chfl_residue</span><span class="p">(</span><span class="s">&quot;res&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>

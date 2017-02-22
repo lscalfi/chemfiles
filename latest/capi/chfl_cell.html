@@ -149,8 +149,8 @@
 <dt id="_CPPv29CHFL_CELL">
 <span id="CHFL_CELL"></span><span class="target" id="chemfilestypes_8h_1a6000b295e6df30f39e754d41ff1cf562"></span><em class="property">typedef </em><em class="property">struct</em> <a class="reference internal" href="#_CPPv29CHFL_CELL" title="CHFL_CELL">CHFL_CELL</a> <code class="descclassname"></code><code class="descname">CHFL_CELL</code><a class="headerlink" href="#_CPPv29CHFL_CELL" title="Permalink to this definition">¶</a></dt>
 <dd><p>An opaque type handling an unit cell.</p>
-<p>A `CHFL_CELL` represent the box containing the atoms, and its periodicity</p>
-<p>A unit cell is fully represented by three lenghts (a, b, c); and three angles (alpha, beta, gamma). The angles are stored in degrees, and the lenghts in Angstroms.</p>
+<p>A `CHFL_CELL` represent the box containing the atoms, and its periodicity.</p>
+<p>An unit cell is fully represented by three lenghts (a, b, c); and three angles (alpha, beta, gamma). The angles are stored in degrees, and the lenghts in Angstroms.</p>
 <p>A cell also has a matricial representation, by projecting the three base vector into an orthonormal base. We choose to represent such matrix as an upper triangular matrix:</p>
 <p>``` | a_x b_x c_x | | 0 b_y c_y | | 0 0 c_z | ``` </p>
 </dd></dl>
@@ -160,6 +160,7 @@
 <span id="chfl_cell__chfl_vector_tC"></span><span class="target" id="chemfilescell_8h_1a076dee32df57fccd87f1b46aeb3befc2"></span><a class="reference internal" href="#_CPPv29CHFL_CELL" title="CHFL_CELL">CHFL_CELL</a> *<code class="descclassname"></code><code class="descname">chfl_cell</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="index.html#_CPPv213chfl_vector_t" title="chfl_vector_t">chfl_vector_t</a> <em>lenghts</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29chfl_cellK13chfl_vector_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an unit cell from three `lenghts`. The unit cell shape is `CHFL_CELL_ORTHORHOMBIC`.</p>
 <p>The cell lenghts should be in Angstroms.</p>
+<p>The caller of this function should free the associated memory using `chfl_cell_free`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_CELL</span><span class="o">*</span> <span class="n">cell</span> <span class="o">=</span> <span class="n">chfl_cell</span><span class="p">((</span><span class="n">chfl_vector_t</span><span class="p">){</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">});</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">cell</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
@@ -182,6 +183,7 @@
 <dd><p>Create an unit cell from three `lenghts` and three `angles`. The unit cell shape is `CHFL_CELL_TRICLINIC`.</p>
 <p>The cell lenghts should be in Angstroms, and the angles in degree.</p>
 <p>The cell angles are defined as follow: alpha is the angles between the cell vector `b` and `c`; beta as the angle between `a` and `c`; and gamma as the angle between `a` and `b`.</p>
+<p>The caller of this function should free the associated memory using `chfl_cell_free`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_CELL</span><span class="o">*</span> <span class="n">cell</span> <span class="o">=</span> <span class="n">chfl_cell_triclinic</span><span class="p">((</span><span class="n">chfl_vector_t</span><span class="p">){</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">},</span> <span class="p">(</span><span class="n">chfl_vector_t</span><span class="p">){</span><span class="mi">122</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">97</span><span class="p">});</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">cell</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
@@ -202,6 +204,7 @@
 <dt id="_CPPv220chfl_cell_from_framePCK10CHFL_FRAME">
 <span id="chfl_cell_from_frame__CHFL_FRAMECPC"></span><span class="target" id="chemfilescell_8h_1a8ebd9d48235ed33b498d7276a6a98613"></span><a class="reference internal" href="#_CPPv29CHFL_CELL" title="CHFL_CELL">CHFL_CELL</a> *<code class="descclassname"></code><code class="descname">chfl_cell_from_frame</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="chfl_frame.html#_CPPv210CHFL_FRAME" title="CHFL_FRAME">CHFL_FRAME</a> *<em class="property">const</em> <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220chfl_cell_from_framePCK10CHFL_FRAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a copy of the unit cell of a `frame`.</p>
+<p>The caller of this function should free the associated memory using `chfl_cell_free`.</p>
 <p><div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">CHFL_FRAME</span><span class="o">*</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">chfl_frame</span><span class="p">();</span>
 <span class="n">CHFL_CELL</span><span class="o">*</span> <span class="n">cell</span> <span class="o">=</span> <span class="n">chfl_cell_from_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
 
