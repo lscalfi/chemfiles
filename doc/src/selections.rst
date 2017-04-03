@@ -4,7 +4,7 @@ Selection language
 ==================
 
 Chemfiles selection language allows to select some atoms in a :ref:`Frame
-<class-Frame>` matching a set of constraints. For examples, ``atom: name H
+<class-Frame>` matching a set of constraints. For examples, ``atoms: name H
 and x > 15`` would select all *single atoms* whose name is ``H`` and x
 coordinate is bigger than 15.
 
@@ -77,8 +77,8 @@ Elisions
 
 This multiple selection language can be a bit verbose for simpler cases, so it
 is sometimes allowed to remove parts of the selection. First, in the ``atom``
-context, the ``#1`` variable is optional, and ``atom: name(#1) == H`` is
-equivalent to ``atom: name == H``.
+context, the ``#1`` variable is optional, and ``atoms: name(#1) == H`` is
+equivalent to ``atoms: name == H``.
 
 Then, if no context is given, the ``atom`` context is used. This make ``atom:
 name == H`` equivalent to ``name == H``.
@@ -88,4 +88,4 @@ precised. This means that we can write ``name H`` instead of ``name == H``.
 
 At the end, using all these elisions rules, ``atom: name(#1) == H or name(#1) ==
 O`` is equivalent to ``name H or name O``; and ``bond: name(#1) == C and
-mass(#2) == 4.5`` is equivalent to ``bond: name(#1) C and mass(#2) 4.5``.
+mass(#2) == 4.5`` is equivalent to ``bonds: name(#1) C and mass(#2) 4.5``.
