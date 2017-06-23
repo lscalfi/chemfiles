@@ -139,3 +139,12 @@ extern "C" chfl_status chfl_cell_free(CHFL_CELL* const cell) {
     delete cell;
     return CHFL_SUCCESS;
 }
+
+extern "C" chfl_status chfl_cell_wrap(const CHFL_CELL* const cell, chfl_vector_t vect) {
+    CHECK_POINTER(cell);
+    CHECK_POINTER(vect);
+    CHFL_ERROR_CATCH(
+        cell->wrap(vector3d(vect[0], vect[1], vect[2]));
+    )
+}
+
